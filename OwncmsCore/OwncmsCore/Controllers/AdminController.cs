@@ -2,6 +2,8 @@
 using System.Globalization;
 using OwncmsCore.Middleware.Language;
 using OwncmsCore.Models.DatabaseModels;
+using Nancy.Json;
+using OwncmsCore.Services.Panel;
 
 namespace OwncmsCore.Controllers
 {
@@ -19,8 +21,6 @@ namespace OwncmsCore.Controllers
         }
 
 
-
-        [AllowAnonymous]
         [HttpPost]
         [Route("Login")]
         public async Task<ActionResult> Login(string username, string password)
@@ -28,7 +28,7 @@ namespace OwncmsCore.Controllers
             using (Database_DB DB = new Database_DB())
             {
                 string pass = Hasher_Lib.Hash.SHA_256(password);
-                Users_Tbl user = Own_Cms.Functions.Statics.Static_User.GetLogin(username, pass);
+                Users_Tbl user = Static_User.GetLogin(username, pass);
                 if (user != null)
                 {
                     if (user.google2f == null || user.google2f == "")

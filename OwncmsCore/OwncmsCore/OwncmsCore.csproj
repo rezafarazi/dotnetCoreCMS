@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
     <Folder Include="wwwroot\Assets\Admin\icons-reference\fonts\" />
     <Folder Include="wwwroot\Assets\Admin\img\" />
     <Folder Include="wwwroot\Assets\Admin\vendor\bootstrap\css\" />
@@ -29,6 +28,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Nancy" Version="2.0.0" />
+    <PackageReference Include="PersianDateTime" Version="1.1.5082.36395" />
   </ItemGroup>
 
   <ItemGroup>
