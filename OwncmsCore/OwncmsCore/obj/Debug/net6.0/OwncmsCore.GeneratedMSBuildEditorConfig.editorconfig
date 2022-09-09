@@ -1,0 +1,24 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = OwncmsCore
+build_property.RootNamespace = OwncmsCore
+build_property.ProjectDir = C:\Users\Rezafta\Desktop\OwncmsCore\OwncmsCore\OwncmsCore\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Rezafta\Desktop\OwncmsCore\OwncmsCore\OwncmsCore
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Rezafta/Desktop/OwncmsCore/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXGxvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rezafta/Desktop/OwncmsCore/OwncmsCore/OwncmsCore/Views/Admin/Themplate/__Empty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVGhlbXBsYXRlXF9fRW1wdHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

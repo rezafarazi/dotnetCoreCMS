@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="wwwroot\Assets\Admin\icons-reference\fonts\" />
+    <Folder Include="wwwroot\Assets\Admin\img\" />
+    <Folder Include="wwwroot\Assets\Admin\vendor\bootstrap\css\" />
+    <Folder Include="wwwroot\Assets\Admin\vendor\bootstrap\js\" />
+    <Folder Include="wwwroot\Assets\Admin\vendor\chart.js\" />
+    <Folder Include="wwwroot\Assets\Admin\vendor\font-awesome\css\" />
+    <Folder Include="wwwroot\Assets\Admin\vendor\font-awesome\fonts\" />
+    <Folder Include="wwwroot\Assets\Admin\vendor\jquery-validation\localization\" />
+    <Folder Include="wwwroot\Assets\Admin\vendor\jquery.cookie\" />
+    <Folder Include="wwwroot\Assets\Admin\vendor\jquery\" />
+    <Folder Include="wwwroot\Assets\Admin\vendor\popper.js\esm\" />
+    <Folder Include="wwwroot\Assets\Admin\vendor\popper.js\umd\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Hasher_Lib">
+      <HintPath>..\..\..\Own_Cms\Own_Cms\Own_Cms\bin\Hasher_Lib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Language\all_strings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>all_strings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Language\all_strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>all_strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
