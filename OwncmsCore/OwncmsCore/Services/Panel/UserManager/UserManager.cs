@@ -7,7 +7,7 @@ using System.Web;
 using System.IO;
 using OwncmsCore.Models.Data_Models.Update_Profile_Model;
 
-namespace Own_Cms.Functions.Statics.UserManager
+namespace Services.Panel.UserManager
 {
     public class UserManager
     {
@@ -360,64 +360,12 @@ namespace Own_Cms.Functions.Statics.UserManager
 
 
 
-        //Get User Categories Start
-        public static List<Categories_Tbl> Get_User_Category(long User_Id)
-        {
-            using (Database_DB DB = new Database_DB())
-            {
-                return (from Users_Tbl in DB.Users_Tbl
-                         join UserCategory_Tbl in DB.UserCategory_Tbl on Users_Tbl.id equals UserCategory_Tbl.user.id
-                         join Categories_Tbl in DB.Categories_Tbl on UserCategory_Tbl.category.id equals Categories_Tbl.id
-                         where Users_Tbl.id == User_Id
-                         select Categories_Tbl).ToList();
-            }
-        }
-        //Get User Categories End
-
-
-        //Set User Categories Start
-        public static void Add_User_Category(long User_Id,long Category_Id)
-        {
-            using (Database_DB DB = new Database_DB())
-            {
-                var UserCategories=(from Users_Tbl in DB.Users_Tbl
-                    join UserCategory_Tbl in DB.UserCategory_Tbl on Users_Tbl.id equals UserCategory_Tbl.user.id
-                    join Categories_Tbl in DB.Categories_Tbl on UserCategory_Tbl.category.id equals Categories_Tbl.id
-                    where Users_Tbl.id == User_Id && UserCategory_Tbl.category.id == Category_Id
-                    select UserCategory_Tbl).ToList();
-
-                if(UserCategories.Count>0)
-                {
-                    DB.UserCategory_Tbl.RemoveRange(UserCategories);
-                }
-                else
-                {
-                    UserCategory_Tbl u_cat = new UserCategory_Tbl();
-                    u_cat.category = (from Categories_Tbl in DB.Categories_Tbl where Categories_Tbl.id == Category_Id select Categories_Tbl).FirstOrDefault();
-                    u_cat.user = (from Users_Tbl in DB.Users_Tbl where Users_Tbl.id == User_Id select Users_Tbl).FirstOrDefault();
-                    DB.UserCategory_Tbl.Add(u_cat);
-                }
-
-                DB.SaveChanges();
-            }
-        }
-        //Set User Categories End
-
-
-
         //Add 30 Days Payment Start
         public static void GetAdd30DayPeyment(long User_Id,string value,long pay_user_id,byte day_count)
         {
             using(Database_DB DB=new Database_DB())
             {
                 Users_Tbl user = (from Users_Tbl in DB.Users_Tbl where Users_Tbl.id == User_Id select Users_Tbl).FirstOrDefault();
-
-                Transations_Tbl transaction = new Transations_Tbl();
-                transaction.date = PersianDateTime.Now.ToString();
-                transaction.User = user;
-                transaction.value = value;
-                transaction.peyment_user_id = pay_user_id;
-                DB.Transactions_Tbl.Add(transaction);
 
                 int Last_Days = user.peyment_day_count + day_count;
                 user.peyment_day_count = Last_Days;

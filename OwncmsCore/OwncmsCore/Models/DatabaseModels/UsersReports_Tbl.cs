@@ -18,7 +18,6 @@ namespace OwncmsCore.Models.DatabaseModels
         public long Reporter_User { get; set; }
         public long Reported_User { get; set; }
         public Reports_Tbl Report_Type { get; set; }
-        public Services_Tbl Service_Id { get; set; }
 
     }
 }

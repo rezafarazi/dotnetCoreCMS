@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using OwncmsCore.Models.DatabaseModels;
 
-namespace Own_Cms.Functions.Statics.Charts
+namespace Services.Panel.Charts
 {
     public class Charts
     {

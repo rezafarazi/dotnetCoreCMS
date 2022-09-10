@@ -1,10 +1,10 @@
-﻿using Store.Models;
+﻿using OwncmsCore.Models.DatabaseModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Own_Cms.Functions.Statics.UsersReports
+namespace Services.Panel.UsersReports
 {
     public class UsersReports
     {

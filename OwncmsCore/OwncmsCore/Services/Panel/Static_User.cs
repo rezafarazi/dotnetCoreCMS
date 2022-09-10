@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using OwncmsCore.Models.DatabaseModels;
 
-namespace OwncmsCore.Services.Panel
+namespace OwncmsCore.Services.Panel.Static_User
 {
     public class Static_User
     {

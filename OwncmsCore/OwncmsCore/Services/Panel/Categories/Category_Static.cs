@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using OwncmsCore.Models.DatabaseModels;
 
-namespace Services.Categories
+namespace Services.Panel.Categories
 { 
     public class Category_Class
     {
@@ -25,7 +25,6 @@ namespace Services.Categories
             public List<string> Categorys_Table_Logo_Address;
             public List<string> Categorys_Table_Visible;
             public List<string> Categorys_Table_Root;
-            public List<string> Categorys_Table_City;
         }
         //Table End
 
@@ -92,14 +91,13 @@ namespace Services.Categories
 
             using (Database_DB DB = new Database_DB())
             {
-                var Get_All_Categorys = (from Categories_Tbl in DB.Categories_Tbl join Cites_Tbl in DB.Cites_Tbl on Categories_Tbl.city_id equals Cites_Tbl.id where Categories_Tbl.Enabled_Flag != "DELETED" select new { Categories_Tbl , Cites_Tbl}).ToList();
+                var Get_All_Categorys = (from Categories_Tbl in DB.Categories_Tbl where Categories_Tbl.Enabled_Flag != "DELETED" select new { Categories_Tbl}).ToList();
 
                 Categorys_Table_Id.Clear();
                 Categorys_Table_Name.Clear();
                 Categorys_Table_Logo_Address.Clear();
                 Categorys_Table_Root.Clear();
                 Categorys_Table_Visible.Clear();
-                Categorys_Table_City.Clear();
 
                 for (int i = 0; i < Get_All_Categorys.Count; i++)
                 {
@@ -108,7 +106,6 @@ namespace Services.Categories
                     Categorys_Table_Logo_Address.Add(Get_All_Categorys[i].Categories_Tbl.Icon_Address);
                     Categorys_Table_Root.Add(Get_All_Categorys[i].Categories_Tbl.Root_Id);
                     Categorys_Table_Visible.Add(Get_All_Categorys[i].Categories_Tbl.Enabled_Flag);
-                    Categorys_Table_City.Add(Get_All_Categorys[i].Cites_Tbl.city_name);
                 }
 
             }
@@ -118,7 +115,6 @@ namespace Services.Categories
             Categprys_Tables.Categorys_Table_Logo_Address = Categorys_Table_Logo_Address;
             Categprys_Tables.Categorys_Table_Visible = Categorys_Table_Visible;
             Categprys_Tables.Categorys_Table_Root = Categorys_Table_Root;
-            Categprys_Tables.Categorys_Table_City = Categorys_Table_City;
 
             return Categprys_Tables;
         }
@@ -234,12 +230,6 @@ namespace Services.Categories
                 }
 
                 DB.Categories_Tbl.Add(Category);
-
-
-                Question_Tbl Question = new Question_Tbl();
-                Question.Cat_Id = Category;
-                Question.Json_Questions = "[]";
-                DB.Question_Tbl.Add(Question);
                 
 
                 DB.SaveChanges();

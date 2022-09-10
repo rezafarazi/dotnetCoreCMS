@@ -1,10 +1,10 @@
-﻿using Own_Cms.Functions.Statics.FileManager;
+﻿using Services.Panel.FileManager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Own_Cms.Functions.Statics
+namespace Services.Panel.Statics
 {
     public class File_Manager
     {

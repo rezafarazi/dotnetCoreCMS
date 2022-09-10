@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using OwncmsCore.Models.DatabaseModels;
 
-namespace Own_Cms.Functions.Statics.Notifications
+namespace Services.Panel.Notifications
 {
     public class Notifications
     {
