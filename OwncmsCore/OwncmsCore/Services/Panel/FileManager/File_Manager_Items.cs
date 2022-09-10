@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Services.Panel.FileManager
+namespace OwncmsCore.Services.Panel.FileManager
 {
     public class File_Manager_Items
     {

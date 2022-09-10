@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using OwncmsCore.Models.DatabaseModels;
 
-namespace Services.Panel.Categories
+namespace OwncmsCore.Services.Panel.Categories
 { 
     public class Category_Class
     {

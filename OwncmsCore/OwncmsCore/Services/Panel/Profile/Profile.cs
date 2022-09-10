@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using OwncmsCore.Models.DatabaseModels;
 
-namespace Services.Panel.Profile
+namespace OwncmsCore.Services.Panel.Profile
 {
     public class Profile
     {

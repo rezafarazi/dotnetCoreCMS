@@ -7,7 +7,7 @@ using System.Web;
 using System.IO;
 using OwncmsCore.Models.Data_Models.Update_Profile_Model;
 
-namespace Services.Panel.UserManager
+namespace OwncmsCore.Services.Panel.UserManager
 {
     public class UserManager
     {

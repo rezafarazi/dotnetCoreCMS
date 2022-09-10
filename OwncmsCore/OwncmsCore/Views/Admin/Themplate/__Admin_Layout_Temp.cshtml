@@ -1,0 +1,395 @@
+﻿@{
+    //User Data
+    OwncmsCore.Models.DatabaseModels.Users_Tbl User_Data= ViewBag.User_Data;
+
+    //User Notifications
+    OwncmsCore.Services.Panel.Notifications.Notifications.Notification_Out Notifications = ViewBag.Notification;
+
+}
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@OwncmsCore.Language.all_strings.companey_name</title>
+    <link rel="stylesheet" href="~/Assets/Admin/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/Assets/Admin/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="~/Assets/Admin/css/style.css">
+    <link rel="stylesheet" href="~/Assets/Admin/css/castum_style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="~/Assets/Admin/images/ico.png" />
+</head>
+<body>
+    <div class="container-scroller">
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo" href="index.html"><img src="~/Assets/Admin/images/logo.png" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="index.html"><img src="~/Assets/Admin/images/ico.png" alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-stretch">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="mdi mdi-menu"></span>
+                </button>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                            <div class="nav-profile-img">
+                                <img src="~/Assets/Admin/images/faces/face.png" alt="image">
+                                <span class="availability-status online"></span>
+                            </div>
+                            <div class="nav-profile-text">
+                                <p class="mb-1 text-black">@User_Data.username</p>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+                            <a class="dropdown-item" href="/Admin/Logout">
+                                <i class="mdi mdi-logout mr-2 text-primary"></i> @OwncmsCore.Language.all_strings.exit
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item d-none d-lg-block full-screen-link">
+                        <a class="nav-link">
+                            <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown" onclick="Get_Seen_All_Notificatio(this)">
+                        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                            <i class="mdi mdi-bell-outline"></i>
+                            @if (@Notifications.seen > 0)
+                            {
+                                <span class="count-symbol bg-danger"></span>
+                            }
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                                <h6 class="p-3 mb-0" style="text-align: center;">Notifications</h6>
+                                <div class="dropdown-divider"></div>
+
+                                @for (int i = 0; i < Notifications.notifications.Count; i++)
+                                {
+                                <a class="dropdown-item preview-item" href="@Notifications.notifications[i].link">
+                                    <div class="preview-thumbnail">
+                                        <div class="preview-icon bg-reddit">
+                                            <i class="mdi mdi-bell"></i>
+                                        </div>
+                                    </div>
+                                    <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                                        <h6 style="margin: 5px;" class="preview-subject font-weight-normal mb-1">@Notifications.notifications[i].title</h6>
+                                        <p style="margin: 5px;" class="text-gray ellipsis mb-0">@Notifications.notifications[i].content</p>
+                                    </div>
+                                </a>
+                                }
+                                <div class="dropdown-divider"></div>
+                                
+
+                            </div>
+                        </li>
+                    </ul>
+                    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                        <span class="mdi mdi-menu"></span>
+                    </button>
+                </div>
+            </nav>
+            <!-- partial -->
+            <div class="container-fluid page-body-wrapper">
+                <!-- partial:partials/_sidebar.html -->
+                <nav class="sidebar sidebar-offcanvas" id="sidebar">
+
+                    @if (User_Data.user_type == "ADMIN")
+                    {
+                        <ul class="nav">
+                        <li class="nav-item nav-profile">
+                            <a href="~/Admin/Profile" class="nav-link">
+                                <div class="nav-profile-image">
+                                    <img src="~/Assets/Admin/images/faces/face.png" alt="profile">
+                                    <span class="login-status online"></span>
+                                    <!--change to offline or busy as needed-->
+                                </div>
+                                <div class="nav-profile-text d-flex flex-column" style="margin-right: 10px;">
+                                    <span class="font-weight-bold mb-2">@User_Data.name @User_Data.family</span>
+                                    @if (User_Data.user_type == "ADMIN")
+                                    {
+                                        <span class="text-secondary text-small">@OwncmsCore.Language.all_strings.ADMIN</span>
+                                    }
+                                </div>
+                                <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Admin/Dashboard">
+                                <span class="menu-title">@OwncmsCore.Language.all_strings.dashboard</span>
+                                <i class="mdi mdi-home menu-icon"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Admin/Categoreis">
+                                <span class="menu-title">@OwncmsCore.Language.all_strings.categoris</span>
+                                <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Admin/Charts">
+                                <span class="menu-title">@OwncmsCore.Language.all_strings.chart</span>
+                                <i class="mdi mdi-chart-bar menu-icon"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Admin/UserManager">
+                                <span class="menu-title">@OwncmsCore.Language.all_strings.usermanagment</span>
+                                <i class="mdi mdi-account-multiple menu-icon"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Admin/FileManager">
+                                <span class="menu-title">@OwncmsCore.Language.all_strings.filemanager</span>
+                                <i class="mdi mdi-folder menu-icon"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Admin/Questions">
+                                <span class="menu-title">@OwncmsCore.Language.all_strings.questins</span>
+                                <i class="mdi mdi-comment-question-outline menu-icon"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Admin/Cites">
+                                <span class="menu-title">@OwncmsCore.Language.all_strings.cites</span>
+                                <i class="mdi mdi-google-maps menu-icon"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                                <span class="menu-title">@OwncmsCore.Language.all_strings.reports</span>
+                                <i class="mdi mdi-chart-bubble menu-icon"></i>
+                            </a>
+                            <div class="collapse" id="ui-basic">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item"> <a class="nav-link" href="~/Admin/Reports">@OwncmsCore.Language.all_strings.reports</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="~/Admin/NewReport">@OwncmsCore.Language.all_strings.new_report</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                                    <span class="menu-title">@OwncmsCore.Language.all_strings.services</span>
+                                    <i class="mdi mdi-briefcase menu-icon"></i>
+                                </a>
+                                <div class="collapse" id="ui-basic">
+                                    <ul class="nav flex-column sub-menu">
+                                        <li class="nav-item"> <a class="nav-link" href="~/Admin/AllNotWorkServices">@OwncmsCore.Language.all_strings.all_service_request</a></li>
+                                        <li class="nav-item"> <a class="nav-link" href="~/Admin/AllCurrentWorkServices">@OwncmsCore.Language.all_strings.all_service_working</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Admin/Profile">
+                                <span class="menu-title">@OwncmsCore.Language.all_strings.profile</span>
+                                <i class="mdi mdi-account menu-icon"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Admin/Settings">
+                                <span class="menu-title">@OwncmsCore.Language.all_strings.settings</span>
+                                <i class="mdi mdi-settings menu-icon"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Admin/Backup">
+                                <span class="menu-title">@OwncmsCore.Language.all_strings.backup</span>
+                                <i class="mdi mdi-backup-restore menu-icon"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Admin/Logout">
+                                <span class="menu-title">@OwncmsCore.Language.all_strings.exit</span>
+                                <i class="mdi mdi-exit-to-app menu-icon"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                    }
+                    else if (User_Data.user_type == "ADMIN_USER")
+                    {
+                        <ul class="nav">
+                            <li class="nav-item nav-profile">
+                                <a href="~/Admin/Profile" class="nav-link">
+                                    <div class="nav-profile-image">
+                                        <img src="~/Assets/Admin/images/faces/face.png" alt="profile">
+                                        <span class="login-status online"></span>
+                                        <!--change to offline or busy as needed-->
+                                    </div>
+                                    <div class="nav-profile-text d-flex flex-column" style="margin-right: 10px;">
+                                        <span class="font-weight-bold mb-2">@User_Data.name @User_Data.family</span>
+                                        @if (User_Data.user_type == "ADMIN")
+                                        {
+                                            <span class="text-secondary text-small">@OwncmsCore.Language.all_strings.ADMIN_USER</span>
+                                        }
+                                    </div>
+                                    <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/Admin/Dashboard">
+                                    <span class="menu-title">@OwncmsCore.Language.all_strings.dashboard</span>
+                                    <i class="mdi mdi-home menu-icon"></i>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/Admin/UserManager">
+                                    <span class="menu-title">@OwncmsCore.Language.all_strings.usermanagment</span>
+                                    <i class="mdi mdi-account-multiple menu-icon"></i>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                                    <span class="menu-title">@OwncmsCore.Language.all_strings.reports</span>
+                                    <i class="mdi mdi-chart-bubble menu-icon"></i>
+                                </a>
+                                <div class="collapse" id="ui-basic">
+                                    <ul class="nav flex-column sub-menu">
+                                        <li class="nav-item"> <a class="nav-link" href="~/Admin/Reports">@OwncmsCore.Language.all_strings.reports</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                                    <span class="menu-title">@OwncmsCore.Language.all_strings.services</span>
+                                    <i class="mdi mdi-briefcase menu-icon"></i>
+                                </a>
+                                <div class="collapse" id="ui-basic">
+                                    <ul class="nav flex-column sub-menu">
+                                        <li class="nav-item"> <a class="nav-link" href="~/Admin/AllNotWorkServices">@OwncmsCore.Language.all_strings.all_service_request</a></li>
+                                        <li class="nav-item"> <a class="nav-link" href="~/Admin/AllCurrentWorkServices">@OwncmsCore.Language.all_strings.all_service_working</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/Admin/Profile">
+                                    <span class="menu-title">@OwncmsCore.Language.all_strings.profile</span>
+                                    <i class="mdi mdi-account menu-icon"></i>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/Admin/Backup">
+                                    <span class="menu-title">@OwncmsCore.Language.all_strings.backup</span>
+                                    <i class="mdi mdi-backup-restore menu-icon"></i>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/Admin/Logout">
+                                    <span class="menu-title">@OwncmsCore.Language.all_strings.exit</span>
+                                    <i class="mdi mdi-exit-to-app menu-icon"></i>
+                                </a>
+                            </li>
+
+                        </ul>
+                    }
+
+                </nav>
+
+
+
+
+                @RenderBody()
+
+
+
+
+<!-- partial:partials/_footer.html -->
+<footer class="footer">
+    <div class="container-fluid clearfix">
+      <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">@OwncmsCore.Language.all_strings.companey_name</span>
+      <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><a href="https://taxi.az" target="_blank">Taxi.az</a></span>
+    </div>
+  </footer>
+  <!-- partial -->
+</div>
+<!-- main-panel ends -->
+</div>
+<!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+
+
+
+
+
+
+
+    <!--Iframe Dialog Start-->
+    <div id="iframe_dialog" style="display: none;">
+        <i class="mdi mdi-close" onclick="Close_Ifram_Dialog(this)"></i>
+        <div id="iframe_dialog_main_content">
+            <iframe id="iframe_dialog_main_content_iframe" src="http://google.com">
+
+            </iframe>
+        </div>
+    </div>
+    <!--Iframe Dialog End-->
+
+
+
+
+    <script>
+        //Browser Dialog Start
+        function Open_Link_Dialog(e, address) {
+            var Dialog = window.document.getElementById("iframe_dialog");
+            var Iframe = window.document.getElementById("iframe_dialog_main_content_iframe");
+            Dialog.style.display = "flex";
+            Iframe.src = address;
+        }
+
+        function Close_Ifram_Dialog(e) {
+            var Dialog = window.document.getElementById("iframe_dialog");
+            Dialog.style.display = "none";
+        }
+        //Browser Dialog End
+    </script>
+
+
+
+
+
+    <!-- plugins:js -->
+    <script src="~/Assets/Admin/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="~/Assets/Admin/vendors/chart.js/Chart.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="Admin/js/off-canvas.js"></script>
+    <script src="~/Assets/Admin/js/hoverable-collapse.js"></script>
+    <script src="~/Assets/Admin/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="~/Assets/Admin/js/dashboard.js'"></script>
+    <script src="~/Assets/Admin/js/todolist.js"></script>
+    <!-- End custom js for this page -->
+    <script src="~/Assets/Admin/js/main.js"></script>
+  </body>
+</html>

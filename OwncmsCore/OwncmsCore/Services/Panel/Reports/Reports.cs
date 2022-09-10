@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Services.Panel.Reports
+namespace OwncmsCore.Services.Panel.Reports
 {
     public class Reports
     {
