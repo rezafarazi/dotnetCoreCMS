@@ -1,0 +1,95 @@
+﻿@using OwncmsCore.Models.DatabaseModels;
+@{
+    Layout = "~/Views/Admin/Themplate/__Admin_Layout_Temp.cshtml";
+    Users_Tbl User = ViewBag.User_Data;
+}
+     
+
+<!-- partial -->
+<div class="main-panel">
+    <!--Send Notification To User Start-->
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title">
+                <span class="page-title-icon bg-gradient-primary text-white mr-2">
+                    <i class="mdi mdi-account "></i>
+                </span>@OwncmsCore.Language.all_strings.profile
+            </h3>
+        </div>
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title" style="text-align: center;">@OwncmsCore.Language.all_strings.profile</h4>
+                        <p class="card-description" style="text-align: center;">@OwncmsCore.Language.all_strings.please_fill_under_field</p>
+                        <form class="forms-sample" method="post" enctype="multipart/form-data">
+                            <input type="hidden" value="@User.id" name="user_id" />
+                            @Html.AntiForgeryToken()
+                            <div class="form-group">
+                                <label for="exampleInputUsername1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.userprofileimage</label>
+                                <input type="file" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.userprofileimage" name="profile_image">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.username</label>
+                                <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.username" name="username" value="@User.username">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.name</label>
+                                <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.name" name="name" value="@User.name">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.family</label>
+                                <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.family" name="family" value="@User.family">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.newpassword</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="@OwncmsCore.Language.all_strings.newpassword" name="password">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.email</label>
+                                <input type="email" class="form-control" id="exampleInputPassword1" placeholder="@OwncmsCore.Language.all_strings.email" name="email" value="@User.email">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.phone</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="@OwncmsCore.Language.all_strings.phone" name="phone" value="@User.phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.national_id</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="@OwncmsCore.Language.all_strings.national_id" name="national_id" value="@User.national_id">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.father_name</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="@OwncmsCore.Language.all_strings.father_name" name="father_name" value="@User.father_name">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.address</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="آدرس" name="address" value="@User.address">
+                            </div>
+                            <br>
+                            <br>
+                            @if (!User.google2f.Equals(string.Empty))
+                            {
+                                <a href="~/Admin/Profile/Passtive2F" style="width: 100%;" type="submit" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.dactive_2f_pass</a>
+                            }
+                            else
+                            {
+                                <a href="~/Admin/Profile/Active2F" style="width: 100%;" type="submit" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.active_2f_pass</a>
+                            }
+                            <br>
+                            <br>
+                            <button style="width: 100%;" type="submit" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Send Notification To User End-->
+
+
+
+
+
+
+
+

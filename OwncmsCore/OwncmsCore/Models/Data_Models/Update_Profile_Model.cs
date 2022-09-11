@@ -22,7 +22,7 @@ namespace OwncmsCore.Models.Data_Models.Update_Profile_Model
         public string user_type { get; set; } = "";
         public string address { get; set; } = "";
         public string city { get; set; } = "";
-        //public HttpPostedFileBase profile_image { get; set; }
+        public IFormFile profile_image { get; set; }
 
     }
 }

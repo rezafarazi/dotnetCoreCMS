@@ -27,6 +27,5 @@ namespace OwncmsCore.Models.DatabaseModels
         public string father_name { get; set; } = "";
         public string profile_image_address { get; set; } = "";
         public bool notification { get; set; } = false;
-        public int peyment_day_count { get; set; } = 0;
     }
 }

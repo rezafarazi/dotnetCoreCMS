@@ -216,9 +216,6 @@ namespace OwncmsCore.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("peyment_day_count")
-                        .HasColumnType("int");
-
                     b.Property<string>("phone")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

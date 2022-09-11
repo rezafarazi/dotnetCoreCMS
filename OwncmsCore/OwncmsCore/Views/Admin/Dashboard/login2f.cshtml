@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "~/Views/Admin/Themplate/__Empty.cshtml";
+}
+
+<!--Login Main Content Start-->
+<div class="content-wrapper" style="height: 100vh;">
+    <div class="row">
+        <div class="col-md-6 grid-margin stretch-card" style="margin: 0 auto;">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title" style="text-align: center;">@OwncmsCore.Language.all_strings.login</h4>
+                    <p class="card-description" style="text-align: center;">@OwncmsCore.Language.all_strings.please_fill_under_field</p>
+                    <form class="forms-sample" method="post">
+                        <div class="form-group">
+                            <label for="exampleInputUsername1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.twofp</label>
+                            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.twofp" name="auth_2f_code">
+                        </div>
+                        <button style="width: 100%;" type="submit" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Login Main Content End-->

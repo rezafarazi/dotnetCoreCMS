@@ -13,6 +13,8 @@ using System.Net.Mail;
 using OwncmsCore.Services.Panel.Categories;
 using OwncmsCore.Services.Panel.Statics;
 using OwncmsCore.Services.Panel.FileManager;
+using OwncmsCore.Models.Data_Models.Update_Profile_Model;
+using OwncmsCore.Services.Panel.UserManager;
 
 namespace OwncmsCore.Controllers
 {
@@ -35,9 +37,16 @@ namespace OwncmsCore.Controllers
         [Route("Login")]
         public async Task<ActionResult> Login()
         {
-            if (HttpContext.Session.Get("user_auth") != null)
+            try
             {
-                Response.Redirect("~/Admin/Dashboard");
+                if (HttpContext.Session.GetString("user_auth").ToString() != String.Empty)
+                {
+                    Response.Redirect("~/Admin/Dashboard");
+                }
+            }
+            catch
+            {
+
             }
             return View("Dashboard/login");
         }
@@ -64,6 +73,7 @@ namespace OwncmsCore.Controllers
                     }
                     else
                     {
+
                         HttpContext.Session.SetString("user_token", user.login_token);
                         return Redirect("~/Admin/Login2F");
                     }
@@ -90,7 +100,8 @@ namespace OwncmsCore.Controllers
         {
             using (Database_DB DB = new Database_DB())
             {
-                string token = HttpContext.Session.Get("user_token").ToString();
+                string token = HttpContext.Session.GetString("user_token").ToString();
+
                 Users_Tbl user = Static_User.GetLogin_With_Token(token);
 
                 byte[] secure_byte = System.Text.ASCIIEncoding.ASCII.GetBytes(user.google2f);
@@ -142,18 +153,7 @@ namespace OwncmsCore.Controllers
         [Route("Logout")]
         public async Task<ActionResult> Logout()
         {
-            HttpContext.Session.Remove("un");
-            HttpContext.Session.Remove("up");
-            HttpContext.Session.Remove("LGK");
-            HttpContext.Session.Remove("TK");
-            HttpContext.Session.Remove("user_auth");
-            HttpContext.Session.Remove("ASPXAUTH");
-            Response.Cookies.Delete("un");
-            Response.Cookies.Delete("up");
-            Response.Cookies.Delete("LGK");
-            Response.Cookies.Delete("TK");
             Response.Cookies.Delete("user_auth");
-            Response.Cookies.Delete(".ASPXAUTH");
             Response.Redirect("~/Admin/Login");
             return Redirect("~/");
         }
@@ -166,316 +166,19 @@ namespace OwncmsCore.Controllers
 
 
 
-        //Get Backup Start
-        [Route("Backup")]
-        public async Task<ActionResult> Backup()
-        {
-            GET_DATA();
-            return View("Dashboard/backup");
-        }
 
 
 
 
-
-
-        //Categories Start
-        [Route("Categoreis")]
-        public async Task<ActionResult> Categories()
-        {
-            GET_DATA();
-            Category_Class.Get_Generate_Categorys_Name();
-            Category_Class.Get_Generate_Categprys_Tables_Data();
-
-            if (HttpContext.Request.Query["Cat_Id"] != null)
-            {
-                Category_Class.Fill_Feilds_Records(int.Parse(HttpContext.Request.Query["Cat_Id"]));
-            }
-
-            ViewBag.All_City_And_Area = OwncmsCore.Services.Panel.City.City.Get_All_City_And_Area();
-
-            return View("Dashboard/categoreis");
-        }
-
-        [HttpPost]
-        [Route("Categoreis/New")]
-        public void New_Category(string Category_Id, string Category_Name, string Icon_Address, string Header_Address, string TextData, string Root_Cat, string Visibleity, string city, string two_way)
-        {
-
-            GET_DATA();
-            long city_code = long.Parse(city);
-
-            //Create New Category Start
-            {
-                if (Category_Id == null || Category_Id == string.Empty)
-                {
-                    using (Database_DB DB = new Database_DB())
-                    {
-                        Category_Class.INSERT_NEW_CATEGORY(User_Data.id, Visibleity, Category_Name, Icon_Address, Root_Cat, city_code, Header_Address, TextData, two_way);
-                    }
-                }
-                else
-                {
-                    Category_Class.UPDATE_Category(int.Parse(Category_Id), Category_Name, Icon_Address, (Root_Cat.ToUpper() == "ROOT") ? "" : Root_Cat, Visibleity, city_code, Header_Address, TextData, two_way);
-                }
-            }
-            //Create New Category End
-
-            Response.Redirect("/Admin/Categoreis");
-        }
-
-        [Route("Categoreis/Delete")]
-        public void Delete_Category()
-        {
-            GET_DATA();
-            //Delete Start
-            {
-                if (Request.QueryString.Get("Delete") != null)
-                {
-                    string Delete = Request.QueryString.Get("Delete");
-                    Category_Class.Delete_CATEGORY(Delete);
-                }
-            }
-            //Delete End
-
-            Response.Redirect(Request.Headers["Referer"].ToString());
-        }
-        //Categories End
-
-
-
-
-
-
-
-        //Chart Start
-        [Route("Charts")]
-        public async Task<ActionResult> Charts()
-        {
-            GET_DATA();
-            ViewBag.Services_Data = 0;
-            ViewBag.WeekServices = 0;
-            return View("Dashboard/charts");
-        }
-        //Chart End
-
-
-
-
-
-
-        //Settings Start
-        [Route("Settings")]
-        public async Task<ActionResult> Settings()
-        {
-            GET_DATA();
-            ViewBag.Settings = OwncmsCore.Services.Global_Functions.Settings.Settings.Configs;
-            return View("Dashboard/settings");
-        }
-
-        [HttpPost]
-        [Route("Settings")]
-        public async Task<ActionResult> Settings(string Config)
-        {
-            GET_DATA();
-            OwncmsCore.Services.Global_Functions.Settings.Settings.Configs = Config;
-            OwncmsCore.Services.Global_Functions.Settings.Settings.WriteSettings(Config);
-            return Redirect("~/Admin/Settings");
-        }
-        //Settings End
-
-
-
-
-
-
-
-
-
-
-        //New Report Start
-        [Route("NewReport")]
-        public async Task<ActionResult> Reports()
-        {
-            GET_DATA();
-            ViewBag.Reports = OwncmsCore.Services.Panel.Reports.Reports.All_Reports();
-            return View("Dashboard/new_report");
-        }
-
-        [HttpPost]
-        [Route("NewReport")]
-        public async Task<ActionResult> Reports(string title)
-        {
-            GET_DATA();
-            OwncmsCore.Services.Panel.Reports.Reports.Add_New_Report(title);
-            return Redirect("~/Admin/NewReport");
-        }
-
+        //Get 404 Start
         [HttpGet]
-        [Route("NewReport/Remove/{id}")]
-        public async Task<ActionResult> Reports_Remove(string id)
+        [Route("")]
+        public void Not_Found()
         {
             GET_DATA();
-            OwncmsCore.Services.Panel.Reports.Reports.Remove_Report(long.Parse(id));
-            return Redirect("~/Admin/NewReport");
+            Response.Redirect("/Admin/Login");
         }
-        //New Report End
-
-
-
-
-
-
-
-        //Reports Start
-
-        [Route("Reports")]
-        public async Task<ActionResult> All_Reports()
-        {
-            GET_DATA();
-            ViewBag.AllReports = OwncmsCore.Services.Panel.UsersReports.UsersReports.GetAll_User_Reports();
-            return View("Dashboard/reports");
-        }
-
-        [HttpGet]
-        [Route("Reports/View/{id}")]
-        public async Task<ActionResult> All_Reports(string id)
-        {
-            GET_DATA();
-            OwncmsCore.Services.Panel.UsersReports.UsersReports.GetView_Report(long.Parse(id));
-            return Redirect("~/Admin/Reports");
-        }
-
-        //Reports End
-
-
-
-
-
-
-
-
-
-
-        //File Manager Start
-        [Route("FileManager")]
-        public async Task<ActionResult> FileManager()
-        {
-            GET_DATA();
-            //Get Read Directory Start
-            {
-                if (Request.QueryString.Get("Dir") != null)
-                {
-                    GET_FILE_LIST(Request.QueryString.Get("Dir"));
-                }
-                else
-                {
-                    GET_FILE_LIST("");
-                }
-            }
-            //Get Read Directory End
-
-            return View("Dashboard/filemanager");
-        }
-
-        [HttpPost]
-        [Route("New_Folder")]
-        public async Task<ActionResult> New_Folder(string Folder_Name, string Addrs)
-        {
-            GET_DATA();
-            //New Folder Event Start
-            {
-                string Addr = Server.MapPath("~/Uploads/" + Addrs + "/" + Folder_Name);
-                if (!System.IO.Directory.Exists(Addr))
-                    System.IO.Directory.CreateDirectory(Addr);
-            }
-            //New Folder Event End
-
-            Response.Redirect(Request.Headers["Referer"].ToString());
-            return View("Dashboard/index");
-        }
-
-        [HttpPost]
-        [Route("Upload_File")]
-        public async Task<ActionResult> Upload_File(HttpPostedFileBase Upload_File, string Address)
-        {
-            GET_DATA();
-            //Upload File Start
-            {
-                try
-                {
-                    if (Upload_File != null)
-                    {
-                        string Upload_Address = Path.Combine(Server.MapPath("~/Uploads/" + Address), Path.GetFileName(Upload_File.FileName));
-                        Upload_File.SaveAs(Upload_Address);
-                    }
-                    else
-                    {
-                    }
-                }
-                catch (Exception Error)
-                {
-                }
-            }
-            //Upload File End
-
-            Response.Redirect(Request.Headers["Referer"].ToString());
-            return View("Dashboard/index");
-        }
-
-        [Route("Delete_File")]
-        public void Delete_File()
-        {
-            string File_Address = Request.QueryString.Get("Delete");
-
-            if (System.IO.File.Exists(File_Address))
-            {
-                System.IO.File.Delete(File_Address);
-            }
-            else if (System.IO.Directory.Exists(File_Address))
-            {
-                System.IO.Directory.Delete(File_Address, true);
-            }
-
-            Response.Redirect(Request.Headers["Referer"].ToString());
-        }
-
-        public void GET_FILE_LIST(string Address)
-        {
-            File_Manager.Files.Clear();
-
-            string contentRootPath = _hostingEnvironment.ContentRootPath;
-
-            string[] L_F_Files = Directory.GetFiles(_hostingEnvironment.ContentRootPath+"~/Uploads/" + Address);
-            string[] L_D_Files = Directory.GetDirectories(_hostingEnvironment.ContentRootPath + "~/Uploads/" + Address);
-
-            for (int i = 0; i < L_D_Files.Length; i++)
-            {
-                File_Manager_Items Item = new File_Manager_Items();
-                string[] Dir_Name = (L_D_Files[i] + "\\").Split('\\');
-                Item.Name = Dir_Name[Dir_Name.Length - 2];
-                Item.Type = "Directory";
-                Item.Address = L_D_Files[i];
-                File_Manager.Files.Add(Item);
-            }
-
-            for (int i = 0; i < L_F_Files.Length; i++)
-            {
-                File_Manager_Items Item = new File_Manager_Items();
-                string[] File_Name = (L_F_Files[i] + "\\").Split('\\');
-                Item.Name = File_Name[File_Name.Length - 2];
-                Item.Type = "File";
-                Item.Address = L_F_Files[i];
-                File_Manager.Files.Add(Item);
-            }
-        }
-        //File Manager End
-
-
-
-
-
-
+        //Get 404 End
 
 
 
@@ -492,16 +195,19 @@ namespace OwncmsCore.Controllers
 
         [HttpPost]
         [Route("Profile")]
-        public async Task<ActionResult> Profile(OwncmsCore.Models.Data_Models.Update_Profile_Model.Update_Profile_Model user_model)
+        public async Task<ActionResult> Profile(Update_Profile_Model user_model)
         {
             GET_DATA();
-            OwncmsCore.Services.Panel.UserManager.UserManager.Get_Update_Profile(user_model,"");
+
+            string upload_path = await SaveUserProfileImage(user_model.profile_image);
+            UserManager.Get_Update_Profile(user_model, upload_path);
+
             Refresh_User_Data();
-            return Redirect(Request.Headers["Referer"].ToString());
+            return Redirect(Request.Headers.Referer.ToString());
         }
 
         [Route("Profile/Active2F")]
-        public async Task<ActionResult> Active2F(OwncmsCore.Models.Data_Models.Update_Profile_Model.Update_Profile_Model user_model)
+        public async Task<ActionResult> Active2F(Update_Profile_Model user_model)
         {
             GET_DATA();
             using (Database_DB DB = new Database_DB())
@@ -553,129 +259,7 @@ namespace OwncmsCore.Controllers
 
             return random_secure;
         }
-        //Profile End
-
-
-
-
-
-
-
-        //UserManager Start
-        [Route("UserManager")]
-        public async Task<ActionResult> User_Manager()
-        {
-            GET_DATA();
-            ViewBag.AdminUsers = OwncmsCore.Services.Panel.UserManager.UserManager.GET_ADMIN_USERS_DATA();
-            ViewBag.Users = OwncmsCore.Services.Panel.UserManager.UserManager.GET_FILL_NEW_USERS();
-            return View("Dashboard/usermanager");
-        }
-
-        [HttpPost]
-        [Route("UserManager")]
-        public async Task<ActionResult> User_Manager(string User_Search)
-        {
-            GET_DATA();
-            ViewBag.AdminUsers = OwncmsCore.Services.Panel.UserManager.UserManager.GET_ADMIN_USERS_DATA();
-            ViewBag.Users = OwncmsCore.Services.Panel.UserManager.UserManager.GET_USER_SEARCH(User_Search);
-            return View("Dashboard/usermanager");
-        }
-
-
-        [HttpGet]
-        [Route("UserManager/Notifications/{User_Id}")]
-        public async Task<ActionResult> Notifications(string User_Id)
-        {
-            GET_DATA();
-            ViewBag.Notifications = OwncmsCore.Services.Panel.Notifications.Notifications.Get_All_Old_Notifications(long.Parse(User_Id));
-            return View("Dashboard/notifications");
-        }
-
-
-        [HttpGet]
-        [Route("UserManager/Pay30/{User_Id}")]
-        public async Task<ActionResult> AddPay30(string User_Id)
-        {
-            GET_DATA();
-            string value = Newtonsoft.Json.Linq.JObject.Parse(OwncmsCore.Services.Global_Functions.Settings.Settings.Configs.ToString()).GetValue("pay_30_day_value").ToString();
-            OwncmsCore.Services.Panel.UserManager.UserManager.GetAdd30DayPeyment(long.Parse(User_Id), value, User_Data.id, 30);
-            return View("Dashboard/done");
-        }
-
-
-        [HttpGet]
-        [Route("UserManager/Pay7/{User_Id}")]
-        public async Task<ActionResult> AddPay7(string User_Id)
-        {
-            GET_DATA();
-            string value = Newtonsoft.Json.Linq.JObject.Parse(OwncmsCore.Services.Global_Functions.Settings.Settings.Configs.ToString()).GetValue("pay_30_day_value").ToString();
-            OwncmsCore.Services.Panel.UserManager.UserManager.GetAdd30DayPeyment(long.Parse(User_Id), value, User_Data.id, 7);
-            return View("Dashboard/done");
-        }
-
-
-        [HttpGet]
-        [Route("UserManager/SendNotification")]
-        public async Task<ActionResult> SendNotification(string User_Id)
-        {
-            GET_DATA();
-            ViewBag.User_Id = User_Id;
-            return View("Dashboard/sendnotification");
-        }
-
-
-        [HttpPost]
-        [Route("UserManager/SendNotification/Done")]
-        public async Task<ActionResult> SendNotification(string User_Id, string title, string content_text, string link)
-        {
-            GET_DATA();
-            OwncmsCore.Services.Panel.Notifications.Notifications.Send_Notification(User_Data.ToString(), User_Id, title, content_text, link);
-            return View("Dashboard/done");
-        }
-
-
-        [HttpGet]
-        [Route("UserManager/Edit_User/{User_Id}")]
-        public async Task<ActionResult> Edit_User(string User_Id)
-        {
-            GET_DATA();
-            ViewBag.Edit_User = OwncmsCore.Services.Panel.UserManager.UserManager.GET_USER(int.Parse(User_Id), User_Data.id);
-            return View("Dashboard/user_profile_view");
-        }
-
-
-        [HttpPost]
-        [Route("UserManager/Edit_User/User_Update")]
-        public async Task<ActionResult> Update_User(OwncmsCore.Models.Data_Models.Update_Profile_Model.Update_Profile_Model user)
-        {
-            GET_DATA();
-            OwncmsCore.Services.Panel.UserManager.UserManager.UPDATE_USER_DATA(User_Data.id, user, "");
-            return View("Dashboard/done");
-        }
-        //UserManager End
-
-
-
-
-
-
-
-
-
-
-
-
-        //Get 404 Start
-        [HttpGet]
-        [Route("")]
-        public void Not_Found()
-        {
-            GET_DATA();
-            Response.Redirect("/Admin/Login");
-        }
-        //Get 404 End
-
-
+        //Profile Start
 
 
 
@@ -752,21 +336,22 @@ namespace OwncmsCore.Controllers
         }
 
 
-        public string SaveUserProfileImage(IFormFile profileimage)
+        public async Task<string> SaveUserProfileImage(IFormFile profileimage)
         {
-            //if (profileimage != null)
-            //{
-            //    string name = (DateTime.Now.Year + DateTime.Now.Month + DateTime.Now.Day + DateTime.Now.Hour + DateTime.Now.Minute + DateTime.Now.Second + DateTime.Now.Ticks + DateTime.Now.Day).ToString();
-            //    string Upload_Address = Path.Combine(Server.MapPath("~/Uploads/Profiles"), name + Path.GetExtension(profileimage.FileName));
-            //    System.Diagnostics.Debug.WriteLine(Upload_Address);
-            //    profileimage.SaveAs(Upload_Address);
 
-            //    return OwncmsCore.Language.all_strings.website + "/Uploads/Profiles/" + name + Path.GetExtension(profileimage.FileName);
-            //}
-            //else
-            //{
-                return "";
-            //}
+            string path = "";
+            path = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "Profiles"));
+
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            using (var fileStream = new FileStream(Path.Combine(path, profileimage.FileName), FileMode.Create))
+            {
+                await profileimage.CopyToAsync(fileStream);
+                return path + "\\" + profileimage.FileName;
+            }
         }
 
 

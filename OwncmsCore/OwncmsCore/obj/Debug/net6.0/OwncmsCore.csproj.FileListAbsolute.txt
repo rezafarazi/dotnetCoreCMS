@@ -70,3 +70,6 @@ C:\Users\Rezafta\Desktop\OwncmsCore\OwncmsCore\OwncmsCore\bin\Debug\net6.0\Googl
 C:\Users\Rezafta\Desktop\OwncmsCore\OwncmsCore\OwncmsCore\bin\Debug\net6.0\QRCoder.dll
 C:\Users\Rezafta\Desktop\OwncmsCore\OwncmsCore\OwncmsCore\bin\Debug\net6.0\MimeKit.dll
 C:\Users\Rezafta\Desktop\OwncmsCore\OwncmsCore\OwncmsCore\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\Rezafta\Desktop\OwncmsCore\OwncmsCore\OwncmsCore\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\Rezafta\Desktop\OwncmsCore\OwncmsCore\OwncmsCore\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\Rezafta\Desktop\OwncmsCore\OwncmsCore\OwncmsCore\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll

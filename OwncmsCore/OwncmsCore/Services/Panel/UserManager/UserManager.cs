@@ -109,7 +109,6 @@ namespace OwncmsCore.Services.Panel.UserManager
                     Users_Tbl User = Users.ToArray()[i];
                     
                     Users_Id.Add(User.id.ToString());
-                    Users_Days.Add(User.peyment_day_count.ToString());
                     Users_Create_Date.Add(User.create_datetime.ToString());
                     Users_Name_And_Family.Add(User.name.ToString()+" "+User.family.ToString());
                     Users_Phone.Add(User.phone.ToString());
@@ -170,7 +169,6 @@ namespace OwncmsCore.Services.Panel.UserManager
                 foreach (Users_Tbl User in Search_Result)
                 {
                     Users_Id.Add(User.id.ToString());
-                    Users_Days.Add(User.peyment_day_count.ToString());
                     Users_Create_Date.Add(User.create_datetime.ToString());
                     Users_Name_And_Family.Add(User.name.ToString()+" "+User.family.ToString());
                     Users_Phone.Add(User.phone.ToString());
@@ -357,23 +355,6 @@ namespace OwncmsCore.Services.Panel.UserManager
             }
         }
         //Get Update Profile End
-
-
-
-        //Add 30 Days Payment Start
-        public static void GetAdd30DayPeyment(long User_Id,string value,long pay_user_id,byte day_count)
-        {
-            using(Database_DB DB=new Database_DB())
-            {
-                Users_Tbl user = (from Users_Tbl in DB.Users_Tbl where Users_Tbl.id == User_Id select Users_Tbl).FirstOrDefault();
-
-                int Last_Days = user.peyment_day_count + day_count;
-                user.peyment_day_count = Last_Days;
-
-                DB.SaveChanges();
-            }
-        }
-        //Add 30 Days Payment End
 
 
 
