@@ -10,11 +10,9 @@ using Google.Authenticator;
 using Newtonsoft.Json.Linq;
 using MimeKit;
 using System.Net.Mail;
-using OwncmsCore.Services.Panel.Categories;
-using OwncmsCore.Services.Panel.Statics;
-using OwncmsCore.Services.Panel.FileManager;
 using OwncmsCore.Models.Data_Models.Update_Profile_Model;
 using OwncmsCore.Services.Panel.UserManager;
+using OwncmsCore.Services.Panel.Categories;
 
 namespace OwncmsCore.Controllers
 {
@@ -39,9 +37,9 @@ namespace OwncmsCore.Controllers
         {
             try
             {
-                if (HttpContext.Session.GetString("user_auth").ToString() != String.Empty)
+                if (Request.Cookies["user_auth"].ToString() != String.Empty)
                 {
-                    Response.Redirect("~/Admin/Dashboard");
+                    Response.Redirect("/Admin/Dashboard");
                 }
             }
             catch
@@ -141,6 +139,42 @@ namespace OwncmsCore.Controllers
             return View("Dashboard/index");
         }
         //Get Dashboard End
+
+
+
+
+
+
+
+
+        //Categories Start
+        [Route("Categoreis")]
+        public async Task<ActionResult> Categories([FromQuery] string Cat_Id)
+        {
+            GET_DATA();
+            ViewBag.AllCategories = OwncmsCore.Services.Panel.Categories.Categories.SelectAllCategories();
+            return View("Dashboard/categoreis");
+        }
+
+        [HttpPost]
+        [Route("Categoreis/New")]
+        public void New_Category(string Category_Id, string Category_Name, string Icon_Address, string Root_Cat, string Visibleity, string link,string text)
+        {
+
+            GET_DATA();
+            OwncmsCore.Services.Panel.Categories.Categories.Insert(Category_Name, text, link, Icon_Address, (Root_Cat=="0")?"MAIN":"SUB", Visibleity, Root_Cat, User_Data);
+            Response.Redirect("/Admin/Categoreis");
+        }
+
+        [Route("Categoreis/Delete")]
+        public void Delete_Category([FromQuery] string Delete)
+        {
+            GET_DATA();
+            
+            Response.Redirect("/Admin/Categoreis");
+        }
+        //Categories End
+
 
 
 
@@ -338,20 +372,27 @@ namespace OwncmsCore.Controllers
 
         public async Task<string> SaveUserProfileImage(IFormFile profileimage)
         {
-
-            string path = "";
-            path = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "Profiles"));
-
-            if (!Directory.Exists(path))
+            try
             {
-                Directory.CreateDirectory(path);
-            }
+                string path = "";
+                path = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "Profiles"));
 
-            using (var fileStream = new FileStream(Path.Combine(path, profileimage.FileName), FileMode.Create))
-            {
-                await profileimage.CopyToAsync(fileStream);
-                return path + "\\" + profileimage.FileName;
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+
+                using (var fileStream = new FileStream(Path.Combine(path, profileimage.FileName), FileMode.Create))
+                {
+                    await profileimage.CopyToAsync(fileStream);
+                    return path + "\\" + profileimage.FileName;
+                }
             }
+            catch
+            {
+
+            }
+            return "";
         }
 
 

@@ -489,4 +489,7 @@
   <data name="days" xml:space="preserve">
     <value>روز های باقی مانده</value>
   </data>
+  <data name="ca_link" xml:space="preserve">
+    <value>لینک سفارشی</value>
+  </data>
 </root>

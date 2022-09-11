@@ -1,0 +1,147 @@
+﻿@using OwncmsCore.Models.DatabaseModels;
+@{
+    Layout = "~/Views/Admin/Themplate/__Admin_Layout_Temp.cshtml";
+    List<Categories_Tbl> categories = ViewBag.AllCategories;
+}
+
+
+
+<!-- partial -->
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title">
+                <span class="page-title-icon bg-gradient-primary text-white mr-2">
+                    <i class="mdi mdi-format-list-bulleted"></i>
+                </span>@OwncmsCore.Language.all_strings.categoris
+            </h3>
+        </div>
+
+        <div class="row">
+
+            <!--Right Side Of Content Start-->
+            <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="post" action="/Admin/Categoreis/New">
+                            @Html.AntiForgeryToken()
+                            <input type="text" name="Category_Id" style="display:none;" />
+                            <div class="form-group">
+                                <label for="exampleInputUsername1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.name</label>
+                                <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.category_name" name="Category_Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.root</label>
+                                <select id="category_combat" class="form-control" name="Root_Cat" onchange="onchange_category(this)">
+                                    <option value="0">@OwncmsCore.Language.all_strings.root</option>
+
+                                    @for (int i = 0; i < categories.Count; i++)
+                                    {
+                                        <option value="@categories[i].id">@categories[i].title</option>
+                                    }
+
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.icon_address</label>
+                                <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.icon_address_link" name="Icon_Address">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.ca_link</label>
+                                <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.ca_link" name="link">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.more_data</label>
+                                <textarea style="resize:vertical;text-align:justify;" class="form-control" name="TextData"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.visible</label>
+                                <select class="form-control" name="Visibleity">
+                                    <option value="Visible"  { Write("selected='selected'"); }>@OwncmsCore.Language.all_strings.visible</option>
+                                    <option value="Hide" { Write("selected='selected'"); } >@OwncmsCore.Language.all_strings.hide</option>
+                                </select>
+                            </div>
+                            <button style="width: 100%;" type="submit" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.n</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--Right Side Of Content End-->
+            <!--Bottom Side Of Content Start-->
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title" style="text-align: right;">دسته بندی ها</h4>
+                        </p>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>@OwncmsCore.Language.all_strings.id</th>
+                                    <th>@OwncmsCore.Language.all_strings.name</th>
+                                    <th>@OwncmsCore.Language.all_strings.sub</th>
+                                    <th>@OwncmsCore.Language.all_strings.opration</th>
+                                    <th>@OwncmsCore.Language.all_strings.delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (int i = 0; i < categories.Count; i++)
+                                {
+                                    <tr>
+                                        <td>@categories[i].id</td>
+                                        <td>@categories[i].title</td>
+                                        <td>@categories[i].Root_Id</td>
+                                        <td>Edit</td>
+                                        <td>Delete</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--Bottom Side Of Content Start-->
+
+        </div>
+
+    </div>
+    <!-- content-wrapper ends -->
+
+
+
+
+
+
+
+
+    <script>
+
+        function onchange_category(e)
+        {
+            var sub_section = window.document.getElementById('sub_section');
+            var category_combat = window.document.getElementById('category_combat');
+
+            if (category_combat.value == "Root")
+            {    
+                sub_section.style.display = "none";
+            }
+            else
+            {
+                sub_section.style.display = "block";
+            }
+        }
+
+        window.addEventListener('load', function (e) {
+            
+        });
+
+    </script>
+
+    <style>
+        
+        #sub_section
+        {
+            display: block;
+        }
+        
+    </style>
+

@@ -17,9 +17,7 @@ namespace OwncmsCore.Models.DatabaseModels
         public string Enabled_Flag { get; set; }
         public string Root_Id { get; set; }
         public Users_Tbl User_Id { get; set; }
-        public long city_id { get; set; } = 0;
-        public string text { get; set; } = "";
-        public string header_image { get; set; } = "";
-        public bool two_way { get; set; } = false;
+        public string text { get; set; }
+        public string link { get; set; }
     }
 }

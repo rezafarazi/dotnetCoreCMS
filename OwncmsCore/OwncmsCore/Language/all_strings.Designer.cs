@@ -196,6 +196,15 @@ namespace OwncmsCore.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to لینک سفارشی.
+        /// </summary>
+        public static string ca_link {
+            get {
+                return ResourceManager.GetString("ca_link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to کنسل.
         /// </summary>
         public static string cancel {

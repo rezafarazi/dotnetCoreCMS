@@ -52,10 +52,7 @@ namespace OwncmsCore.Migrations
                     b.Property<long>("User_Idid")
                         .HasColumnType("bigint");
 
-                    b.Property<long>("city_id")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("header_image")
+                    b.Property<string>("link")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -66,9 +63,6 @@ namespace OwncmsCore.Migrations
                     b.Property<string>("title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("two_way")
-                        .HasColumnType("bit");
 
                     b.HasKey("id");
 
