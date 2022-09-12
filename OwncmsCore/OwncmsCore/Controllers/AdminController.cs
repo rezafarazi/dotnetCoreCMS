@@ -152,17 +152,36 @@ namespace OwncmsCore.Controllers
         public async Task<ActionResult> Categories([FromQuery] string Cat_Id)
         {
             GET_DATA();
-            ViewBag.AllCategories = OwncmsCore.Services.Panel.Categories.Categories.SelectAllCategories();
-            return View("Dashboard/categoreis");
+            ViewBag.AllCategories = OwncmsCore.Services.Panel.Categories.Categories.Select();
+
+            if(!String.IsNullOrEmpty(Cat_Id))
+            {
+                ViewBag.EditCategory = OwncmsCore.Services.Panel.Categories.Categories.Select(long.Parse(Cat_Id));
+                return View("Dashboard/editcategoreis");
+            }
+            else
+            {
+                return View("Dashboard/categoreis");
+            }
         }
 
         [HttpPost]
         [Route("Categoreis/New")]
-        public void New_Category(string Category_Id, string Category_Name, string Icon_Address, string Root_Cat, string Visibleity, string link,string text)
+        public void New_Category(string Category_Id, string Category_Name, string Icon_Address, string Root_Cat, string Visibleity, string link,string TextData)
         {
 
             GET_DATA();
-            OwncmsCore.Services.Panel.Categories.Categories.Insert(Category_Name, text, link, Icon_Address, (Root_Cat=="0")?"MAIN":"SUB", Visibleity, Root_Cat, User_Data);
+            OwncmsCore.Services.Panel.Categories.Categories.Insert(Category_Name, TextData, link, Icon_Address, (Root_Cat=="0")?"MAIN":"SUB", Visibleity, Root_Cat, User_Data);
+            Response.Redirect("/Admin/Categoreis");
+        }
+
+        [HttpPost]
+        [Route("Categoreis/Update")]
+        public void Update_Category(string Category_Id, string Category_Name, string Icon_Address, string Root_Cat, string Visibleity, string link, string TextData)
+        {
+
+            GET_DATA();
+            OwncmsCore.Services.Panel.Categories.Categories.Update(long.Parse(Category_Id),Category_Name, TextData, link, Icon_Address, (Root_Cat == "0") ? "MAIN" : "SUB", Visibleity, Root_Cat, User_Data);
             Response.Redirect("/Admin/Categoreis");
         }
 
@@ -170,7 +189,7 @@ namespace OwncmsCore.Controllers
         public void Delete_Category([FromQuery] string Delete)
         {
             GET_DATA();
-            
+            OwncmsCore.Services.Panel.Categories.Categories.Delete(long.Parse(Delete));
             Response.Redirect("/Admin/Categoreis");
         }
         //Categories End

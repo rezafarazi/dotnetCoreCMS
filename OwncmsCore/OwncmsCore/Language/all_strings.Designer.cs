@@ -673,6 +673,15 @@ namespace OwncmsCore.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to موردی یافت نشد.
+        /// </summary>
+        public static string notfound {
+            get {
+                return ResourceManager.GetString("notfound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to اعلان.
         /// </summary>
         public static string notification {

@@ -492,4 +492,7 @@
   <data name="ca_link" xml:space="preserve">
     <value>لینک سفارشی</value>
   </data>
+  <data name="notfound" xml:space="preserve">
+    <value>موردی یافت نشد</value>
+  </data>
 </root>
