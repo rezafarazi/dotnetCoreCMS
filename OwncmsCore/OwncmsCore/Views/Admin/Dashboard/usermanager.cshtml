@@ -1,0 +1,156 @@
+﻿@using OwncmsCore.Models.DatabaseModels;
+@using OwncmsCore.Services.Panel.UserManager;
+@{
+    Layout = "~/Views/Admin/Themplate/__Admin_Layout_Temp.cshtml";
+
+    Users_Tbl User = ViewBag.User_Data;
+
+    UserManager.GET_ADMIN_USERS_STRUCT User_Admin = ViewBag.AdminUsers;
+    UserManager.GET_FILL_NEW_USERS_STRUCT Users = ViewBag.Users;
+    
+}
+
+      
+
+
+
+
+
+<!-- partial -->
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title">
+                <span class="page-title-icon bg-gradient-primary text-white mr-2">
+                    <i class="mdi mdi-account-multiple "></i>
+                </span></span>@OwncmsCore.Language.all_strings.usermanagment
+            </h3>
+        </div>
+
+        <div class="row">
+
+            <!--Top Side Of Content Start-->
+            <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <form class="forms-sample" method="post">
+                            @Html.AntiForgeryToken()
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.search</label>
+                                <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.search" name="User_Search">
+                            </div>
+                            <button style="width: 100%;" type="submit" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--Top Side Of Content Start-->
+            <!--Top Side Of Content Start-->
+            <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+
+                    <div class="card-body">
+                        <h4 class="card-title">@OwncmsCore.Language.all_strings.managers</h4>
+                        </p>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>@OwncmsCore.Language.all_strings.username</th>
+                                    <th>@OwncmsCore.Language.all_strings.name @OwncmsCore.Language.all_strings.family</th>
+                                    <th>@OwncmsCore.Language.all_strings.edit</th>
+                                    <th>@OwncmsCore.Language.all_strings.notification</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @{
+                                    int admin_user_count = 0;
+                                }
+                                @for (int i = 0; i < User_Admin.All_User_Id.Count; i++)
+                                {
+                                    if (long.Parse(User_Admin.All_User_Id[i]) != User.id)
+                                    {
+                                        admin_user_count++;
+                                        <tr>
+                                            <th scope="row">@User_Admin.All_User_Name[i]</th>
+                                            <td>@User_Admin.All_User_Name[i]</td>
+                                            <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/UserManager/Edit_User/@User_Admin.All_User_Id[i]')"><i class="mdi mdi-account-edit" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></i></td>
+                                            <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/UserManager/SendNotification?User_Id=@User_Admin.All_User_Id[i]')" class="mdi mdi-comment" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></td>
+                                        </tr>
+                                    }
+                                }
+
+                            </tbody>
+                        </table>
+
+                        @if (admin_user_count <= 0)
+                        {
+                            <tr>
+                                <div style="margin-top:60px;">
+                                    <img src="~/Assets/Admin/images/icons/empty.png" width="150px" style="display:block;margin:0 auto;" />
+                                    <p style="width:100%;text-align:center;color:#666;margin-top:20px;">@OwncmsCore.Language.all_strings.not_found</p>
+                                </div>
+                            </tr>
+                        }
+
+                    </div>
+
+                </div>
+            </div>
+            <!--Top Side Of Content Start-->
+            <!--Bottom Side Of Content Start-->
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">@OwncmsCore.Language.all_strings.users</h4>
+                        </p>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>@OwncmsCore.Language.all_strings.name @OwncmsCore.Language.all_strings.family</th>
+                                    <th>@OwncmsCore.Language.all_strings.phone</th>
+                                    <th>@OwncmsCore.Language.all_strings.user_model</th>
+                                    <th>@OwncmsCore.Language.all_strings.old_notifications</th>
+                                    <th>@OwncmsCore.Language.all_strings.edit</th>
+                                    <th>@OwncmsCore.Language.all_strings.notification</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @for (int i = 0; i < Users.Users_Id.Count; i++)
+                                {
+                                    if (Users.Users_Type[i] != "ADMIN")
+                                    {
+                                    <tr>
+                                        <th scope="row">@Users.Users_Name_And_Family[i]</th>
+                                        <td><a href="tel:@Users.Users_Phone[i]">@Users.Users_Phone[i]</a></td>
+                                        <td>@Users.Users_Type[i]</td>
+                                        <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/UserManager/Notifications/@Users.Users_Id[i]')" class="mdi mdi-comment" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></td>
+                                        <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/UserManager/Edit_User/@Users.Users_Id[i]')"><i class="mdi mdi-account-edit" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></i></td>
+                                        <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/UserManager/SendNotification?User_Id=@Users.Users_Id[i]')" class="mdi mdi-comment" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></td>
+                                    </tr>
+                                    }
+                                }
+
+                                @if (@Users.Users_Id.Count <= 0)
+                                {
+                                <div style="margin-top:60px;">
+                                    <img src="~/Assets/Admin/img/box.png" width="150px" style="display:block;margin:0 auto;" />
+                                    <p style="width:100%;text-align:center;color:#FFFF;">@OwncmsCore.Language.all_strings.not_found</p>
+                                </div>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--Bottom Side Of Content Start-->
+
+        </div>
+
+    </div>
+    <!-- content-wrapper ends -->
+
+
+

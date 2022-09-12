@@ -142,6 +142,15 @@ namespace OwncmsCore.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to همه پست ها.
+        /// </summary>
+        public static string allposts {
+            get {
+                return ResourceManager.GetString("allposts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to استان.
         /// </summary>
         public static string area {
@@ -651,6 +660,15 @@ namespace OwncmsCore.Language {
         public static string newpassword {
             get {
                 return ResourceManager.GetString("newpassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to پست جدید.
+        /// </summary>
+        public static string newpost {
+            get {
+                return ResourceManager.GetString("newpost", resourceCulture);
             }
         }
         

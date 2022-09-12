@@ -1,0 +1,47 @@
+﻿@using OwncmsCore.Models.DatabaseModels;
+@{
+    Layout = "~/Views/Admin/Themplate/__Empty.cshtml";
+    List<Notifications_Tbl> nofificaitions = ViewBag.Notifications;
+}
+     
+<div class="content-wrapper" style="height: 100vh;">
+    <div class="row">
+
+        <!--Top Side Of Content Start-->
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+
+                <div class="card-body">
+                    <table class="table">
+                        <tbody>
+
+                            @for (int i = 0; i < nofificaitions.Count; i++)
+                                {
+                                <tr>
+                                    <td>@nofificaitions[i].title</td>
+                                    <td>@nofificaitions[i].content</td>
+                                    <td>@nofificaitions[i].link</td>
+                                    </tr>
+                                }
+
+                        </tbody>
+                    </table>
+
+                    @if (@nofificaitions.Count <= 0)
+                        {
+                        <tr>
+                            <div style="margin-top:60px;">
+                                <img src="~/Assets/Admin/images/icons/empty.png" width="150px" style="display:block;margin:0 auto;" />
+                                <p style="width:100%;text-align:center;color:#666;margin-top:20px;">@OwncmsCore.Language.all_strings.not_found</p>
+                            </div>
+                        </tr>
+                        }
+
+                </div>
+
+            </div>
+        </div>
+        <!--Top Side Of Content Start-->
+
+    </div>
+</div>

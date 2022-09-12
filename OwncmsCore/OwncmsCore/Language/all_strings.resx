@@ -495,4 +495,10 @@
   <data name="notfound" xml:space="preserve">
     <value>موردی یافت نشد</value>
   </data>
+  <data name="allposts" xml:space="preserve">
+    <value>همه پست ها</value>
+  </data>
+  <data name="newpost" xml:space="preserve">
+    <value>پست جدید</value>
+  </data>
 </root>

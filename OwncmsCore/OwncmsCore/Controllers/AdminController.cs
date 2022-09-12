@@ -13,6 +13,7 @@ using System.Net.Mail;
 using OwncmsCore.Models.Data_Models.Update_Profile_Model;
 using OwncmsCore.Services.Panel.UserManager;
 using OwncmsCore.Services.Panel.Categories;
+using OwncmsCore.Services.Panel.Notifications;
 
 namespace OwncmsCore.Controllers
 {
@@ -215,7 +216,75 @@ namespace OwncmsCore.Controllers
 
 
 
+        //UserManager Start
+        [Route("UserManager")]
+        public async Task<ActionResult> User_Manager()
+        {
+            GET_DATA();
+            ViewBag.AdminUsers = UserManager.GET_ADMIN_USERS_DATA();
+            ViewBag.Users = UserManager.GET_FILL_NEW_USERS();
+            return View("Dashboard/usermanager");
+        }
 
+        [HttpPost]
+        [Route("UserManager")]
+        public async Task<ActionResult> User_Manager(string User_Search)
+        {
+            GET_DATA();
+            ViewBag.AdminUsers = UserManager.GET_ADMIN_USERS_DATA();
+            ViewBag.Users = UserManager.GET_USER_SEARCH(User_Search);
+            return View("Dashboard/usermanager");
+        }
+
+
+        [HttpGet]
+        [Route("UserManager/Notifications/{User_Id}")]
+        public async Task<ActionResult> Notificationss(string User_Id)
+        {
+            GET_DATA();
+            ViewBag.Notifications = Notifications.Get_All_Old_Notifications(long.Parse(User_Id));
+            return View("Dashboard/notifications");
+        }
+
+        [HttpGet]
+        [Route("UserManager/SendNotification")]
+        public async Task<ActionResult> SendNotification(string User_Id)
+        {
+            GET_DATA();
+            ViewBag.User_Id = User_Id;
+            return View("Dashboard/sendnotification");
+        }
+
+
+        [HttpPost]
+        [Route("UserManager/SendNotification/Done")]
+        public async Task<ActionResult> SendNotification(string User_Id, string title, string content_text, string link)
+        {
+            GET_DATA();
+            Notifications.Send_Notification(User_Data.ToString(), User_Id, title, content_text, link);
+            return View("Dashboard/done");
+        }
+
+
+        [HttpGet]
+        [Route("UserManager/Edit_User/{User_Id}")]
+        public async Task<ActionResult> Edit_User(string User_Id)
+        {
+            GET_DATA();
+            ViewBag.Edit_User = UserManager.GET_USER(int.Parse(User_Id), User_Data.id);
+            return View("Dashboard/user_profile_view");
+        }
+
+        [HttpPost]
+        [Route("UserManager/Edit_User/User_Update")]
+        public async Task<ActionResult> Update_User(Update_Profile_Model user)
+        {
+            GET_DATA();
+            string upload_path = await SaveUserProfileImage(user.profile_image);
+            UserManager.UPDATE_USER_DATA(User_Data.id, user, upload_path);
+            return View("Dashboard/done");
+        }
+        //UserManager End
 
 
 

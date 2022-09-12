@@ -1,0 +1,147 @@
+﻿@using OwncmsCore.Services.Panel.UserManager;
+@{
+    Layout = "~/Views/Admin/Themplate/__Empty.cshtml";
+    UserManager.GET_USER_STRUCT User = ViewBag.Edit_User;
+}
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+<!--Send Notification To User Start-->
+<div class="content-wrapper" style="height: 100vh;">
+    <div class="row">
+        <div class="col-md-11 grid-margin stretch-card" style="margin: 50px auto;">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title" style="text-align: center;">@OwncmsCore.Language.all_strings.edit_user</h4>
+                    <p class="card-description" style="text-align: center;">@OwncmsCore.Language.all_strings.please_fill_under_field</p>
+                    <form class="forms-sample" method="post" action="~/Admin/UserManager/Edit_User/User_Update" enctype="multipart/form-data">
+                        <input type="hidden" value="@User.Get_User_Id" name="user_id" />
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <label for="exampleInputUsername1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.username</label>
+                            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.username" name="username" value="@User.Get_User_Username">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputUsername1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.userprofileimage</label>
+                            <input type="file" class="form-control" id="exampleInputUsername1" name="profile_image">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputUsername1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.name</label>
+                            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.name" name="name" value="@User.Get_User_Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputUsername1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.family</label>
+                            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.family" name="family" value="@User.Get_User_Family">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.national_id</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="@OwncmsCore.Language.all_strings.national_id" name="national_id" value="@User.Get_User_National_Id">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.father_name</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="@OwncmsCore.Language.all_strings.father_name" name="father_name" value="@User.Get_User_Father_Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="@OwncmsCore.Language.all_strings.password" name="password">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.email</label>
+                            <input type="email" class="form-control" id="exampleInputPassword1" placeholder="@OwncmsCore.Language.all_strings.email" name="email" value="@User.Get_User_Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.phone</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="@OwncmsCore.Language.all_strings.phone" name="phone" value="@User.Get_User_Phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.status</label>
+                            <select class="form-control" name="status">
+                                @if (User.Get_User_Active_Mode == "1")
+                                {
+                                    <option value="1" selected>@OwncmsCore.Language.all_strings.active</option>
+                                }
+                                else
+                                {
+                                    <option value="1">@OwncmsCore.Language.all_strings.active</option>
+                                }
+
+                                @if (User.Get_User_Active_Mode == "0")
+                                {
+                                    <option value="0" selected>@OwncmsCore.Language.all_strings.deactive</option>
+                                }
+                                else
+                                {
+                                    <option value="0">@OwncmsCore.Language.all_strings.deactive</option>
+                                }
+
+                                @if (User.Get_User_Active_Mode == "2")
+                                {
+                                    <option value="2" selected>@OwncmsCore.Language.all_strings.interview_is_fail</option>
+                                }
+                                else
+                                {
+                                    <option value="2">@OwncmsCore.Language.all_strings.interview_is_fail</option>
+                                }
+
+                                @if (User.Get_User_Active_Mode == "3")
+                                {
+                                    <option value="3" selected>@OwncmsCore.Language.all_strings.bad_worker</option>
+                                }
+                                else
+                                {
+                                    <option value="3">@OwncmsCore.Language.all_strings.bad_worker</option>
+                                }
+
+
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" style="width: 100%;text-align: right;">نوع کاربر</label>
+                            <select class="form-control" name="user_type">
+                                @if (User.Get_User_Type == "ADMIN")
+                                {
+                                    <option value="ADMIN" selected>@OwncmsCore.Language.all_strings.ADMIN</option>
+                                }
+                                else
+                                {
+                                    <option value="ADMIN">@OwncmsCore.Language.all_strings.ADMIN</option>
+                                }
+
+                                @if (User.Get_User_Type == "USER")
+                                {
+                                    <option value="USER" selected>@OwncmsCore.Language.all_strings.USER</option>
+                                }
+                                else
+                                {
+                                    <option value="USER">@OwncmsCore.Language.all_strings.USER</option>
+                                }
+
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.address</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="@OwncmsCore.Language.all_strings.address" name="address" value="@User.Get_User_Address">
+                        </div>
+
+                        <button style="width: 100%;" type="submit" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Send Notification To User End-->
+
+
+
+<script>
+
+    function change_cat_event(e,user_id,cat_id)
+    {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', window.location.protocol + '//' + window.location.host + '/Admin/UserManager/Edit_User/CategoryAdd/' + user_id + "/" + cat_id);
+        xhr.send();
+    }
+
+</script>
