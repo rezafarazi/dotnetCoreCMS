@@ -501,4 +501,10 @@
   <data name="newpost" xml:space="preserve">
     <value>پست جدید</value>
   </data>
+  <data name="posts_chart" xml:space="preserve">
+    <value>آمار پست</value>
+  </data>
+  <data name="view_chart" xml:space="preserve">
+    <value>آمار بازدید</value>
+  </data>
 </root>

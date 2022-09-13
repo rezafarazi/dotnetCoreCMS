@@ -1,0 +1,164 @@
+﻿@using OwncmsCore.Services.Panel.FileManager;
+@{
+    Layout = "~/Views/Admin/Themplate/__Admin_Layout_Temp.cshtml";
+    string Dir = ViewBag.Dir;
+}
+       
+
+<!-- partial -->
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title">
+                <span class="page-title-icon bg-gradient-primary text-white mr-2">
+                    <i class="mdi mdi-folder "></i>
+                </span></span>@OwncmsCore.Language.all_strings.filemanager
+            </h3>
+        </div>
+
+        <div class="row">
+
+            <!--Top Side Of Content Start-->
+            <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">@OwncmsCore.Language.all_strings.upload_new_file</h4>
+                        <form action="Upload_File" method="POST" class="form-validate" enctype="multipart/form-data">
+
+                            <br />
+                            <!--File Select Start-->
+                            <input name="Upload_File" type="file" class="upload_file" id="file_upload_btn" onchange='uploadFile(this)' />
+                            <label class="upload_file_label" for="file_upload_btn" id="address_bar_file_upload">@OwncmsCore.Language.all_strings.select_file</label>
+
+                            <!--Address Start-->
+                            <input type="text" name="Address" style="display:none;" id="Upload_Address" value='@Dir' />
+                            <!--Address End-->
+                            <!--File Select Start-->
+                            <br />
+                            <br />
+                            <button style="width: 100%;" type="submit" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--Top Side Of Content Start-->
+            <!--Top Side Of Content Start-->
+            <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+
+                    <div class="card-body">
+                        <h4 class="card-title">@OwncmsCore.Language.all_strings.new_directory</h4>
+                        </p>
+                        <form action="New_Folder" method="POST" class="form-validate">
+
+                            <div class="form-group">
+                                <label for="exampleInputPassword1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.new_folder</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="@OwncmsCore.Language.all_strings.new_folder" name="Folder_Name">
+                            </div>
+
+                            <!--Address Start-->
+                            <input type="hidden" name="Addrs" style="display:none;" id="New_Folder_Address" value='@Dir' />
+                            <!--Address End-->
+
+                            <button style="width: 100%;" type="submit" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</button>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <!--Top Side Of Content Start-->
+            <!--Bottom Side Of Content Start-->
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">@OwncmsCore.Language.all_strings.file_in_path</h4>
+                        
+                        @if(File_Manager.Files.Count>0)
+                        {
+                            <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>@OwncmsCore.Language.all_strings.name</th>
+                                    <th>@OwncmsCore.Language.all_strings.type</th>
+                                    <th>@OwncmsCore.Language.all_strings.delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @{
+
+                                    for (int i = 0; i < File_Manager.Files.Count; i++)
+                                    {
+
+                                        OwncmsCore.Services.Panel.FileManager.File_Manager_Items F_File = File_Manager.Files[i];
+
+                                        <tr>
+
+
+                                            <!--File Type Start-->
+                                            @if (F_File.Type == "File")
+                                            {
+                                                <th scope="row">
+                                                    <a href="@F_File.Address">
+                                                        @F_File.Name
+                                                    </a>
+                                                </th>
+                                                <td><i style="font-size:18px;" class="mdi mdi-file menu-icon"></i></td>
+                                                <td><a href="/Admin/Delete_File?Delete=@F_File.Address"><i style="color:red;font-size:18px;" class="mdi mdi-delete menu-icon"></i></a></td>
+                                            }
+                                            else
+                                            {
+                                                <th scope="row">
+
+                                                    @if (Dir != null)
+                                                    {
+                                                        <a href="@Context.Request.Path/@F_File.Name">
+                                                            @F_File.Name
+                                                        </a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a href="@Context.Request.Path?Dir=@F_File.Name">
+                                                            @F_File.Name
+                                                        </a>
+                                                    }
+
+                                                </th>
+                                                <td><i style="font-size:18px;" class="mdi mdi-folder menu-icon"></i></td>
+                                                <td><a style="color:red;font-size:18px;" href="/Admin/Delete_File?Delete=@F_File.Address"><i class="mdi mdi-delete menu-icon"></i></a></td>
+                                            }
+                                            <!--File Type Start-->
+
+
+                                        </tr>
+                                    }
+
+                                }
+                            </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                            <div style="width: 100%;height: 250px;display: flex;justify-content: center;align-items: center;">
+                                <div style="width: 150px;">
+                                    <img style="margin: 0 auto;" src="/Assets/Admin/images/icons/empty.png" width="150px"/>
+                                    <p style="margin: 10px auto;text-align: center;">@OwncmsCore.Language.all_strings.notfound</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <!--Bottom Side Of Content Start-->
+
+        </div>
+
+    </div>
+    <!-- content-wrapper ends -->
+
+
+
+
+

@@ -799,6 +799,15 @@ namespace OwncmsCore.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to آمار پست.
+        /// </summary>
+        public static string posts_chart {
+            get {
+                return ResourceManager.GetString("posts_chart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to مشکل شما حل شد.
         /// </summary>
         public static string problem_is_ok {
@@ -1110,6 +1119,15 @@ namespace OwncmsCore.Language {
         public static string values {
             get {
                 return ResourceManager.GetString("values", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to آمار بازدید.
+        /// </summary>
+        public static string view_chart {
+            get {
+                return ResourceManager.GetString("view_chart", resourceCulture);
             }
         }
         
