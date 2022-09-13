@@ -11,8 +11,8 @@ using OwncmsCore.Models.DatabaseModels;
 namespace OwncmsCore.Migrations
 {
     [DbContext(typeof(Database_DB))]
-    [Migration("20220913100916_first_mig")]
-    partial class first_mig
+    [Migration("20220913144043_frist")]
+    partial class frist
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -293,10 +293,7 @@ namespace OwncmsCore.Migrations
                     b.Property<long>("Report_Typeid")
                         .HasColumnType("bigint");
 
-                    b.Property<long>("Reported_User")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("Reporter_User")
+                    b.Property<long>("Reporter_Userid")
                         .HasColumnType("bigint");
 
                     b.Property<bool>("Seen")
@@ -306,6 +303,9 @@ namespace OwncmsCore.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<long>("report_postid")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -313,6 +313,10 @@ namespace OwncmsCore.Migrations
                     b.HasKey("id");
 
                     b.HasIndex("Report_Typeid");
+
+                    b.HasIndex("Reporter_Userid");
+
+                    b.HasIndex("report_postid");
 
                     b.ToTable("UsersReports_Tbl");
                 });
@@ -399,7 +403,23 @@ namespace OwncmsCore.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("OwncmsCore.Models.DatabaseModels.Users_Tbl", "Reporter_User")
+                        .WithMany()
+                        .HasForeignKey("Reporter_Userid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OwncmsCore.Models.DatabaseModels.Posts_Tbl", "report_post")
+                        .WithMany()
+                        .HasForeignKey("report_postid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Report_Type");
+
+                    b.Navigation("Reporter_User");
+
+                    b.Navigation("report_post");
                 });
 
             modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.Verify_Code_Tbl", b =>

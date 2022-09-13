@@ -4,7 +4,7 @@
 
 namespace OwncmsCore.Migrations
 {
-    public partial class first_mig : Migration
+    public partial class frist : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -49,31 +49,6 @@ namespace OwncmsCore.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Users_Tbl", x => x.id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "UsersReports_Tbl",
-                columns: table => new
-                {
-                    id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    content = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DateTime = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Seen = table.Column<bool>(type: "bit", nullable: false),
-                    Reporter_User = table.Column<long>(type: "bigint", nullable: false),
-                    Reported_User = table.Column<long>(type: "bigint", nullable: false),
-                    Report_Typeid = table.Column<long>(type: "bigint", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_UsersReports_Tbl", x => x.id);
-                    table.ForeignKey(
-                        name: "FK_UsersReports_Tbl_Reports_Tbl_Report_Typeid",
-                        column: x => x.Report_Typeid,
-                        principalTable: "Reports_Tbl",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -199,6 +174,43 @@ namespace OwncmsCore.Migrations
                         onDelete: ReferentialAction.NoAction);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "UsersReports_Tbl",
+                columns: table => new
+                {
+                    id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    content = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DateTime = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Seen = table.Column<bool>(type: "bit", nullable: false),
+                    Reporter_Userid = table.Column<long>(type: "bigint", nullable: false),
+                    report_postid = table.Column<long>(type: "bigint", nullable: false),
+                    Report_Typeid = table.Column<long>(type: "bigint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UsersReports_Tbl", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_UsersReports_Tbl_Posts_Tbl_report_postid",
+                        column: x => x.report_postid,
+                        principalTable: "Posts_Tbl",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_UsersReports_Tbl_Reports_Tbl_Report_Typeid",
+                        column: x => x.Report_Typeid,
+                        principalTable: "Reports_Tbl",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_UsersReports_Tbl_Users_Tbl_Reporter_Userid",
+                        column: x => x.Reporter_Userid,
+                        principalTable: "Users_Tbl",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.NoAction);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Categories_Tbl_User_Idid",
                 table: "Categories_Tbl",
@@ -225,9 +237,19 @@ namespace OwncmsCore.Migrations
                 column: "User_Idid");
 
             migrationBuilder.CreateIndex(
+                name: "IX_UsersReports_Tbl_report_postid",
+                table: "UsersReports_Tbl",
+                column: "report_postid");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_UsersReports_Tbl_Report_Typeid",
                 table: "UsersReports_Tbl",
                 column: "Report_Typeid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UsersReports_Tbl_Reporter_Userid",
+                table: "UsersReports_Tbl",
+                column: "Reporter_Userid");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Verify_Code_Tbl_Userid",
@@ -244,19 +266,19 @@ namespace OwncmsCore.Migrations
                 name: "Notifications_Tbl");
 
             migrationBuilder.DropTable(
-                name: "Posts_Tbl");
-
-            migrationBuilder.DropTable(
                 name: "UsersReports_Tbl");
 
             migrationBuilder.DropTable(
                 name: "Verify_Code_Tbl");
 
             migrationBuilder.DropTable(
-                name: "Categories_Tbl");
+                name: "Posts_Tbl");
 
             migrationBuilder.DropTable(
                 name: "Reports_Tbl");
+
+            migrationBuilder.DropTable(
+                name: "Categories_Tbl");
 
             migrationBuilder.DropTable(
                 name: "Users_Tbl");

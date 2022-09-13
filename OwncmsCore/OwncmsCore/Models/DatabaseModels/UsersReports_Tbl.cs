@@ -15,8 +15,8 @@ namespace OwncmsCore.Models.DatabaseModels
         public string content { get; set; }
         public string DateTime { get; set; }
         public bool Seen { get; set; }
-        public long Reporter_User { get; set; }
-        public long Reported_User { get; set; }
+        public Users_Tbl Reporter_User { get; set; }
+        public Posts_Tbl report_post { get; set; }
         public Reports_Tbl Report_Type { get; set; }
 
     }

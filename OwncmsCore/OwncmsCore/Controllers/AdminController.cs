@@ -17,6 +17,7 @@ using OwncmsCore.Services.Panel.Notifications;
 using OwncmsCore.Services.Panel.FileManager;
 using OwncmsCore.Services.Panel.Posts;
 using static OwncmsCore.Services.Panel.Posts.Posts;
+using OwncmsCore.Services.Panel.Reports;
 
 namespace OwncmsCore.Controllers
 {
@@ -511,6 +512,39 @@ namespace OwncmsCore.Controllers
         }
 
         //AllPosts End
+
+
+
+
+
+
+        //New Report Start
+        [Route("NewReport")]
+        public async Task<ActionResult> Reportss()
+        {
+            GET_DATA();
+            ViewBag.Reports = Reports.All_Reports();
+            return View("Dashboard/new_report");
+        }
+
+        [HttpPost]
+        [Route("NewReport")]
+        public async Task<ActionResult> Reportss(string title)
+        {
+            GET_DATA();
+            Reports.Add_New_Report(title);
+            return Redirect(Request.Headers.Referer);
+        }
+
+        [HttpGet]
+        [Route("NewReport/Remove/{id}")]
+        public async Task<ActionResult> Reports_Remove(string id)
+        {
+            GET_DATA();
+            Reports.Remove_Report(long.Parse(id));
+            return Redirect(Request.Headers.Referer);
+        }
+        //New Report End
 
 
 
