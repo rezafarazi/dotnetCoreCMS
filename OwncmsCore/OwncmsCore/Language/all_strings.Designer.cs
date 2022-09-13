@@ -295,7 +295,7 @@ namespace OwncmsCore.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to izino.
+        ///   Looks up a localized string similar to OwnCmsCore.
         /// </summary>
         public static string companey_name {
             get {
@@ -309,6 +309,15 @@ namespace OwncmsCore.Language {
         public static string condition {
             get {
                 return ResourceManager.GetString("condition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to محتوا.
+        /// </summary>
+        public static string content {
+            get {
+                return ResourceManager.GetString("content", resourceCulture);
             }
         }
         
@@ -457,6 +466,15 @@ namespace OwncmsCore.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to هدر.
+        /// </summary>
+        public static string header {
+            get {
+                return ResourceManager.GetString("header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to آدرس هدر.
         /// </summary>
         public static string header_address {
@@ -502,6 +520,33 @@ namespace OwncmsCore.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to عکس.
+        /// </summary>
+        public static string image {
+            get {
+                return ResourceManager.GetString("image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to توضیحات عکس.
+        /// </summary>
+        public static string imagealt {
+            get {
+                return ResourceManager.GetString("imagealt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to آدرس عکس.
+        /// </summary>
+        public static string imagelink {
+            get {
+                return ResourceManager.GetString("imagelink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to اضافه کردن یک روز به همه کارگر ها.
         /// </summary>
         public static string increment_worker_day {
@@ -543,6 +588,15 @@ namespace OwncmsCore.Language {
         public static string izino {
             get {
                 return ResourceManager.GetString("izino", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لینک.
+        /// </summary>
+        public static string link {
+            get {
+                return ResourceManager.GetString("link", resourceCulture);
             }
         }
         
@@ -732,6 +786,15 @@ namespace OwncmsCore.Language {
         public static string opration_is_done {
             get {
                 return ResourceManager.GetString("opration_is_done", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to پاراگراف.
+        /// </summary>
+        public static string paragraph {
+            get {
+                return ResourceManager.GetString("paragraph", resourceCulture);
             }
         }
         
@@ -1119,6 +1182,24 @@ namespace OwncmsCore.Language {
         public static string values {
             get {
                 return ResourceManager.GetString("values", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ویدیو.
+        /// </summary>
+        public static string video {
+            get {
+                return ResourceManager.GetString("video", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to آدرس ویدیو.
+        /// </summary>
+        public static string videolink {
+            get {
+                return ResourceManager.GetString("videolink", resourceCulture);
             }
         }
         

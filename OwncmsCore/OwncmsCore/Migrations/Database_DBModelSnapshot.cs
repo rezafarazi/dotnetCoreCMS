@@ -131,6 +131,51 @@ namespace OwncmsCore.Migrations
                     b.ToTable("Notifications_Tbl");
                 });
 
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.Posts_Tbl", b =>
+                {
+                    b.Property<long>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("id"), 1L, 1);
+
+                    b.Property<long>("User_Idid")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("category_idid")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("date")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("delete_flag")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("visible")
+                        .HasColumnType("bit");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("User_Idid");
+
+                    b.HasIndex("category_idid");
+
+                    b.ToTable("Posts_Tbl");
+                });
+
             modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.Reports_Tbl", b =>
                 {
                     b.Property<long>("id")
@@ -323,6 +368,25 @@ namespace OwncmsCore.Migrations
                         .IsRequired();
 
                     b.Navigation("user_id");
+                });
+
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.Posts_Tbl", b =>
+                {
+                    b.HasOne("OwncmsCore.Models.DatabaseModels.Users_Tbl", "User_Id")
+                        .WithMany()
+                        .HasForeignKey("User_Idid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OwncmsCore.Models.DatabaseModels.Categories_Tbl", "category_id")
+                        .WithMany()
+                        .HasForeignKey("category_idid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User_Id");
+
+                    b.Navigation("category_id");
                 });
 
             modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.UsersReports_Tbl", b =>

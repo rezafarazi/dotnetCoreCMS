@@ -11,7 +11,8 @@ namespace OwncmsCore.Models.DatabaseModels
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Rezafta\Desktop\OwncmsCore\OwncmsCore\DB\DB.mdf;Integrated Security=True;Connect Timeout=30");
+            //optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Rezafta\Desktop\OwncmsCore\OwncmsCore\DB\DB.mdf;Integrated Security=True;Connect Timeout=30");
+            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-UFBPQJ8;Initial Catalog=OwnCmsCore;Integrated Security=True");
         }
 
         public DbSet<Categories_Tbl> Categories_Tbl { get; set; }
@@ -21,6 +22,7 @@ namespace OwncmsCore.Models.DatabaseModels
         public DbSet<Reports_Tbl> Reports_Tbl { get; set; }
         public DbSet<UsersReports_Tbl> UsersReports_Tbl { get; set; }
         public DbSet<Verify_Code_Tbl> Verify_Code_Tbl { get; set; }
+        public DbSet<Posts_Tbl> Posts_Tbl { get; set; }
 
     }
 }

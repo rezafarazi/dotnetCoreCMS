@@ -148,7 +148,7 @@
     <value>شهر</value>
   </data>
   <data name="companey_name" xml:space="preserve">
-    <value>izino</value>
+    <value>OwnCmsCore</value>
   </data>
   <data name="condition" xml:space="preserve">
     <value>وضعیت</value>
@@ -506,5 +506,32 @@
   </data>
   <data name="view_chart" xml:space="preserve">
     <value>آمار بازدید</value>
+  </data>
+  <data name="content" xml:space="preserve">
+    <value>محتوا</value>
+  </data>
+  <data name="header" xml:space="preserve">
+    <value>هدر</value>
+  </data>
+  <data name="image" xml:space="preserve">
+    <value>عکس</value>
+  </data>
+  <data name="imagealt" xml:space="preserve">
+    <value>توضیحات عکس</value>
+  </data>
+  <data name="imagelink" xml:space="preserve">
+    <value>آدرس عکس</value>
+  </data>
+  <data name="link" xml:space="preserve">
+    <value>لینک</value>
+  </data>
+  <data name="paragraph" xml:space="preserve">
+    <value>پاراگراف</value>
+  </data>
+  <data name="video" xml:space="preserve">
+    <value>ویدیو</value>
+  </data>
+  <data name="videolink" xml:space="preserve">
+    <value>آدرس ویدیو</value>
   </data>
 </root>

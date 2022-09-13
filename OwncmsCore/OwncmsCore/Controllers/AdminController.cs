@@ -15,6 +15,7 @@ using OwncmsCore.Services.Panel.UserManager;
 using OwncmsCore.Services.Panel.Categories;
 using OwncmsCore.Services.Panel.Notifications;
 using OwncmsCore.Services.Panel.FileManager;
+using OwncmsCore.Services.Panel.Posts;
 
 namespace OwncmsCore.Controllers
 {
@@ -156,7 +157,7 @@ namespace OwncmsCore.Controllers
             GET_DATA();
             ViewBag.AllCategories = OwncmsCore.Services.Panel.Categories.Categories.Select();
 
-            if(!String.IsNullOrEmpty(Cat_Id))
+            if (!String.IsNullOrEmpty(Cat_Id))
             {
                 ViewBag.EditCategory = OwncmsCore.Services.Panel.Categories.Categories.Select(long.Parse(Cat_Id));
                 return View("Dashboard/editcategoreis");
@@ -169,11 +170,11 @@ namespace OwncmsCore.Controllers
 
         [HttpPost]
         [Route("Categoreis/New")]
-        public void New_Category(string Category_Id, string Category_Name, string Icon_Address, string Root_Cat, string Visibleity, string link,string TextData)
+        public void New_Category(string Category_Id, string Category_Name, string Icon_Address, string Root_Cat, string Visibleity, string link, string TextData)
         {
 
             GET_DATA();
-            OwncmsCore.Services.Panel.Categories.Categories.Insert(Category_Name, TextData, link, Icon_Address, (Root_Cat=="0")?"MAIN":"SUB", Visibleity, Root_Cat, User_Data);
+            OwncmsCore.Services.Panel.Categories.Categories.Insert(Category_Name, TextData, link, Icon_Address, (Root_Cat == "0") ? "MAIN" : "SUB", Visibleity, Root_Cat, User_Data);
             Response.Redirect("/Admin/Categoreis");
         }
 
@@ -183,7 +184,7 @@ namespace OwncmsCore.Controllers
         {
 
             GET_DATA();
-            OwncmsCore.Services.Panel.Categories.Categories.Update(long.Parse(Category_Id),Category_Name, TextData, link, Icon_Address, (Root_Cat == "0") ? "MAIN" : "SUB", Visibleity, Root_Cat, User_Data);
+            OwncmsCore.Services.Panel.Categories.Categories.Update(long.Parse(Category_Id), Category_Name, TextData, link, Icon_Address, (Root_Cat == "0") ? "MAIN" : "SUB", Visibleity, Root_Cat, User_Data);
             Response.Redirect("/Admin/Categoreis");
         }
 
@@ -313,7 +314,7 @@ namespace OwncmsCore.Controllers
 
             //Get Read Directory Start
             {
-                if (Dir!=String.Empty)
+                if (Dir != String.Empty)
                 {
                     GET_FILE_LIST(Dir);
                 }
@@ -334,7 +335,7 @@ namespace OwncmsCore.Controllers
             GET_DATA();
             //New Folder Event Start
             {
-                string Addr = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "Uploads/"+Addrs+"/" +Folder_Name));
+                string Addr = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "Uploads/" + Addrs + "/" + Folder_Name));
                 if (!Directory.Exists(Addr))
                     Directory.CreateDirectory(Addr);
             }
@@ -397,7 +398,7 @@ namespace OwncmsCore.Controllers
         {
             File_Manager.Files.Clear();
 
-            string[] L_F_Files = Directory.GetFiles(Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "Uploads\\"+Address)));
+            string[] L_F_Files = Directory.GetFiles(Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "Uploads\\" + Address)));
             string[] L_D_Files = Directory.GetDirectories(Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "Uploads\\" + Address)));
 
             for (int i = 0; i < L_D_Files.Length; i++)
@@ -437,6 +438,32 @@ namespace OwncmsCore.Controllers
             Response.Redirect("/Admin/Login");
         }
         //Get 404 End
+
+
+
+
+
+
+        //Profile Start
+        [Route("NewPost")]
+        public async Task<ActionResult> NewPost()
+        {
+            GET_DATA();
+
+            ViewBag.AllCategories = OwncmsCore.Services.Panel.Categories.Categories.Select();
+
+            return View("Dashboard/newpost");
+        }
+
+        [Route("NewPostDone")]
+        public async Task<ActionResult> AddNewPost(string title,string category,string visible,string img_adrs,string cntent)
+        {
+            GET_DATA();
+            Posts.Insert(title, cntent, img_adrs, (visible=="1")?true:false, User_Data.id, long.Parse(category));
+            return Redirect(Request.Headers.Referer.ToString());
+        }
+        //Profile End
+
 
 
 

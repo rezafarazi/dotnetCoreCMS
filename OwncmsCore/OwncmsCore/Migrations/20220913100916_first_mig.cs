@@ -4,7 +4,7 @@
 
 namespace OwncmsCore.Migrations
 {
-    public partial class startmigration : Migration
+    public partial class first_mig : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -44,8 +44,7 @@ namespace OwncmsCore.Migrations
                     national_id = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     father_name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     profile_image_address = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    notification = table.Column<bool>(type: "bit", nullable: false),
-                    peyment_day_count = table.Column<int>(type: "int", nullable: false)
+                    notification = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -90,10 +89,8 @@ namespace OwncmsCore.Migrations
                     Enabled_Flag = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Root_Id = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     User_Idid = table.Column<long>(type: "bigint", nullable: false),
-                    city_id = table.Column<long>(type: "bigint", nullable: false),
                     text = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    header_image = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    two_way = table.Column<bool>(type: "bit", nullable: false)
+                    link = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -170,6 +167,38 @@ namespace OwncmsCore.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Posts_Tbl",
+                columns: table => new
+                {
+                    id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    content = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    image = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    date = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    delete_flag = table.Column<bool>(type: "bit", nullable: false),
+                    visible = table.Column<bool>(type: "bit", nullable: false),
+                    User_Idid = table.Column<long>(type: "bigint", nullable: false),
+                    category_idid = table.Column<long>(type: "bigint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Posts_Tbl", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_Posts_Tbl_Categories_Tbl_category_idid",
+                        column: x => x.category_idid,
+                        principalTable: "Categories_Tbl",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Posts_Tbl_Users_Tbl_User_Idid",
+                        column: x => x.User_Idid,
+                        principalTable: "Users_Tbl",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.NoAction);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Categories_Tbl_User_Idid",
                 table: "Categories_Tbl",
@@ -186,6 +215,16 @@ namespace OwncmsCore.Migrations
                 column: "user_idid");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Posts_Tbl_category_idid",
+                table: "Posts_Tbl",
+                column: "category_idid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Posts_Tbl_User_Idid",
+                table: "Posts_Tbl",
+                column: "User_Idid");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_UsersReports_Tbl_Report_Typeid",
                 table: "UsersReports_Tbl",
                 column: "Report_Typeid");
@@ -199,19 +238,22 @@ namespace OwncmsCore.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Categories_Tbl");
-
-            migrationBuilder.DropTable(
                 name: "Logs_Tbl");
 
             migrationBuilder.DropTable(
                 name: "Notifications_Tbl");
 
             migrationBuilder.DropTable(
+                name: "Posts_Tbl");
+
+            migrationBuilder.DropTable(
                 name: "UsersReports_Tbl");
 
             migrationBuilder.DropTable(
                 name: "Verify_Code_Tbl");
+
+            migrationBuilder.DropTable(
+                name: "Categories_Tbl");
 
             migrationBuilder.DropTable(
                 name: "Reports_Tbl");
