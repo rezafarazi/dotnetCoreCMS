@@ -27,12 +27,14 @@ namespace OwncmsCore.Services.Panel.Posts
 
                 post.title = title;
                 post.content = content;
-                post.image = image;
                 post.visible = visible;
                 post.delete_flag = false;
                 post.date = PersianDateTime.Now.ToString();
                 post.User_Id = usr_id;
                 post.category_id = categ;
+
+                if (!string.IsNullOrEmpty(image))
+                    post.image = image;
 
                 DB.Posts_Tbl.Add(post);
                 DB.SaveChanges();

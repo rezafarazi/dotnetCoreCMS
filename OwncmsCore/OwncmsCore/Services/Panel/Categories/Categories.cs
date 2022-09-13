@@ -22,8 +22,13 @@ namespace OwncmsCore.Services.Panel.Categories
                 category.Enabled_Flag = enable_flag;
                 category.Root_Id = root_id;
                 category.User_Id = usr;
-                category.link = link;
                 category.text = text;
+
+                if (!string.IsNullOrEmpty(link))
+                {
+                    category.link = link;
+                }
+
 
                 DB.Categories_Tbl.Add(category);
                 DB.SaveChanges();

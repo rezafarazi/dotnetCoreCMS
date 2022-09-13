@@ -53,7 +53,6 @@ namespace OwncmsCore.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("link")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("text")
