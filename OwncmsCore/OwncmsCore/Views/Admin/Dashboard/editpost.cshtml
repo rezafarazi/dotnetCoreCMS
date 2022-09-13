@@ -1,0 +1,444 @@
+﻿@using OwncmsCore.Models.DatabaseModels;
+@{
+    Layout = "~/Views/Admin/Themplate/__Empty.cshtml";
+    List<Categories_Tbl> categories = ViewBag.AllCategories;
+    Posts_Tbl post = ViewBag.Post;
+    Categories_Tbl cat = ViewBag.Cat;
+}
+
+     
+<!-- partial -->
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title">
+                <span class="page-title-icon bg-gradient-primary text-white mr-2">
+                  <i class="mdi mdi-package-variant-closed"></i>
+                </span>@OwncmsCore.Language.all_strings.newpost
+            </h3>
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <form class="forms-sample" method="post" action="/Admin/AllPosts/Update">
+                            @Html.AntiForgeryToken()
+
+                            <input type="hidden" value="@post.id" name="id"/>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.title</label>
+                                <input value="@post.title" type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.title" name="title" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.category_name</label>
+                                <select class="form-control" name="category" required>
+                                    @for (int i = 0; i < categories.Count; i++)
+                                    {
+                                        if (cat.id == categories[i].id)
+                                        {
+                                            <option selected value="@categories[i].id">@categories[i].title</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@categories[i].id">@categories[i].title</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.visible</label>
+                                <select class="form-control" name="visible" required>
+
+                                    @if(post.visible)
+                                    {
+                                        <option selected value="1">@OwncmsCore.Language.all_strings.visible</option>
+                                        <option value="0">@OwncmsCore.Language.all_strings.hide</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="1">@OwncmsCore.Language.all_strings.visible</option>
+                                        <option selected value="0">@OwncmsCore.Language.all_strings.hide</option>
+                                    }
+
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.icon_address_link</label>
+                                <input value="@post.image" type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.icon_address_link" name="img_adrs" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.content</label>
+
+                                <div style="margin-bottom: 20px;margin-top: 10px;display: flex;">
+                                    <btn onclick="ParagraphOnClick(this)" class="Element_btn">@OwncmsCore.Language.all_strings.paragraph</btn>
+                                    <btn onclick="HeaderOnClick(this)" class="Element_btn">@OwncmsCore.Language.all_strings.header</btn>
+                                    <btn onclick="ImageOnClick(this)" class="Element_btn">@OwncmsCore.Language.all_strings.image</btn>
+                                    <btn onclick="VideoOnClick(this)" class="Element_btn">@OwncmsCore.Language.all_strings.video</btn>
+                                    <btn onclick="LinkOnClick(this)" class="Element_btn">@OwncmsCore.Language.all_strings.link</btn>
+                                </div>
+
+                                <textarea id="content_text_area" required name="cntent" style="resize: vertical;height: 250px;text-align: left;" class="form-control">@post.content</textarea>
+                            </div>
+
+                            <button style="width: 100%;" type="submit" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- content-wrapper ends -->
+
+
+
+
+
+
+    <!--Content Managmant Start-->
+
+    <!--Paragraph Start-->
+    <div id="parapraph_dialog">
+        <i class="mdi mdi-close Close_Btn" onclick="Close_All_Dialogs(this)"></i>
+        <div id="parapraph_dialog_content">
+            <div>
+                <h5 style="text-align: right;">@OwncmsCore.Language.all_strings.paragraph</h5>
+                <textarea id="new_paragraph_text_area" required name="cntent" style="margin-top:10px;resize: vertical;height: 250px;text-align: right;" class="form-control" placeholder="@OwncmsCore.Language.all_strings.text"></textarea>
+                <br>
+                <btn onclick="ParagraphDoneClick(this)" style="width: 100%;" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</btn>
+            </div>
+        </div>
+    </div>
+    <!--Paragraph End-->
+
+
+    <!--Header Start-->
+    <div id="header_dialog">
+        <i class="mdi mdi-close Close_Btn" onclick="Close_All_Dialogs(this)"></i>
+        <div id="header_dialog_content">
+            <div>
+                <h5 style="text-align: right;">@OwncmsCore.Language.all_strings.header</h5>
+                <input placeholder="@OwncmsCore.Language.all_strings.text" id="new_header_input" required name="cntent" style="margin-top:10px;text-align: right;" class="form-control"/>
+                <br>
+                <btn onclick="HeaderDoneClick(this)" style="width: 100%;" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</btn>
+            </div>
+        </div>
+    </div>
+    <!--Header End-->
+
+    <!--Image Start-->
+    <div id="image_dialog">
+        <i class="mdi mdi-close Close_Btn" onclick="Close_All_Dialogs(this)"></i>
+        <div id="image_dialog_content">
+            <div>
+                <h5 style="text-align: right;">@OwncmsCore.Language.all_strings.image</h5>
+                <input placeholder="@OwncmsCore.Language.all_strings.imagelink" id="new_image_input" required name="cntent" style="margin-top:10px;text-align: left;direction: ltr;" class="form-control"/>
+                <br>
+                <input placeholder="@OwncmsCore.Language.all_strings.imagealt" id="new_image_alt_input" required name="cntent" style="margin-top:10px;text-align: left;direction: ltr;" class="form-control"/>
+                <br>
+                <btn onclick="ImageDoneClick(this)" style="width: 100%;" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</btn>
+            </div>
+        </div>
+    </div>
+    <!--Image End-->
+
+    <!--Video Start-->
+    <div id="video_dialog">
+        <i class="mdi mdi-close Close_Btn" onclick="Close_All_Dialogs(this)"></i>
+        <div id="video_dialog_content">
+            <div>
+                <h5 style="text-align: right;">@OwncmsCore.Language.all_strings.video</h5>
+                <input placeholder="@OwncmsCore.Language.all_strings.videolink" id="new_video_input" required name="cntent" style="margin-top:10px;text-align: left;direction: ltr;" class="form-control"/>
+                <br>
+                <btn onclick="VideoDoneClick(this)" style="width: 100%;" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</btn>
+            </div>
+        </div>
+    </div>
+    <!--Video End-->
+
+    <!--link Start-->
+    <div id="link_dialog">
+        <i class="mdi mdi-close Close_Btn" onclick="Close_All_Dialogs(this)"></i>
+        <div id="link_dialog_content">
+            <div>
+                <h5 style="text-align: right;">@OwncmsCore.Language.all_strings.link</h5>
+                <input placeholder="@OwncmsCore.Language.all_strings.text" id="new_link_input" required name="cntent" style="margin-top:10px;text-align: right;direction: rtl;" class="form-control"/>
+                <br>
+                <input placeholder="@OwncmsCore.Language.all_strings.link" id="new_link_href_input" required name="cntent" style="margin-top:10px;text-align: left;direction: ltr;" class="form-control"/>
+                <br>
+                <btn onclick="LinkDoneClick(this)" style="width: 100%;" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</btn>
+            </div>
+        </div>
+    </div>
+    <!--link End-->
+
+
+    <style>
+
+        .Close_Btn
+        {
+            color: var(--white);
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+        }
+
+        .Element_btn
+        {
+            margin-right: 5px;
+            margin-left: 5px;
+            padding: 5px 10px;
+            color:var(--white);
+            background: var(--primary);
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        #parapraph_dialog
+        {
+            width: 100vw;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: #00000066;
+            z-index: 99999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #parapraph_dialog_content
+        {
+            width: 75%;
+            min-height: 350px;
+            background: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        #header_dialog
+        {
+            width: 100vw;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: #00000066;
+            z-index: 99999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #header_dialog_content
+        {
+            width: 75%;
+            background: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        #video_dialog
+        {
+            width: 100vw;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: #00000066;
+            z-index: 99999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #video_dialog_content
+        {
+            width: 75%;
+            background: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        #image_dialog
+        {
+            width: 100vw;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: #00000066;
+            z-index: 99999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #image_dialog_content
+        {
+            width: 75%;
+            background: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        #link_dialog
+        {
+            width: 100vw;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: #00000066;
+            z-index: 99999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #link_dialog_content
+        {
+            width: 75%;
+            background: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+    </style>
+
+    <script>
+
+        //Close All Dialogs Start
+        function Close_All_Dialogs(e)
+        {
+            var parapraph_dialog=window.document.getElementById('parapraph_dialog');
+            parapraph_dialog.style.display="none";
+
+            var header_dialog=window.document.getElementById('header_dialog');
+            header_dialog.style.display="none";
+
+            var image_dialog=window.document.getElementById('image_dialog');
+            image_dialog.style.display="none";
+
+            var video_dialog=window.document.getElementById('video_dialog');
+            video_dialog.style.display="none";
+
+            var link_dialog=window.document.getElementById('link_dialog');
+            link_dialog.style.display="none";
+        }
+        //Close All Dialogs End
+
+        //Paragraph Start
+        function ParagraphOnClick(e)
+        {
+            var parapraph_dialog=window.document.getElementById('parapraph_dialog');
+            parapraph_dialog.style.display="flex";
+        }
+
+        function ParagraphDoneClick(e)
+        {
+            var content_text_area=window.document.getElementById('content_text_area');
+            var new_paragraph_text_area=window.document.getElementById('new_paragraph_text_area');
+            var parapraph_dialog=window.document.getElementById('parapraph_dialog');
+
+            content_text_area.innerText=content_text_area.value+("<p>"+new_paragraph_text_area.value+"</p>");
+            new_paragraph_text_area.value="";
+            parapraph_dialog.style.display="none";
+        }
+        //Paragraph End
+
+
+        //Header Start
+        function HeaderOnClick(e)
+        {
+            var header_dialog=window.document.getElementById('header_dialog');
+            header_dialog.style.display="flex";
+        }
+
+        function HeaderDoneClick(e)
+        {
+            var content_text_area=window.document.getElementById('content_text_area');
+            var new_header_input=window.document.getElementById('new_header_input');
+            var header_dialog=window.document.getElementById('header_dialog');
+
+            content_text_area.innerText=content_text_area.value+("<h3>"+new_header_input.value+"</h3>");
+            new_header_input.value="";
+            header_dialog.style.display="none";
+        }
+        //Header End
+
+        //Image Start
+        function ImageOnClick(e)
+        {
+            var image_dialog=window.document.getElementById('image_dialog');
+            image_dialog.style.display="flex";
+        }
+
+        function ImageDoneClick(e)
+        {
+            var content_text_area=window.document.getElementById('content_text_area');
+            var new_image_input=window.document.getElementById('new_image_input');
+            var new_image_alt_input=window.document.getElementById('new_image_alt_input');
+            var image_dialog=window.document.getElementById('image_dialog');
+
+            content_text_area.innerText=content_text_area.value+("<img src='"+new_image_input.value+"' alt='"+new_image_alt_input.value+"'/>");
+            new_image_input.value="";
+            new_image_alt_input.value="";
+            image_dialog.style.display="none";
+        }
+        //Image End
+
+        //Video Start
+        function VideoOnClick(e)
+        {
+            var video_dialog=window.document.getElementById('video_dialog');
+            video_dialog.style.display="flex";
+        }
+
+        function VideoDoneClick(e)
+        {
+            var content_text_area=window.document.getElementById('content_text_area');
+            var new_video_input=window.document.getElementById('new_video_input');
+            var video_dialog=window.document.getElementById('video_dialog');
+
+            content_text_area.innerText=content_text_area.value+("<video controls><source src=\""+new_video_input.value+"\" type=\"video/mp4\"></video>");
+            new_video_input.value="";
+            video_dialog.style.display="none";
+        }
+        //Video End
+
+        //Image Start
+        function LinkOnClick(e)
+        {
+            var link_dialog=window.document.getElementById('link_dialog');
+            link_dialog.style.display="flex";
+        }
+
+        function LinkDoneClick(e)
+        {
+            var content_text_area=window.document.getElementById('content_text_area');
+            var new_link_input=window.document.getElementById('new_link_input');
+            var new_link_href_input=window.document.getElementById('new_link_href_input');
+            var link_dialog=window.document.getElementById('link_dialog');
+
+            content_text_area.innerText+=content_text_area.value+("<a href='"+new_link_href_input.value+"'>"+new_link_input.value+"</a>");
+            new_link_input.value="";
+            new_link_href_input.value="";
+            link_dialog.style.display="none";
+        }
+        //Image End
+
+    </script>
+    <!--Content Managmant End-->
+
+
+

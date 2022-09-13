@@ -16,6 +16,7 @@ using OwncmsCore.Services.Panel.Categories;
 using OwncmsCore.Services.Panel.Notifications;
 using OwncmsCore.Services.Panel.FileManager;
 using OwncmsCore.Services.Panel.Posts;
+using static OwncmsCore.Services.Panel.Posts.Posts;
 
 namespace OwncmsCore.Controllers
 {
@@ -444,14 +445,13 @@ namespace OwncmsCore.Controllers
 
 
 
-        //Profile Start
+        //New Post Start
+
         [Route("NewPost")]
         public async Task<ActionResult> NewPost()
         {
             GET_DATA();
-
             ViewBag.AllCategories = OwncmsCore.Services.Panel.Categories.Categories.Select();
-
             return View("Dashboard/newpost");
         }
 
@@ -462,7 +462,56 @@ namespace OwncmsCore.Controllers
             Posts.Insert(title, cntent, img_adrs, (visible=="1")?true:false, User_Data.id, long.Parse(category));
             return Redirect(Request.Headers.Referer.ToString());
         }
-        //Profile End
+
+        //New Post End
+
+
+
+
+
+
+        //AllPosts Start
+
+        [Route("AllPosts")]
+        public async Task<ActionResult> AllPosts()
+        {
+            GET_DATA();
+            ViewBag.AllPosts = Posts.Select();
+            return View("Dashboard/allposts");
+        }
+
+
+        [Route("AllPosts/{id}")]
+        public async Task<ActionResult> GetPost(string id)
+        {
+            GET_DATA();
+            PostData_struc post = Posts.Select(long.Parse(id));
+            ViewBag.AllCategories = OwncmsCore.Services.Panel.Categories.Categories.Select();
+            ViewBag.Post = post.Post;
+            ViewBag.Cat = post.Category;
+            return View("Dashboard/editpost");
+        }
+
+
+        [Route("AllPosts/Update")]
+        public async Task<ActionResult> PostUpdate(string id,string title, string category, string visible, string img_adrs, string cntent)
+        {
+            GET_DATA();
+            Posts.Update(long.Parse(id), title, cntent, img_adrs, (visible == "1") ? true : false, User_Data.id, long.Parse(category));
+            return View("Dashboard/done");
+        }
+
+
+        [Route("AllPosts/Remove/{id}")]
+        public async Task<ActionResult> PostRemove(string id)
+        {
+            GET_DATA();
+            Posts.Delete(long.Parse(id));
+            return Redirect(Request.Headers.Referer.ToString());
+        }
+
+        //AllPosts End
+
 
 
 
