@@ -18,6 +18,7 @@ using OwncmsCore.Services.Panel.FileManager;
 using OwncmsCore.Services.Panel.Posts;
 using static OwncmsCore.Services.Panel.Posts.Posts;
 using OwncmsCore.Services.Panel.Reports;
+using OwncmsCore.Services.Panel.UsersReports;
 
 namespace OwncmsCore.Controllers
 {
@@ -546,6 +547,30 @@ namespace OwncmsCore.Controllers
         }
         //New Report End
 
+
+
+
+
+        //Reports Start
+
+        [Route("Reports")]
+        public async Task<ActionResult> All_Reports()
+        {
+            GET_DATA();
+            ViewBag.AllReports = UsersReports.GetAll_User_Reports();
+            return View("Dashboard/reports");
+        }
+
+        [HttpGet]
+        [Route("Reports/View/{id}")]
+        public async Task<ActionResult> All_Reports(string id)
+        {
+            GET_DATA();
+            UsersReports.GetView_Report(long.Parse(id));
+            return Redirect("~/Admin/Reports");
+        }
+
+        //Reports End
 
 
 
