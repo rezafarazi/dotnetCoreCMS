@@ -75,15 +75,185 @@
                             <div class="form-group">
                                 <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.content</label>
 
-                                <div style="margin-bottom: 20px;margin-top: 10px;display: flex;">
-                                    <btn onclick="ParagraphOnClick(this)" class="Element_btn">@OwncmsCore.Language.all_strings.paragraph</btn>
-                                    <btn onclick="HeaderOnClick(this)" class="Element_btn">@OwncmsCore.Language.all_strings.header</btn>
-                                    <btn onclick="ImageOnClick(this)" class="Element_btn">@OwncmsCore.Language.all_strings.image</btn>
-                                    <btn onclick="VideoOnClick(this)" class="Element_btn">@OwncmsCore.Language.all_strings.video</btn>
-                                    <btn onclick="LinkOnClick(this)" class="Element_btn">@OwncmsCore.Language.all_strings.link</btn>
-                                </div>
+                                <!--Content Managment Start-->
+                                <section>
 
-                                <textarea id="content_text_area" required name="cntent" style="resize: vertical;height: 250px;text-align: left;" class="form-control">@post.content</textarea>
+                                    <style>
+            #container {
+                width: 100%;
+                margin: 20px auto;
+            }
+            .ck-editor__editable[role="textbox"] {
+                /* editing area */
+                min-height: 200px;
+            }
+            .ck-content .image {
+                /* block images */
+                max-width: 80%;
+                margin: 20px auto;
+            }
+        </style>
+        <div id="container">
+            <textarea id="editor" name="cntent">
+                @post.content
+            </textarea>
+        </div>
+        <!--
+            The "super-build" of CKEditor 5 served via CDN contains a large set of plugins and multiple editor types.
+            See https://ckeditor.com/docs/ckeditor5/latest/installation/getting-started/quick-start.html#running-a-full-featured-editor-from-cdn
+        -->
+        <script src="https://cdn.ckeditor.com/ckeditor5/35.1.0/super-build/ckeditor.js"></script>
+        <!--
+            Uncomment to load the Spanish translation
+            <script src="https://cdn.ckeditor.com/ckeditor5/35.1.0/super-build/translations/es.js"></script>
+        -->
+        <script>
+            // This sample still does not showcase all CKEditor 5 features (!)
+            // Visit https://ckeditor.com/docs/ckeditor5/latest/features/index.html to browse all the features.
+            CKEDITOR.ClassicEditor.create(document.getElementById("editor"), {
+                // https://ckeditor.com/docs/ckeditor5/latest/features/toolbar/toolbar.html#extended-toolbar-configuration-format
+                toolbar: {
+                    items: [
+                        'exportPDF','exportWord', '|',
+                        'findAndReplace', 'selectAll', '|',
+                        'heading', '|',
+                        'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                        'bulletedList', 'numberedList', 'todoList', '|',
+                        'outdent', 'indent', '|',
+                        'undo', 'redo',
+                        '-',
+                        'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'highlight', '|',
+                        'alignment', '|',
+                        'link', 'insertImage', 'blockQuote', 'insertTable', 'mediaEmbed', 'codeBlock', 'htmlEmbed', '|',
+                        'specialCharacters', 'horizontalLine', 'pageBreak', '|',
+                        'textPartLanguage', '|',
+                        'sourceEditing'
+                    ],
+                    shouldNotGroupWhenFull: true
+                },
+                // Changing the language of the interface requires loading the language file using the <script> tag.
+                // language: 'es',
+                list: {
+                    properties: {
+                        styles: true,
+                        startIndex: true,
+                        reversed: true
+                    }
+                },
+                // https://ckeditor.com/docs/ckeditor5/latest/features/headings.html#configuration
+                heading: {
+                    options: [
+                        { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                        { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                        { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
+                        { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
+                        { model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
+                        { model: 'heading5', view: 'h5', title: 'Heading 5', class: 'ck-heading_heading5' },
+                        { model: 'heading6', view: 'h6', title: 'Heading 6', class: 'ck-heading_heading6' }
+                    ]
+                },
+                // https://ckeditor.com/docs/ckeditor5/latest/features/editor-placeholder.html#using-the-editor-configuration
+                // https://ckeditor.com/docs/ckeditor5/latest/features/font.html#configuring-the-font-family-feature
+                fontFamily: {
+                    options: [
+                        'default',
+                        'Arial, Helvetica, sans-serif',
+                        'Courier New, Courier, monospace',
+                        'Georgia, serif',
+                        'Lucida Sans Unicode, Lucida Grande, sans-serif',
+                        'Tahoma, Geneva, sans-serif',
+                        'Times New Roman, Times, serif',
+                        'Trebuchet MS, Helvetica, sans-serif',
+                        'Verdana, Geneva, sans-serif'
+                    ],
+                    supportAllValues: true
+                },
+                // https://ckeditor.com/docs/ckeditor5/latest/features/font.html#configuring-the-font-size-feature
+                fontSize: {
+                    options: [ 10, 12, 14, 'default', 18, 20, 22 ],
+                    supportAllValues: true
+                },
+                // Be careful with the setting below. It instructs CKEditor to accept ALL HTML markup.
+                // https://ckeditor.com/docs/ckeditor5/latest/features/general-html-support.html#enabling-all-html-features
+                htmlSupport: {
+                    allow: [
+                        {
+                            name: /.*/,
+                            attributes: true,
+                            classes: true,
+                            styles: true
+                        }
+                    ]
+                },
+                // Be careful with enabling previews
+                // https://ckeditor.com/docs/ckeditor5/latest/features/html-embed.html#content-previews
+                htmlEmbed: {
+                    showPreviews: true
+                },
+                // https://ckeditor.com/docs/ckeditor5/latest/features/link.html#custom-link-attributes-decorators
+                link: {
+                    decorators: {
+                        addTargetToExternalLinks: true,
+                        defaultProtocol: 'https://',
+                        toggleDownloadable: {
+                            mode: 'manual',
+                            label: 'Downloadable',
+                            attributes: {
+                                download: 'file'
+                            }
+                        }
+                    }
+                },
+                // https://ckeditor.com/docs/ckeditor5/latest/features/mentions.html#configuration
+                mention: {
+                    feeds: [
+                        {
+                            marker: '@@',
+                            feed: [
+                                '@@apple', '@@bears', '@@brownie', '@@cake', '@@cake', '@@candy', '@@canes', '@@chocolate', '@@cookie', '@@cotton', '@@cream',
+                                '@@cupcake', '@@danish', '@@donut', '@@dragée', '@@fruitcake', '@@gingerbread', '@@gummi', '@@ice', '@@jelly-o',
+                                '@@liquorice', '@@macaroon', '@@marzipan', '@@oat', '@@pie', '@@plum', '@@pudding', '@@sesame', '@@snaps', '@@soufflé',
+                                '@@sugar', '@@sweet', '@@topping', '@@wafer'
+                            ],
+                            minimumCharacters: 1
+                        }
+                    ]
+                },
+                // The "super-build" contains more premium features that require additional configuration, disable them below.
+                // Do not turn them on unless you read the documentation and know how to configure them and setup the editor.
+                removePlugins: [
+                    // These two are commercial, but you can try them out without registering to a trial.
+                    // 'ExportPdf',
+                    // 'ExportWord',
+                    'CKBox',
+                    'CKFinder',
+                    'EasyImage',
+                    // This sample uses the Base64UploadAdapter to handle image uploads as it requires no configuration.
+                    // https://ckeditor.com/docs/ckeditor5/latest/features/images/image-upload/base64-upload-adapter.html
+                    // Storing images as Base64 is usually a very bad idea.
+                    // Replace it on production website with other solutions:
+                    // https://ckeditor.com/docs/ckeditor5/latest/features/images/image-upload/image-upload.html
+                    // 'Base64UploadAdapter',
+                    'RealTimeCollaborativeComments',
+                    'RealTimeCollaborativeTrackChanges',
+                    'RealTimeCollaborativeRevisionHistory',
+                    'PresenceList',
+                    'Comments',
+                    'TrackChanges',
+                    'TrackChangesData',
+                    'RevisionHistory',
+                    'Pagination',
+                    'WProofreader',
+                    // Careful, with the Mathtype plugin CKEditor will not load when loading this sample
+                    // from a local file system (file://) - load this site via HTTP server if you enable MathType
+                    'MathType'
+                ]
+            });
+        </script>
+
+                                </section>
+                                <!--Content Managment End-->
+
                             </div>
 
                             <button style="width: 100%;" type="submit" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</button>
@@ -100,345 +270,6 @@
 
 
 
-
-
-    <!--Content Managmant Start-->
-
-    <!--Paragraph Start-->
-    <div id="parapraph_dialog">
-        <i class="mdi mdi-close Close_Btn" onclick="Close_All_Dialogs(this)"></i>
-        <div id="parapraph_dialog_content">
-            <div>
-                <h5 style="text-align: right;">@OwncmsCore.Language.all_strings.paragraph</h5>
-                <textarea id="new_paragraph_text_area" required name="cntent" style="margin-top:10px;resize: vertical;height: 250px;text-align: right;" class="form-control" placeholder="@OwncmsCore.Language.all_strings.text"></textarea>
-                <br>
-                <btn onclick="ParagraphDoneClick(this)" style="width: 100%;" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</btn>
-            </div>
-        </div>
-    </div>
-    <!--Paragraph End-->
-
-
-    <!--Header Start-->
-    <div id="header_dialog">
-        <i class="mdi mdi-close Close_Btn" onclick="Close_All_Dialogs(this)"></i>
-        <div id="header_dialog_content">
-            <div>
-                <h5 style="text-align: right;">@OwncmsCore.Language.all_strings.header</h5>
-                <input placeholder="@OwncmsCore.Language.all_strings.text" id="new_header_input" required name="cntent" style="margin-top:10px;text-align: right;" class="form-control"/>
-                <br>
-                <btn onclick="HeaderDoneClick(this)" style="width: 100%;" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</btn>
-            </div>
-        </div>
-    </div>
-    <!--Header End-->
-
-    <!--Image Start-->
-    <div id="image_dialog">
-        <i class="mdi mdi-close Close_Btn" onclick="Close_All_Dialogs(this)"></i>
-        <div id="image_dialog_content">
-            <div>
-                <h5 style="text-align: right;">@OwncmsCore.Language.all_strings.image</h5>
-                <input placeholder="@OwncmsCore.Language.all_strings.imagelink" id="new_image_input" required name="cntent" style="margin-top:10px;text-align: left;direction: ltr;" class="form-control"/>
-                <br>
-                <input placeholder="@OwncmsCore.Language.all_strings.imagealt" id="new_image_alt_input" required name="cntent" style="margin-top:10px;text-align: left;direction: ltr;" class="form-control"/>
-                <br>
-                <btn onclick="ImageDoneClick(this)" style="width: 100%;" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</btn>
-            </div>
-        </div>
-    </div>
-    <!--Image End-->
-
-    <!--Video Start-->
-    <div id="video_dialog">
-        <i class="mdi mdi-close Close_Btn" onclick="Close_All_Dialogs(this)"></i>
-        <div id="video_dialog_content">
-            <div>
-                <h5 style="text-align: right;">@OwncmsCore.Language.all_strings.video</h5>
-                <input placeholder="@OwncmsCore.Language.all_strings.videolink" id="new_video_input" required name="cntent" style="margin-top:10px;text-align: left;direction: ltr;" class="form-control"/>
-                <br>
-                <btn onclick="VideoDoneClick(this)" style="width: 100%;" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</btn>
-            </div>
-        </div>
-    </div>
-    <!--Video End-->
-
-    <!--link Start-->
-    <div id="link_dialog">
-        <i class="mdi mdi-close Close_Btn" onclick="Close_All_Dialogs(this)"></i>
-        <div id="link_dialog_content">
-            <div>
-                <h5 style="text-align: right;">@OwncmsCore.Language.all_strings.link</h5>
-                <input placeholder="@OwncmsCore.Language.all_strings.text" id="new_link_input" required name="cntent" style="margin-top:10px;text-align: right;direction: rtl;" class="form-control"/>
-                <br>
-                <input placeholder="@OwncmsCore.Language.all_strings.link" id="new_link_href_input" required name="cntent" style="margin-top:10px;text-align: left;direction: ltr;" class="form-control"/>
-                <br>
-                <btn onclick="LinkDoneClick(this)" style="width: 100%;" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</btn>
-            </div>
-        </div>
-    </div>
-    <!--link End-->
-
-
-    <style>
-
-        .Close_Btn
-        {
-            color: var(--white);
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            cursor: pointer;
-        }
-
-        .Element_btn
-        {
-            margin-right: 5px;
-            margin-left: 5px;
-            padding: 5px 10px;
-            color:var(--white);
-            background: var(--primary);
-            border-radius: 25px;
-            cursor: pointer;
-        }
-
-        #parapraph_dialog
-        {
-            width: 100vw;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: #00000066;
-            z-index: 99999;
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #parapraph_dialog_content
-        {
-            width: 75%;
-            min-height: 350px;
-            background: var(--white);
-            border-radius: 10px;
-            padding: 20px;
-        }
-
-        #header_dialog
-        {
-            width: 100vw;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: #00000066;
-            z-index: 99999;
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #header_dialog_content
-        {
-            width: 75%;
-            background: var(--white);
-            border-radius: 10px;
-            padding: 20px;
-        }
-
-        #video_dialog
-        {
-            width: 100vw;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: #00000066;
-            z-index: 99999;
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #video_dialog_content
-        {
-            width: 75%;
-            background: var(--white);
-            border-radius: 10px;
-            padding: 20px;
-        }
-
-        #image_dialog
-        {
-            width: 100vw;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: #00000066;
-            z-index: 99999;
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #image_dialog_content
-        {
-            width: 75%;
-            background: var(--white);
-            border-radius: 10px;
-            padding: 20px;
-        }
-
-        #link_dialog
-        {
-            width: 100vw;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: #00000066;
-            z-index: 99999;
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #link_dialog_content
-        {
-            width: 75%;
-            background: var(--white);
-            border-radius: 10px;
-            padding: 20px;
-        }
-
-    </style>
-
-    <script>
-
-        //Close All Dialogs Start
-        function Close_All_Dialogs(e)
-        {
-            var parapraph_dialog=window.document.getElementById('parapraph_dialog');
-            parapraph_dialog.style.display="none";
-
-            var header_dialog=window.document.getElementById('header_dialog');
-            header_dialog.style.display="none";
-
-            var image_dialog=window.document.getElementById('image_dialog');
-            image_dialog.style.display="none";
-
-            var video_dialog=window.document.getElementById('video_dialog');
-            video_dialog.style.display="none";
-
-            var link_dialog=window.document.getElementById('link_dialog');
-            link_dialog.style.display="none";
-        }
-        //Close All Dialogs End
-
-        //Paragraph Start
-        function ParagraphOnClick(e)
-        {
-            var parapraph_dialog=window.document.getElementById('parapraph_dialog');
-            parapraph_dialog.style.display="flex";
-        }
-
-        function ParagraphDoneClick(e)
-        {
-            var content_text_area=window.document.getElementById('content_text_area');
-            var new_paragraph_text_area=window.document.getElementById('new_paragraph_text_area');
-            var parapraph_dialog=window.document.getElementById('parapraph_dialog');
-
-            content_text_area.innerText=content_text_area.value+("<p>"+new_paragraph_text_area.value+"</p>");
-            new_paragraph_text_area.value="";
-            parapraph_dialog.style.display="none";
-        }
-        //Paragraph End
-
-
-        //Header Start
-        function HeaderOnClick(e)
-        {
-            var header_dialog=window.document.getElementById('header_dialog');
-            header_dialog.style.display="flex";
-        }
-
-        function HeaderDoneClick(e)
-        {
-            var content_text_area=window.document.getElementById('content_text_area');
-            var new_header_input=window.document.getElementById('new_header_input');
-            var header_dialog=window.document.getElementById('header_dialog');
-
-            content_text_area.innerText=content_text_area.value+("<h3>"+new_header_input.value+"</h3>");
-            new_header_input.value="";
-            header_dialog.style.display="none";
-        }
-        //Header End
-
-        //Image Start
-        function ImageOnClick(e)
-        {
-            var image_dialog=window.document.getElementById('image_dialog');
-            image_dialog.style.display="flex";
-        }
-
-        function ImageDoneClick(e)
-        {
-            var content_text_area=window.document.getElementById('content_text_area');
-            var new_image_input=window.document.getElementById('new_image_input');
-            var new_image_alt_input=window.document.getElementById('new_image_alt_input');
-            var image_dialog=window.document.getElementById('image_dialog');
-
-            content_text_area.innerText=content_text_area.value+("<img src='"+new_image_input.value+"' alt='"+new_image_alt_input.value+"'/>");
-            new_image_input.value="";
-            new_image_alt_input.value="";
-            image_dialog.style.display="none";
-        }
-        //Image End
-
-        //Video Start
-        function VideoOnClick(e)
-        {
-            var video_dialog=window.document.getElementById('video_dialog');
-            video_dialog.style.display="flex";
-        }
-
-        function VideoDoneClick(e)
-        {
-            var content_text_area=window.document.getElementById('content_text_area');
-            var new_video_input=window.document.getElementById('new_video_input');
-            var video_dialog=window.document.getElementById('video_dialog');
-
-            content_text_area.innerText=content_text_area.value+("<video controls><source src=\""+new_video_input.value+"\" type=\"video/mp4\"></video>");
-            new_video_input.value="";
-            video_dialog.style.display="none";
-        }
-        //Video End
-
-        //Image Start
-        function LinkOnClick(e)
-        {
-            var link_dialog=window.document.getElementById('link_dialog');
-            link_dialog.style.display="flex";
-        }
-
-        function LinkDoneClick(e)
-        {
-            var content_text_area=window.document.getElementById('content_text_area');
-            var new_link_input=window.document.getElementById('new_link_input');
-            var new_link_href_input=window.document.getElementById('new_link_href_input');
-            var link_dialog=window.document.getElementById('link_dialog');
-
-            content_text_area.innerText+=content_text_area.value+("<a href='"+new_link_href_input.value+"'>"+new_link_input.value+"</a>");
-            new_link_input.value="";
-            new_link_href_input.value="";
-            link_dialog.style.display="none";
-        }
-        //Image End
-
-    </script>
-    <!--Content Managmant End-->
 
 
 

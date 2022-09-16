@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bBPpuPB5oMGgMAQQ1ShLJMIvHjEQs8/7IFXAfK6OGlFWO1odl3ntlTDBKSZgjTrTq7ji3OSanpQsvZclYcKIjA==",
+  "dgSpecHash": "BCOtFbNExkSUvwRetw7yY9mnPxK1MUc2nr2GcAPPgRxfN9GQkhNgaV0mN+DX4aVsVXu3mWl8o0JqALVW+0rWRw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rezafta\\Desktop\\OwncmsCore\\OwncmsCore\\OwncmsCore\\OwncmsCore.csproj",
+  "projectFilePath": "C:\\Users\\Rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\OwncmsCore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rezafta\\.nuget\\packages\\googleauthenticator\\3.0.0\\googleauthenticator.3.0.0.nupkg.sha512",
     "C:\\Users\\Rezafta\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

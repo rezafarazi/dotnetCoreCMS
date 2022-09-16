@@ -1294,6 +1294,15 @@ namespace OwncmsCore.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to محتوا خود را اینجا بنویسید.
+        /// </summary>
+        public static string write_your_content {
+            get {
+                return ResourceManager.GetString("write_your_content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to دسترسی شما محدود شده.
         /// </summary>
         public static string your_access_is_denid {

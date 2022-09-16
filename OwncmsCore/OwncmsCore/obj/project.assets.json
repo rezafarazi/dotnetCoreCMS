@@ -7562,11 +7562,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rezafta\\Desktop\\OwncmsCore\\OwncmsCore\\OwncmsCore\\OwncmsCore.csproj",
+      "projectUniqueName": "C:\\Users\\Rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\OwncmsCore.csproj",
       "projectName": "OwncmsCore",
-      "projectPath": "C:\\Users\\Rezafta\\Desktop\\OwncmsCore\\OwncmsCore\\OwncmsCore\\OwncmsCore.csproj",
+      "projectPath": "C:\\Users\\Rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\OwncmsCore.csproj",
       "packagesPath": "C:\\Users\\Rezafta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rezafta\\Desktop\\OwncmsCore\\OwncmsCore\\OwncmsCore\\obj\\",
+      "outputPath": "C:\\Users\\Rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Rezafta\\AppData\\Roaming\\NuGet\\NuGet.Config",

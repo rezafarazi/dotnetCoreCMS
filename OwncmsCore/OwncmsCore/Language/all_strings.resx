@@ -534,4 +534,7 @@
   <data name="videolink" xml:space="preserve">
     <value>آدرس ویدیو</value>
   </data>
+  <data name="write_your_content" xml:space="preserve">
+    <value>محتوا خود را اینجا بنویسید</value>
+  </data>
 </root>

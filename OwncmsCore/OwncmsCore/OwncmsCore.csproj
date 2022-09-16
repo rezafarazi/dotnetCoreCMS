@@ -38,7 +38,7 @@
 
   <ItemGroup>
     <Reference Include="Hasher_Lib">
-      <HintPath>..\..\..\Own_Cms\Own_Cms\Own_Cms\bin\Hasher_Lib.dll</HintPath>
+      <HintPath>..\..\..\hasherlib\Hasher_Lib.dll</HintPath>
     </Reference>
   </ItemGroup>
 
