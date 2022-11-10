@@ -86,7 +86,7 @@
                             </div>
                         </li>
                     </ul>
-                    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                    <button onclick="OnClick_Mobile_Hamburger_Btn(this)" class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
                         <span class="mdi mdi-menu"></span>
                     </button>
                 </div>
@@ -253,6 +253,26 @@
             Dialog.style.display = "none";
         }
         //Browser Dialog End
+
+
+        //Mobile Nav Menu Start
+        var MobileMenuStatus=false;
+
+        function OnClick_Mobile_Hamburger_Btn(e)
+        {
+            var menu = window.document.getElementsByClassName("sidebar-offcanvas")[0];
+
+            if(!MobileMenuStatus) {
+                menu.style.right = "0px";
+                MobileMenuStatus=true;
+            }
+            else{
+                menu.style.right = "-720px";
+                MobileMenuStatus=false;
+            }
+        }
+        //Mobile Nav Menu End
+
     </script>
 
 

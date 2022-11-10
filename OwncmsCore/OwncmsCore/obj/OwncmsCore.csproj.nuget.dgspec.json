@@ -70,9 +70,9 @@
               "target": "Package",
               "version": "[2.0.0, )"
             },
-            "PersianDateTime": {
+            "PersianTools.Core": {
               "target": "Package",
-              "version": "[1.1.5082.36395, )"
+              "version": "[2.0.3, )"
             }
           },
           "imports": [

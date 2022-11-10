@@ -33,12 +33,12 @@
     </PackageReference>
     <PackageReference Include="MimeKit" Version="3.4.0" />
     <PackageReference Include="Nancy" Version="2.0.0" />
-    <PackageReference Include="PersianDateTime" Version="1.1.5082.36395" />
+    <PackageReference Include="PersianTools.Core" Version="2.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Hasher_Lib">
-      <HintPath>..\..\..\hasherlib\Hasher_Lib.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\Projects\Web\dotnetCoreCMS\OwncmsCore\OwncmsCore\bin\Debug\net6.0\Hasher_Lib.dll</HintPath>
     </Reference>
   </ItemGroup>
 

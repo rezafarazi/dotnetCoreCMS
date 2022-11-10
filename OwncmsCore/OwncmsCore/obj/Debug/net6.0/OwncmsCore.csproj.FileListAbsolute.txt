@@ -119,7 +119,6 @@ C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\bin\Debug\net6.0\Mi
 C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\bin\Debug\net6.0\MimeKit.dll
 C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\bin\Debug\net6.0\Nancy.dll
 C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\bin\Debug\net6.0\Newtonsoft.Json.dll
-C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\bin\Debug\net6.0\PersianDateTime.dll
 C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\bin\Debug\net6.0\BouncyCastle.Crypto.dll
 C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\bin\Debug\net6.0\QRCoder.dll
 C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
@@ -148,3 +147,4 @@ C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\obj\Debug\net6.0\sc
 C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\obj\Debug\net6.0\OwncmsCore.csproj.CopyComplete
 C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\obj\Debug\net6.0\OwncmsCore.genruntimeconfig.cache
 C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\obj\Debug\net6.0\ref\OwncmsCore.dll
+C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\bin\Debug\net6.0\PersianTools.Core.dll
