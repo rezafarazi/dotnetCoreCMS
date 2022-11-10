@@ -1,4 +1,4 @@
-# How Use Dotnet Core Cms
+# How to use dotnet core cms
 
 ### 1-Install DotNetCore6
 
