@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <h4 class="card-title" style="text-align: center;">@OwncmsCore.Language.all_strings.send_notification</h4>
                     <p class="card-description" style="text-align: center;">@OwncmsCore.Language.all_strings.please_fill_under_field</p>
-                    <form class="forms-sample" method="post" action="/Admin/UserManager/SendNotification/Done">
+                    <form class="forms-sample" method="post" action="/Admin/Panel/UserManager/SendNotification/Done">
                         <input type="hidden" value="@ViewBag.User_Id" name="user_id" />
                         @Html.AntiForgeryToken()
                         <div class="form-group">

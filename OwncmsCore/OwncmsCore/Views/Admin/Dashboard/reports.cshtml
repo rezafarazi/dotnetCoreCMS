@@ -51,9 +51,9 @@
                                     <td>@UsersReports.AllReports[i].title</td>
                                     <td>@UsersReports.AllReports[i].content</td>
                                     <td>@UsersReports.ReportType[i].title</td>
-                                    <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/UserManager/Edit_User/@UsersReports.AllReports[i].Reporter_User')"><i class="mdi mdi-account-edit" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></i></td>
-                                    <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/UserManager/Notifications/@UsersReports.AllReports[i].Reporter_User')" class="mdi mdi-comment" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></td>
-                                    <td><a href="~/Admin/Reports/View/@UsersReports.AllReports[i].id" style="color:#FF0000;">@OwncmsCore.Language.all_strings.not_seen</a></td>
+                                    <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/Panel/UserManager/Edit_User/@UsersReports.AllReports[i].Reporter_User')"><i class="mdi mdi-account-edit" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></i></td>
+                                    <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/Panel/UserManager/Notifications/@UsersReports.AllReports[i].Reporter_User')" class="mdi mdi-comment" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></td>
+                                    <td><a href="~/Admin/Admin/Reports/View/@UsersReports.AllReports[i].id" style="color:#FF0000;">@OwncmsCore.Language.all_strings.not_seen</a></td>
                                 </tr>
                                 }
 

@@ -38,7 +38,7 @@
 
   <ItemGroup>
     <Reference Include="Hasher_Lib">
-      <HintPath>..\..\..\..\Downloads\Projects\Web\dotnetCoreCMS\OwncmsCore\OwncmsCore\bin\Debug\net6.0\Hasher_Lib.dll</HintPath>
+      <HintPath>..\Libs\Hasher_Lib.dll</HintPath>
     </Reference>
   </ItemGroup>
 

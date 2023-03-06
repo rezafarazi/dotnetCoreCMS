@@ -150,3 +150,8 @@ body
 {
     text-align: right;
 }
+
+.form-group > label {
+    width: 100%;
+    text-align: right;
+}

@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <h4 class="card-title" style="text-align: center;">@OwncmsCore.Language.all_strings.edit_user</h4>
                     <p class="card-description" style="text-align: center;">@OwncmsCore.Language.all_strings.please_fill_under_field</p>
-                    <form class="forms-sample" method="post" action="~/Admin/UserManager/Edit_User/User_Update" enctype="multipart/form-data">
+                    <form class="forms-sample" method="post" action="~/Admin/Panel/UserManager/Edit_User/User_Update" enctype="multipart/form-data">
                         <input type="hidden" value="@User.Get_User_Id" name="user_id" />
                         @Html.AntiForgeryToken()
                         <div class="form-group">
@@ -140,7 +140,7 @@
     function change_cat_event(e,user_id,cat_id)
     {
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', window.location.protocol + '//' + window.location.host + '/Admin/UserManager/Edit_User/CategoryAdd/' + user_id + "/" + cat_id);
+        xhr.open('GET', window.location.protocol + '//' + window.location.host + '/Admin/Panel/UserManager/Edit_User/CategoryAdd/' + user_id + "/" + cat_id);
         xhr.send();
     }
 

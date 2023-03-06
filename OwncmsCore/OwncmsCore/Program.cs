@@ -38,6 +38,7 @@ app.Use(async (context, next) => {
             if (context.Request.Cookies["user_auth"] != null)
             {
                 await next.Invoke();
+
                 return;
             }
             else
@@ -59,3 +60,6 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+
+

@@ -26,7 +26,7 @@
             <div class="col-md-6 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <form method="post" action="/Admin/Categoreis/Update">
+                        <form method="post" action="/Admin/Panel/Categoreis/Update">
                             @Html.AntiForgeryToken()
                             <input type="text" name="Category_Id" style="display:none;" value="@edit_category.id"/>
                             <div class="form-group">
@@ -127,7 +127,7 @@
                                         }
 
                                         <td><a href="?Cat_Id=@categories[i].id"><i class="mdi mdi-table-edit" style="font-size: 20px;"></i></a></td>
-                                        <td><a href="/Admin/Categoreis/Delete?Delete=@categories[i].id"><i class="mdi mdi-delete" style="color: #F00;font-size: 20px;"></i></a></td>
+                                        <td><a href="/Admin/Panel/Categoreis/Delete?Delete=@categories[i].id"><i class="mdi mdi-delete" style="color: #F00;font-size: 20px;"></i></a></td>
                                     </tr>
                                 }
                             </tbody>

@@ -74,8 +74,8 @@
                                         <tr>
                                             <th scope="row">@User_Admin.All_User_Name[i]</th>
                                             <td>@User_Admin.All_User_Name[i]</td>
-                                            <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/UserManager/Edit_User/@User_Admin.All_User_Id[i]')"><i class="mdi mdi-account-edit" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></i></td>
-                                            <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/UserManager/SendNotification?User_Id=@User_Admin.All_User_Id[i]')" class="mdi mdi-comment" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></td>
+                                            <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/Panel/UserManager/Edit_User/@User_Admin.All_User_Id[i]')"><i class="mdi mdi-account-edit" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></i></td>
+                                            <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/Panel/UserManager/SendNotification?User_Id=@User_Admin.All_User_Id[i]')" class="mdi mdi-comment" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></td>
                                         </tr>
                                     }
                                 }
@@ -125,9 +125,9 @@
                                         <th scope="row">@Users.Users_Name_And_Family[i]</th>
                                         <td><a href="tel:@Users.Users_Phone[i]">@Users.Users_Phone[i]</a></td>
                                         <td>@Users.Users_Type[i]</td>
-                                        <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/UserManager/Notifications/@Users.Users_Id[i]')" class="mdi mdi-comment" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></td>
-                                        <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/UserManager/Edit_User/@Users.Users_Id[i]')"><i class="mdi mdi-account-edit" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></i></td>
-                                        <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/UserManager/SendNotification?User_Id=@Users.Users_Id[i]')" class="mdi mdi-comment" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></td>
+                                        <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/Panel/UserManager/Notifications/@Users.Users_Id[i]')" class="mdi mdi-comment" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></td>
+                                        <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/Panel/UserManager/Edit_User/@Users.Users_Id[i]')"><i class="mdi mdi-account-edit" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></i></td>
+                                        <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/Panel/UserManager/SendNotification?User_Id=@Users.Users_Id[i]')" class="mdi mdi-comment" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></td>
                                     </tr>
                                     }
                                 }
