@@ -6,26 +6,25 @@ using System.Web;
 
 namespace OwncmsCore.Models.DatabaseModels
 {
-    public class Users_Tbl
+    public class users_tbl
     {
         [Key]
         public long id { get; set; }
-        public string name { get; set; } = "";
-        public string family { get; set; } = "";
-        public string username { get; set; } = "";
-        public string password { get; set; } = "";
-        public string login_token { get; set; } = "";
-        public string create_datetime { get; set; } = "";
-        public string user_type{ get; set; } = "";
-        public string active_user_flag { get; set; } = "";
-        public string email{ get; set; } = "";
-        public string address { get; set; } = "";
-        public string city { get; set; } = "";
-        public string phone { get; set; } = "";
-        public string google2f { get; set; } = "";
-        public string national_id { get; set; } = "";
-        public string father_name { get; set; } = "";
-        public string profile_image_address { get; set; } = "";
-        public bool notification { get; set; } = false;
+        public String username { get; set; }
+        public String password{get;set;}
+        public String name{get;set;}
+        public String family{get;set;}
+        public String phone{get;set;}
+        public String email{get;set;}
+        public String bio{get;set;}
+        public String login_token{get;set;}
+        public String date_time{get;set;}
+        public String user_type{get;set;}
+        public String status{get;set;}
+        public String website{get;set;}
+        public String address{get;set;}
+        public String google_auth { get; set; }
+        public city_tbls city_id { get; set; }
+
     }
 }

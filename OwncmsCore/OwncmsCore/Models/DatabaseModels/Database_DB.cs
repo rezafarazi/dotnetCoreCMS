@@ -15,14 +15,24 @@ namespace OwncmsCore.Models.DatabaseModels
             optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-UFBPQJ8;Initial Catalog=OwnCmsCore;Integrated Security=True");
         }
 
-        public DbSet<Categories_Tbl> Categories_Tbl { get; set; }
-        public DbSet<Logs_Tbl> Logs_Tbl { get; set; }
-        public DbSet<Users_Tbl> Users_Tbl { get; set; }
-        public DbSet<Notifications_Tbl> Notifications_Tbl { get; set; }
-        public DbSet<Reports_Tbl> Reports_Tbl { get; set; }
-        public DbSet<UsersReports_Tbl> UsersReports_Tbl { get; set; }
-        public DbSet<Verify_Code_Tbl> Verify_Code_Tbl { get; set; }
-        public DbSet<Posts_Tbl> Posts_Tbl { get; set; }
+        public DbSet<settings_tbl> settings_tbl { get; set; }
+        public DbSet<city_tbls> city_tbls { get; set; }
+        public DbSet<file_tbl> file_tbl { get; set; }
+        public DbSet<users_tbl> users_tbl { get; set; }
+        public DbSet<userstype_tbl> userstype_tbl { get; set; }
+        public DbSet<user_verify_tbl> user_verify_tbl { get; set; }
+        public DbSet<notifications_tbl> notifications_tbl { get; set; }
+        public DbSet<categories_tbl> categories_tbl { get; set; }
+        public DbSet<posts_tbls> posts_tbls { get; set; }
+        public DbSet<report_tbl> report_tbl { get; set; }
+        public DbSet<reports_tbl> reports_tbl { get; set; }
+        public DbSet<store_categories_tbl> store_categories_tbl { get; set; }
+        public DbSet<store_tbl> store_tbl { get; set; }
+        public DbSet<store_images_tbls> store_images_tbls { get; set; }
+        public DbSet<discount_code_tbl> discount_code_tbl { get; set; }
+        public DbSet<orders_tbls> orders_tbls { get; set; }
+        public DbSet<transcation_tbl> transcation_tbl { get; set; }
+
 
     }
 }

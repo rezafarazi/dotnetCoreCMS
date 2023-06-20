@@ -2,7 +2,7 @@
 
 namespace OwncmsCore.Models.DatabaseModels
 {
-    public class Posts_Tbl
+    public class posts_tbls
     {
 
         [Key]
@@ -11,10 +11,11 @@ namespace OwncmsCore.Models.DatabaseModels
         public string content { get; set; }
         public string image { get; set; }
         public string date { get; set; }
-        public bool delete_flag { get; set; }
-        public bool visible { get; set; }
-        public Users_Tbl User_Id { get; set; }
-        public Categories_Tbl category_id { get; set; }
+        public string delete_flag { get; set; }
+        public string visible { get; set; }
+        public users_tbl user_id { get; set; }
+        public categories_tbl category_id { get; set; }
+
 
     }
 }
