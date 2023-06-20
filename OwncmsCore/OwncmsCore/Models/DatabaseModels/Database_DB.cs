@@ -12,7 +12,7 @@ namespace OwncmsCore.Models.DatabaseModels
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Rezafta\Desktop\OwncmsCore\OwncmsCore\DB\DB.mdf;Integrated Security=True;Connect Timeout=30");
-            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-UFBPQJ8;Initial Catalog=OwnCmsCore;Integrated Security=True");
+            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-UFBPQJ8;Initial Catalog=cmscore_synced;Integrated Security=True");
         }
 
         public DbSet<settings_tbl> settings_tbl { get; set; }

@@ -45,10 +45,10 @@ namespace OwncmsCore.Controllers
             using (Database_DB DB = new Database_DB())
             {
                 string pass = Hasher_Lib.Hash.SHA_256(password);
-                Users_Tbl user = Static_User.GetLogin(username, pass);
+                users_tbl user = Static_User.GetLogin(username, pass);
                 if (user != null)
                 {
-                    if (user.google2f == null || user.google2f == "")
+                    if (user.google_auth == null || user.google_auth == "")
                     {
                         //Add Auth Session Start
                         string user_data = new JavaScriptSerializer().Serialize(user);
@@ -88,9 +88,9 @@ namespace OwncmsCore.Controllers
             {
                 string token = HttpContext.Session.GetString("user_token").ToString();
 
-                Users_Tbl user = Static_User.GetLogin_With_Token(token);
+                users_tbl user = Static_User.GetLogin_With_Token(token);
 
-                byte[] secure_byte = System.Text.ASCIIEncoding.ASCII.GetBytes(user.google2f);
+                byte[] secure_byte = System.Text.ASCIIEncoding.ASCII.GetBytes(user.google_auth);
 
                 TwoFactorAuthenticator tfa = new TwoFactorAuthenticator();
 

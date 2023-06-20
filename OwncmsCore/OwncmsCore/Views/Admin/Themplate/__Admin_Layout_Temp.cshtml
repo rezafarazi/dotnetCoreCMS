@@ -1,10 +1,7 @@
 ﻿@{
     //User Data
-    OwncmsCore.Models.DatabaseModels.Users_Tbl User_Data= ViewBag.User_Data;
-
-    //User Notifications
-    OwncmsCore.Services.Panel.Notifications.Notifications.Notification_Out Notifications = ViewBag.Notification;
-
+    OwncmsCore.Models.DatabaseModels.users_tbl User_Data= ViewBag.User_Data;
+    
 }
 <!DOCTYPE html>
 <html lang="fa">
@@ -57,7 +54,7 @@
                     <li class="nav-item dropdown" onclick="Get_Seen_All_Notificatio(this)">
                         <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
                             <i class="mdi mdi-bell-outline"></i>
-                            @if (@Notifications.seen > 0)
+                            @if (0 > 0)
                             {
                                 <span class="count-symbol bg-danger"></span>
                             }
@@ -66,17 +63,17 @@
                                 <h6 class="p-3 mb-0" style="text-align: center;">Notifications</h6>
                                 <div class="dropdown-divider"></div>
 
-                                @for (int i = 0; i < Notifications.notifications.Count; i++)
+                                @for (int i = 0; i < 0; i++)
                                 {
-                                <a class="dropdown-item preview-item" href="@Notifications.notifications[i].link">
+                                <a class="dropdown-item preview-item" href="salam">
                                     <div class="preview-thumbnail">
                                         <div class="preview-icon bg-reddit">
                                             <i class="mdi mdi-bell"></i>
                                         </div>
                                     </div>
                                     <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                                        <h6 style="margin: 5px;" class="preview-subject font-weight-normal mb-1">@Notifications.notifications[i].title</h6>
-                                        <p style="margin: 5px;" class="text-gray ellipsis mb-0">@Notifications.notifications[i].content</p>
+                                        <h6 style="margin: 5px;" class="preview-subject font-weight-normal mb-1">hello</h6>
+                                        <p style="margin: 5px;" class="text-gray ellipsis mb-0">hello</p>
                                     </div>
                                 </a>
                                 }
