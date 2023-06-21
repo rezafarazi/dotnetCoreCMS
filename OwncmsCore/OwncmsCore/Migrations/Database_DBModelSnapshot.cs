@@ -129,10 +129,6 @@ namespace OwncmsCore.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("file_address_address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("file_date_time")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -146,6 +142,10 @@ namespace OwncmsCore.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("file_name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("file_server_address")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -608,6 +608,9 @@ namespace OwncmsCore.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<long>("profile_image_file_idid")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("status")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -627,6 +630,8 @@ namespace OwncmsCore.Migrations
                     b.HasKey("id");
 
                     b.HasIndex("city_idid");
+
+                    b.HasIndex("profile_image_file_idid");
 
                     b.ToTable("users_tbl");
                 });
@@ -812,7 +817,15 @@ namespace OwncmsCore.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("OwncmsCore.Models.DatabaseModels.file_tbl", "profile_image_file_id")
+                        .WithMany()
+                        .HasForeignKey("profile_image_file_idid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("city_id");
+
+                    b.Navigation("profile_image_file_id");
                 });
 #pragma warning restore 612, 618
         }

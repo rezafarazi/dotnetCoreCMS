@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Nancy.Json;
 using OwncmsCore.Middleware.Language;
+using OwncmsCore.Models.Data_Models.Auth_Model;
 using OwncmsCore.Models.DatabaseModels;
 using OwncmsCore.Services.Global_Functions.Encript;
 using OwncmsCore.Services.Panel.Static_User;
@@ -48,10 +49,21 @@ namespace OwncmsCore.Controllers
                 users_tbl user = Static_User.GetLogin(username, pass);
                 if (user != null)
                 {
+                    string user_profile_image = Static_User.GetProfileImageHash(user.id);
                     if (user.google_auth == null || user.google_auth == "")
                     {
                         //Add Auth Session Start
-                        string user_data = new JavaScriptSerializer().Serialize(user);
+                        Auth_Model user_auth = new Auth_Model()
+                        {
+                            id = user.id,
+                            name = user.name,
+                            family = user.family,
+                            username = user.username,
+                            login_token = user.login_token,
+                            user_type = user.user_type,
+                            profile_image = user_profile_image,
+                        };
+                        string user_data = new JavaScriptSerializer().Serialize(user_auth);
                         string encript_user_data = Encript.Encrypt(user_data);
                         Response.Cookies.Append("user_auth", encript_user_data);
                         //Add Auth Session End
@@ -89,6 +101,7 @@ namespace OwncmsCore.Controllers
                 string token = HttpContext.Session.GetString("user_token").ToString();
 
                 users_tbl user = Static_User.GetLogin_With_Token(token);
+                string user_profile_image = Static_User.GetProfileImageHash(user.id);
 
                 byte[] secure_byte = System.Text.ASCIIEncoding.ASCII.GetBytes(user.google_auth);
 
@@ -97,7 +110,16 @@ namespace OwncmsCore.Controllers
                 if (tfa.ValidateTwoFactorPIN(secure_byte, auth_2f_code))
                 {
                     //Add Auth Session Start
-                    string user_data = new JavaScriptSerializer().Serialize(user);
+                    Auth_Model user_auth = new Auth_Model() {
+                        id=user.id,
+                        name = user.name,
+                        family = user.family,
+                        username = user.username,
+                        login_token = user.login_token,
+                        user_type = user.user_type,
+                        profile_image = user_profile_image,
+                    };
+                    string user_data = new JavaScriptSerializer().Serialize(user_auth);
                     string encript_user_data = Encript.Encrypt(user_data);
                     Response.Cookies.Append("user_auth", encript_user_data);
                     //Add Auth Session End

@@ -9,7 +9,7 @@ namespace OwncmsCore.Models.DatabaseModels
         public long id { get; set; }
         public string file_name { get; set; }
         public string file_address { get; set; }
-        public string file_address_address { get; set; }
+        public string file_server_address { get; set; }
         public string file_type { get; set; }
         public string file_extention { get; set; }
         public string file_size { get; set; }

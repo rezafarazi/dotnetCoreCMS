@@ -25,6 +25,7 @@ namespace OwncmsCore.Models.DatabaseModels
         public String address{get;set;}
         public String google_auth { get; set; }
         public city_tbls city_id { get; set; }
+        public file_tbl profile_image_file_id { get; set; }
 
     }
 }
