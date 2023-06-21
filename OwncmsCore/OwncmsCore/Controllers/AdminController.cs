@@ -46,7 +46,7 @@ namespace OwncmsCore.Controllers
 
 
 
-        //Get Dashboard Start
+        //Get Cateogries Start
         [Route("Categoreis")]
         public async Task<ActionResult> Categoreis()
         {
@@ -88,10 +88,18 @@ namespace OwncmsCore.Controllers
             ViewBag.Category = Categories_Service.GetCategory(long.Parse(category_id));
             return View("Dashboard/categories");
         }
-        //Get Dashboard End
+        //Get Categories End
 
 
 
+        //Get Chart Start
+        [Route("Charts")]
+        public async Task<ActionResult> Chart()
+        {
+            GET_DATA();
+            return View("Dashboard/chart");
+        }
+        //Get Chart End
 
 
 
