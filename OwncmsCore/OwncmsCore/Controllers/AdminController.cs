@@ -11,6 +11,8 @@ using Newtonsoft.Json.Linq;
 using MimeKit;
 using System.Net.Mail;
 using OwncmsCore.Models.Data_Models.Auth_Model;
+using OwncmsCore.Services.Panel.Categories;
+using OwncmsCore.Models.FormModels;
 
 namespace OwncmsCore.Controllers
 {
@@ -38,6 +40,57 @@ namespace OwncmsCore.Controllers
             return View("Dashboard/index");
         }
         //Get Dashboard End
+
+
+
+
+
+
+        //Get Dashboard Start
+        [Route("Categoreis")]
+        public async Task<ActionResult> Categoreis()
+        {
+            GET_DATA();
+            ViewBag.Categories = Categories_Service.GetAllCategories();
+            return View("Dashboard/categories");
+        }
+
+        [HttpPost]
+        [Route("Categoreis/New")]
+        public async Task<ActionResult> NewCategory(Category_Model category)
+        {
+            Categories_Service.NewCategory(category);
+            return Redirect("~/Admin/Panel/Categoreis");
+        }
+
+        [HttpPost]
+        [Route("Categoreis/UpdateDone")]
+        public async Task<ActionResult> UpdateCategoryDone(Category_Model category)
+        {
+            Categories_Service.UpdateCategory(category);
+            return Redirect("~/Admin/Panel/Categoreis");
+        }
+
+        [HttpGet]
+        [Route("Category/Remove/{category_id}")]
+        public async Task<ActionResult> DeleteCategory(string category_id)
+        {
+            Categories_Service.DeleteCategory(long.Parse(category_id));
+            return Redirect(Request.Headers.Referer.ToString());
+        }
+
+        [HttpGet]
+        [Route("Category/Update/{category_id}")]
+        public async Task<ActionResult> UpdateCategory(string category_id)
+        {
+            GET_DATA();
+            ViewBag.Categories = Categories_Service.GetAllCategories();
+            ViewBag.Category = Categories_Service.GetCategory(long.Parse(category_id));
+            return View("Dashboard/categories");
+        }
+        //Get Dashboard End
+
+
 
 
 

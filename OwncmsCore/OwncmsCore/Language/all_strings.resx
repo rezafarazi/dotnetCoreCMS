@@ -537,4 +537,13 @@
   <data name="write_your_content" xml:space="preserve">
     <value>محتوا خود را اینجا بنویسید</value>
   </data>
+  <data name="newcategory" xml:space="preserve">
+    <value>دسته بندی جدید</value>
+  </data>
+  <data name="properties" xml:space="preserve">
+    <value>عملیات</value>
+  </data>
+  <data name="visib" xml:space="preserve">
+    <value>قابل مشاهده</value>
+  </data>
 </root>

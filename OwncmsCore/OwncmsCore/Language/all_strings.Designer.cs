@@ -709,6 +709,15 @@ namespace OwncmsCore.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to دسته بندی جدید.
+        /// </summary>
+        public static string newcategory {
+            get {
+                return ResourceManager.GetString("newcategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to رمز جدید.
         /// </summary>
         public static string newpassword {
@@ -885,6 +894,15 @@ namespace OwncmsCore.Language {
         public static string profile {
             get {
                 return ResourceManager.GetString("profile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to عملیات.
+        /// </summary>
+        public static string properties {
+            get {
+                return ResourceManager.GetString("properties", resourceCulture);
             }
         }
         
@@ -1218,6 +1236,15 @@ namespace OwncmsCore.Language {
         public static string view_in_map {
             get {
                 return ResourceManager.GetString("view_in_map", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to قابل مشاهده.
+        /// </summary>
+        public static string visib {
+            get {
+                return ResourceManager.GetString("visib", resourceCulture);
             }
         }
         
