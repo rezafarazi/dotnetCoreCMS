@@ -10,7 +10,7 @@
             <h3 class="page-title">
                 <span class="page-title-icon bg-gradient-primary text-white mr-2">
                     <i class="mdi mdi-chart-bar"></i>
-                </span></span>آمار
+                </span></span>@OwncmsCore.Language.all_strings.chart
             </h3>
         </div>
 
@@ -22,14 +22,14 @@
             <div class="col-lg-6 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">آمار بازدید</h4>
+                        <h4 class="card-title">@OwncmsCore.Language.all_strings.view_chart</h4>
                         <canvas id="video_make" style="height:250px"></canvas>
                         <script>
                             const video_make_ctx = document.getElementById('video_make').getContext('2d');
                             const video_make = new Chart(video_make_ctx, {
                                 type: 'polarArea',
                                 data: {
-                                    labels: ['کل سرویس ها', 'سرویس های این هفته'],
+                                    labels: ['@OwncmsCore.Language.all_strings.posts_chart', '@OwncmsCore.Language.all_strings.services_chart'],
                                     datasets: [{
                                         label: '# of Votes',
                                         data: [50, 80],

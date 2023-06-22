@@ -13,6 +13,7 @@ using System.Net.Mail;
 using OwncmsCore.Models.Data_Models.Auth_Model;
 using OwncmsCore.Services.Panel.Categories;
 using OwncmsCore.Models.FormModels;
+using OwncmsCore.Services.Panel.Cites;
 
 namespace OwncmsCore.Controllers
 {
@@ -92,6 +93,14 @@ namespace OwncmsCore.Controllers
 
 
 
+
+
+
+
+
+
+
+
         //Get Chart Start
         [Route("Charts")]
         public async Task<ActionResult> Chart()
@@ -100,6 +109,119 @@ namespace OwncmsCore.Controllers
             return View("Dashboard/chart");
         }
         //Get Chart End
+
+
+
+
+
+
+
+
+
+
+        //Get Chart Start
+        [Route("Cities")]
+        public async Task<ActionResult> Cities()
+        {
+            GET_DATA();
+            return View("Dashboard/cites");
+        }
+
+        [HttpGet]
+        [Route("Cities/Edit/{city_id}")]
+        public async Task<ActionResult> Cities(string city_id)
+        {
+            GET_DATA();
+            ViewBag.City_Data = City_Service.GetCity(long.Parse(city_id));
+            return View("Dashboard/cites");
+        }
+
+        [HttpPost]
+        [Route("Cities/New")]
+        public async Task<ActionResult> NewCity(string name,string area,string status)
+        {
+            City_Service.AddNewCityOrArea(name, int.Parse(area), status);
+            return Redirect("/Admin/Panel/Cities");
+        }
+
+        [HttpPost]
+        [Route("Cities/Update")]
+        public async Task<ActionResult> UpdateCity(string id,string name, string area, string status)
+        {
+            City_Service.UpdateCityOrArea(long.Parse(id),name, int.Parse(area), status);
+            return Redirect("/Admin/Panel/Cities");
+        }
+        //Get Chart End
+
+
+
+
+
+
+
+
+
+
+
+
+        //Profile start
+        [Route("Profile")]
+        public async Task<ActionResult> Profile()
+        {
+            GET_DATA();
+            ViewBag.USER=Static_User.GetLogin_With_Token(User_Data.login_token);
+            return View("Dashboard/profile");
+        }
+
+        [Route("Profile/Active2F")]
+        public async Task<ActionResult> Active2F()
+        {
+            GET_DATA();
+            ViewBag.USER = Static_User.GetLogin_With_Token(User_Data.login_token);
+
+            using (Database_DB DB = new Database_DB())
+            {
+                users_tbl user = (from Users_Tbl in DB.users_tbl where Users_Tbl.login_token.Equals(User_Data.login_token) select Users_Tbl).First();
+
+                string secure = generateSecret();
+
+                TwoFactorAuthenticator tfa = new TwoFactorAuthenticator();
+                byte[] secure_byte = System.Text.Encoding.ASCII.GetBytes(secure);
+
+                user.google_auth = secure;
+
+                var qr_code = tfa.GenerateSetupCode("Sorapp", "Sorapp", secure_byte, 300, true);
+                ViewBag.GoogleAuth2F = qr_code.QrCodeSetupImageUrl;
+
+                DB.SaveChanges();
+
+            }
+
+            return View("Dashboard/profile2F");
+        }
+
+        [Route("Profile/Diactive2F")]
+        public async Task<ActionResult> Diactive2F()
+        {
+            GET_DATA();
+            using (Database_DB DB = new Database_DB())
+            {
+                users_tbl user = (from Users_Tbl in DB.users_tbl where Users_Tbl.login_token.Equals(User_Data.login_token) select Users_Tbl).First();
+                user.google_auth = "";
+                DB.SaveChanges();
+            }
+
+            return Redirect(Request.Headers.Referer.ToString());
+        }
+        //Profile end
+
+
+
+
+
+
+
+
 
 
 
@@ -135,6 +257,19 @@ namespace OwncmsCore.Controllers
 
             User_Data = user;
             ViewBag.User_Data = User_Data;
+        }
+
+        private string generateSecret()
+        {
+            string random_secure = "";
+            Random rnd = new Random();
+
+            for (int i = 0; i < 10; i++)
+            {
+                random_secure += rnd.Next(65, 75);
+            }
+
+            return random_secure;
         }
         //My Functionss End
 

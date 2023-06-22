@@ -546,4 +546,37 @@
   <data name="visib" xml:space="preserve">
     <value>قابل مشاهده</value>
   </data>
+  <data name="bio" xml:space="preserve">
+    <value>بایو</value>
+  </data>
+  <data name="accesss" xml:space="preserve">
+    <value>دسترسی ها</value>
+  </data>
+  <data name="allorders" xml:space="preserve">
+    <value>همه سفارشات</value>
+  </data>
+  <data name="allstores" xml:space="preserve">
+    <value>کل پست های فروشگاهی</value>
+  </data>
+  <data name="coupon" xml:space="preserve">
+    <value>کوپن</value>
+  </data>
+  <data name="curent_orders" xml:space="preserve">
+    <value>سفارشات در جریان</value>
+  </data>
+  <data name="discountforall" xml:space="preserve">
+    <value>تخفیف برای همه</value>
+  </data>
+  <data name="newstorepost" xml:space="preserve">
+    <value>پست فروشگاهی جدید</value>
+  </data>
+  <data name="store" xml:space="preserve">
+    <value>فروشگاه</value>
+  </data>
+  <data name="store_categories" xml:space="preserve">
+    <value>دسته بندی فروشگاه</value>
+  </data>
+  <data name="transactions" xml:space="preserve">
+    <value>پرداخت ها</value>
+  </data>
 </root>
