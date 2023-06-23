@@ -14,6 +14,7 @@ using OwncmsCore.Models.Data_Models.Auth_Model;
 using OwncmsCore.Services.Panel.Categories;
 using OwncmsCore.Models.FormModels;
 using OwncmsCore.Services.Panel.Cites;
+using OwncmsCore.Services.Panel.User;
 
 namespace OwncmsCore.Controllers
 {
@@ -169,8 +170,43 @@ namespace OwncmsCore.Controllers
         public async Task<ActionResult> Profile()
         {
             GET_DATA();
-            ViewBag.USER=Static_User.GetLogin_With_Token(User_Data.login_token);
+            Static_User.UserCity user = Static_User.GetUserByID(User_Data.id);
+            users_tbl usr = user.user;
+            ViewBag.USER = usr;
+            ViewBag.City = user.city;
             return View("Dashboard/profile");
+        }
+
+        [HttpPost]
+        [Route("Profile/Update")]
+        public async Task<ActionResult> ProfileDone(Profile_Model profile,IFormFile profile_image)
+        {
+
+            if(profile_image != null)
+            {
+                profile.profile_image = profile_image;
+            }
+
+            GET_DATA();
+            profile.id = User_Data.id;
+            users_tbl user = Users_Service.UpdateUser(profile);
+            string user_profile_image = Static_User.GetProfileImageHash(user.id);
+
+            Auth_Model user_auth = new Auth_Model()
+            {
+                id = user.id,
+                name = user.name,
+                family = user.family,
+                username = user.username,
+                login_token = user.login_token,
+                user_type = user.user_type,
+                profile_image = user_profile_image,
+            };
+            string user_data = new JavaScriptSerializer().Serialize(user_auth);
+            string encript_user_data = Encript.Encrypt(user_data);
+            Response.Cookies.Append("user_auth", encript_user_data);
+
+            return Redirect(Request.Headers.Referer);
         }
 
         [Route("Profile/Active2F")]

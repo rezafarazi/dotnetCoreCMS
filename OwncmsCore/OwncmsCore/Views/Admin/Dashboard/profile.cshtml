@@ -23,8 +23,8 @@
                         <div class="card-body">
                             <h4 class="card-title" style="text-align: center;">@OwncmsCore.Language.all_strings.profile</h4>
                             <p class="card-description" style="text-align: center;">@OwncmsCore.Language.all_strings.please_fill_under_field</p>
-                            <form class="forms-sample" method="post" enctype="multipart/form-data">
-                                <input type="hidden" th:value="@USER.id" name="user_id" />
+                            <form action="~/Admin/Panel/Profile/Update" class="forms-sample" method="post" enctype="multipart/form-data">
+                                <input type="hidden" value="@USER.id" name="user_id" />
                                 <div class="form-group">
                                     <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.username</label>
                                     <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.username" name="username" value="@USER.username">
@@ -62,7 +62,14 @@
                                     <select class="form-control" id="exampleInputUsername1" name="city">
                                         @foreach (var city in ALLCites)
                                         {
-                                            <option value="@city.id">@city.name</option>
+                                            @if(city.id == ViewBag.City.id)
+                                            {
+                                                <option selected value="@city.id">@city.name</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@city.id">@city.name</option>
+                                            }
                                         }
                                     </select>
                                 </div>
