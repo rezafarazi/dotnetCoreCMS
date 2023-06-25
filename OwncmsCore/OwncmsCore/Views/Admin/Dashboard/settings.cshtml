@@ -1,0 +1,289 @@
+﻿@{
+    Layout = "~/Views/Admin/Themplate/__Admin_Layout_Temp.cshtml";
+}
+
+<!-- partial -->
+<div class="main-panel">
+    <!--Send Notification To User Start-->
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title">
+                <span class="page-title-icon bg-gradient-primary text-white mr-2">
+                  <i class="mdi mdi-settings"></i>
+                </span></span></span>@OwncmsCore.Language.all_strings.settings
+            </h3>
+        </div>
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title" style="text-align: center;">@OwncmsCore.Language.all_strings.settings</h4>
+                        <form class="forms-sample" method="post">
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.icon_address</label>
+                                <input value="@ViewBag.logo" type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.icon_address" name="icon" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.law</label>
+                                <textarea style="height: 150px;" class="form-control" placeholder="@OwncmsCore.Language.all_strings.law" name="law" required>@ViewBag.law</textarea>
+                            </div>
+
+
+                            <br>
+                            <br>
+
+
+                            <!--Slider start-->
+                            <div>
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.slides</label>
+
+                                    <div style="display: flex;">
+                                        <input type="text" style="margin: 5px" class="form-control" id="slider_imageaddress" placeholder="@OwncmsCore.Language.all_strings.icon_address">
+                                        <input type="text" style="margin: 5px" class="form-control" id="slider_imagelink" placeholder="@OwncmsCore.Language.all_strings.link">
+                                        <input type="text" style="margin: 5px" class="form-control" id="slider_imagetext" placeholder="@OwncmsCore.Language.all_strings.text">
+                                        <btn onclick="AddNewSlider(this)" style="margin : 7px;height: 40px;" class="btn btn-gradient-primary mr-2">+</btn>
+                                    </div>
+
+                                </div>
+                                <input value="@ViewBag.slider" name="slider" type="hidden" style="margin: 5px" class="form-control" id="silder_input" placeholder="{{__('all_strings.imageaddress')}}">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.slides</label>
+
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th>@OwncmsCore.Language.all_strings.address</th>
+                                            <th>@OwncmsCore.Language.all_strings.link</th>
+                                            <th>@OwncmsCore.Language.all_strings.text</th>
+                                            <th>@OwncmsCore.Language.all_strings.eventt</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="silder_table_content">
+
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                            <script>
+
+
+                                //load event start
+                                window.addEventListener('load',function (e) {
+
+                                    //get load slider
+                                    slider_load(e);
+
+                                });
+                                //load event end
+
+
+                                //get on click add new slider item start
+                                function AddNewSlider(e){
+
+                                    var silder_input=window.document.getElementById("silder_input");
+                                    var slider_imagetext=window.document.getElementById("slider_imagetext");
+                                    var slider_imagelink=window.document.getElementById("slider_imagelink");
+                                    var slider_imageaddress=window.document.getElementById("slider_imageaddress");
+
+                                    var silder_input_json=JSON.parse(silder_input.value);
+
+                                    var n_js={"text":slider_imagetext.value,"address":slider_imageaddress.value,"link":slider_imagelink.value};
+                                    silder_input_json.push(n_js);
+
+                                    silder_input.value=JSON.stringify(silder_input_json);
+
+                                    slider_imageaddress.value=slider_imagetext.value=slider_imagelink.value="";
+
+                                    slider_load(e);
+                                }
+                                //get on click add new slider item end
+
+
+                                //load all silders function start
+                                function slider_load(e){
+                                    var silder_input=window.document.getElementById("silder_input");
+                                    var silder_input_js=JSON.parse(silder_input.value);
+                                    var silder_table_content=window.document.getElementById("silder_table_content");
+
+                                    silder_table_content.innerHTML="";
+
+                                    for(var i=0;i<silder_input_js.length;i++)
+                                    {
+                                        silder_table_content.innerHTML+="<tr><td><a href='"+silder_input_js[i].address+"'><i class='mdi mdi-image'/></a></td><td><a href='"+silder_input_js[i].link+"'><i class='mdi mdi-link'/></a></td><td>"+silder_input_js[i].text+"</td><td><btn style='color: #F00;cursor: pointer;' onclick='get_remove_slider("+i+")'>-</btn></td></tr>";
+                                    }
+                                }
+
+                                function slider_load(){
+                                    var silder_input=window.document.getElementById("silder_input");
+                                    var silder_input_js=JSON.parse(silder_input.value);
+                                    var silder_table_content=window.document.getElementById("silder_table_content");
+
+                                    silder_table_content.innerHTML="";
+
+                                    for(var i=0;i<silder_input_js.length;i++)
+                                    {
+                                        silder_table_content.innerHTML+="<tr><td><a href='"+silder_input_js[i].address+"'><i class='mdi mdi-image'/></a></td><td><a href='"+silder_input_js[i].link+"'><i class='mdi mdi-link'/></a></td><td>"+silder_input_js[i].text+"</td><td><btn style='color: #F00;cursor: pointer;' onclick='get_remove_slider("+i+")'>-</btn></td></tr>";
+                                    }
+                                }
+                                //load all silders function end
+
+
+                                //get remove slider item start
+                                function get_remove_slider(index)
+                                {
+                                    var silder_input=window.document.getElementById("silder_input");
+                                    var silder_input_js=JSON.parse(silder_input.value);
+                                    delete silder_input_js[index];
+
+                                    var result=JSON.stringify(silder_input_js);
+                                    result=result.replaceAll(",null","");
+                                    result=result.replaceAll("null,","");
+                                    result=result.replaceAll(",null,",",");
+
+                                    silder_input.value=result;
+
+                                    slider_load();
+
+                                }
+                                //get remove slider item end
+
+
+                            </script>
+                            <!--Slider end-->
+
+
+                            <br>
+                            <br>
+
+                            <!--Banner start-->
+                            <div>
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.newbanner</label>
+                                    <div style="display: flex;">
+                                        <input type="text" style="margin: 5px" class="form-control" id="banner_imageaddress" placeholder="@OwncmsCore.Language.all_strings.icon_address">
+                                        <input type="text" style="margin: 5px" class="form-control" id="banner_imagelink" placeholder="@OwncmsCore.Language.all_strings.link">
+                                        <btn onclick="AddNewBanner(this)" style="margin : 7px;height: 40px;" class="btn btn-gradient-primary mr-2">+</btn>
+                                    </div>
+                                </div>
+                                <input value="@ViewBag.banner" name="banner" type="hidden" style="margin: 5px" class="form-control" id="banner_input" placeholder="@OwncmsCore.Language.all_strings.icon_address">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.banners</label>
+
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th>@OwncmsCore.Language.all_strings.icon_address</th>
+                                            <th>@OwncmsCore.Language.all_strings.link</th>
+                                            <th>@OwncmsCore.Language.all_strings.eventt</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="banner_table_content">
+
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                            <script>
+
+
+                                //load event start
+                                window.addEventListener('load',function (e) {
+
+                                    //get load slider
+                                    banner_load(e);
+
+                                });
+                                //load event end
+
+
+                                //get on click add new slider item start
+                                function AddNewBanner(e){
+                                    var banner_input=window.document.getElementById("banner_input");
+                                    var banner_imagelink=window.document.getElementById("banner_imagelink");
+                                    var banner_imageaddress=window.document.getElementById("banner_imageaddress");
+
+                                    var banner_input_json=JSON.parse(banner_input.value);
+
+                                    var n_js={"address":banner_imageaddress.value,"link":banner_imagelink.value};
+                                    banner_input_json.push(n_js);
+
+                                    banner_input.value=JSON.stringify(banner_input_json);
+
+                                    banner_imageaddress.value=banner_imagelink.value="";
+
+                                    banner_load(e);
+                                }
+                                //get on click add new slider item end
+
+
+                                //load all silders function start
+                                function banner_load(e){
+                                    var banner_input=window.document.getElementById("banner_input");
+                                    var banner_input_js=JSON.parse(banner_input.value);
+                                    var banner_table_content=window.document.getElementById("banner_table_content");
+
+                                    banner_table_content.innerHTML="";
+
+                                    for(var i=0;i<banner_input_js.length;i++)
+                                    {
+                                        banner_table_content.innerHTML+="<tr><td><a href='"+banner_input_js[i].address+"'><i class='mdi mdi-image'/></a></td><td><a href='"+banner_input_js[i].link+"'><i class='mdi mdi-link'/></a></td><td><btn style='color: #F00;cursor: pointer;' onclick='get_remove_banner("+i+")'>-</btn></td></tr>";
+                                    }
+                                }
+
+                                function banner_load(){
+                                    var banner_input=window.document.getElementById("banner_input");
+                                    var banner_input_js=JSON.parse(banner_input.value);
+                                    var banner_table_content=window.document.getElementById("banner_table_content");
+
+                                    banner_table_content.innerHTML="";
+
+                                    for(var i=0;i<banner_input_js.length;i++)
+                                    {
+                                        banner_table_content.innerHTML+="<tr><td><a href='"+banner_input_js[i].address+"'><i class='mdi mdi-image'/></a></td><td><a href='"+banner_input_js[i].link+"'><i class='mdi mdi-link'/></a></td><td><btn style='color: #F00;cursor: pointer;' onclick='get_remove_banner("+i+")'>-</btn></td></tr>";
+                                    }
+                                }
+                                //load all silders function end
+
+
+                                //get remove slider item start
+                                function get_remove_banner(index)
+                                {
+                                    var banner_input=window.document.getElementById("banner_input");
+                                    var banner_input_js=JSON.parse(banner_input.value);
+                                    delete banner_input_js[index];
+
+                                    var result=JSON.stringify(banner_input_js);
+                                    result=result.replaceAll(",null","");
+                                    result=result.replaceAll("null,","");
+                                    result=result.replaceAll(",null,",",");
+
+                                    banner_input.value=result;
+
+                                    banner_load();
+
+                                }
+                                //get remove slider item end
+
+
+                            </script>
+                            <!--Banner end-->
+
+
+                            <br>
+                            <br>
+
+                            <div class="form-group" style="display: none;">
+                                <textarea style="direction:ltr;resize:vertical;height:250px;" class="form-control" id="exampleInputUsername1" name="Config"></textarea>
+                            </div>
+                            <button style="width: 100%;" type="submit" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Send Notification To User End-->
+        

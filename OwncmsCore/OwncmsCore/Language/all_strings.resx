@@ -579,4 +579,19 @@
   <data name="transactions" xml:space="preserve">
     <value>پرداخت ها</value>
   </data>
+  <data name="banners" xml:space="preserve">
+    <value>بنر ها</value>
+  </data>
+  <data name="eventt" xml:space="preserve">
+    <value>رویداد</value>
+  </data>
+  <data name="law" xml:space="preserve">
+    <value>قوانین</value>
+  </data>
+  <data name="newbanner" xml:space="preserve">
+    <value>بنرجدید</value>
+  </data>
+  <data name="slides" xml:space="preserve">
+    <value>اسلایدها</value>
+  </data>
 </root>

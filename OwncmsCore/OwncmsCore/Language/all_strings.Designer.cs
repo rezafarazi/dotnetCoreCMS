@@ -232,6 +232,15 @@ namespace OwncmsCore.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to بنر ها.
+        /// </summary>
+        public static string banners {
+            get {
+                return ResourceManager.GetString("banners", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to بایو.
         /// </summary>
         public static string bio {
@@ -484,6 +493,15 @@ namespace OwncmsCore.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to رویداد.
+        /// </summary>
+        public static string eventt {
+            get {
+                return ResourceManager.GetString("eventt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to خروج.
         /// </summary>
         public static string exit {
@@ -655,6 +673,15 @@ namespace OwncmsCore.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to قوانین.
+        /// </summary>
+        public static string law {
+            get {
+                return ResourceManager.GetString("law", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to لینک.
         /// </summary>
         public static string link {
@@ -768,6 +795,15 @@ namespace OwncmsCore.Language {
         public static string new_report {
             get {
                 return ResourceManager.GetString("new_report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to بنرجدید.
+        /// </summary>
+        public static string newbanner {
+            get {
+                return ResourceManager.GetString("newbanner", resourceCulture);
             }
         }
         
@@ -1101,6 +1137,15 @@ namespace OwncmsCore.Language {
         public static string settings {
             get {
                 return ResourceManager.GetString("settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اسلایدها.
+        /// </summary>
+        public static string slides {
+            get {
+                return ResourceManager.GetString("slides", resourceCulture);
             }
         }
         
