@@ -17,6 +17,7 @@ using OwncmsCore.Services.Panel.Cites;
 using OwncmsCore.Services.Panel.User;
 using OwncmsCore.Services.Panel.Settings;
 using OwncmsCore.Services.Panel.FileManager;
+using OwncmsCore.Services.Panel.Groups;
 
 namespace OwncmsCore.Controllers
 {
@@ -158,6 +159,41 @@ namespace OwncmsCore.Controllers
 
 
 
+
+
+
+
+
+
+
+
+        //Groups start
+        [Route("Groups")]
+        public async Task<ActionResult> Groups()
+        {
+            GET_DATA();
+            ViewBag.Groups = Groups_Service.GetAllAccessTypeUser();
+            return View("Dashboard/groups");
+        }
+
+        [HttpPost]
+        [Route("Groups/New")]
+        public async Task<ActionResult> NewGroups(string title,string en_title)
+        {
+            GET_DATA();
+            Groups_Service.GetAddNewGroup(title, en_title);
+            return Redirect(Request.Headers.Referer);
+        }
+
+        [HttpGet]
+        [Route("Groups/Delete/{type_id}")]
+        public async Task<ActionResult> RemoveGroups(string type_id)
+        {
+            GET_DATA();
+            Groups_Service.GetRemoveAccessType(int.Parse(type_id));
+            return Redirect(Request.Headers.Referer);
+        }
+        //Groups end
 
 
 

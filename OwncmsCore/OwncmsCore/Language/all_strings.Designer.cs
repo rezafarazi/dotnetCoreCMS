@@ -493,6 +493,15 @@ namespace OwncmsCore.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to نام لاتین.
+        /// </summary>
+        public static string en_name {
+            get {
+                return ResourceManager.GetString("en_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to رویداد.
         /// </summary>
         public static string eventt {

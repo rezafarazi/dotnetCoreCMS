@@ -594,4 +594,7 @@
   <data name="slides" xml:space="preserve">
     <value>اسلایدها</value>
   </data>
+  <data name="en_name" xml:space="preserve">
+    <value>نام لاتین</value>
+  </data>
 </root>

@@ -1,0 +1,93 @@
+﻿@{
+    Layout = "~/Views/Admin/Themplate/__Admin_Layout_Temp.cshtml";
+
+    List<OwncmsCore.Models.DatabaseModels.userstype_tbl> allgroups = ViewBag.Groups;
+
+}
+
+<!-- partial -->
+<div class="main-panel">
+  <div class="content-wrapper">
+
+    <div class="page-header">
+      <h3 class="page-title">
+                <span class="page-title-icon bg-gradient-primary text-white mr-2">
+                  <i class="mdi mdi-fingerprint"></i>
+                </span></span>@OwncmsCore.Language.all_strings.accesss
+      </h3>
+    </div>
+
+    <div class="row">
+
+      <!--Right Side Of Content Start-->
+      <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <form class="forms-sample" action="/Admin/Panel/Groups/New" method="post">
+              <div class="form-group">
+                <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.name</label>
+                <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.name" name="title" style="text-align: center;" required>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">@OwncmsCore.Language.all_strings.en_name</label>
+                <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.en_name" name="en_title" style="text-align: center;" required>
+              </div>
+              <button style="width: 100%;" type="submit" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!--Right Side Of Content End-->
+
+
+      <!--Bottom Side Of Content Start-->
+      <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">@OwncmsCore.Language.all_strings.accesss</h4>
+
+
+                @if(allgroups.Count > 0)
+                {
+                    <table class="table">
+                      <thead>
+                      <tr>
+                        <th>@OwncmsCore.Language.all_strings.name</th>
+                        <th>@OwncmsCore.Language.all_strings.en_name</th>
+                        <th>@OwncmsCore.Language.all_strings.delete</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+
+                            @foreach (OwncmsCore.Models.DatabaseModels.userstype_tbl type in allgroups)
+                            {
+                                <tr>
+                                    <th>@type.title</th>
+                                    <th>@type.en_title</th>
+                                    <th><a href="~/Admin/Panel/Groups/Delete/@type.id"><i class="mdi mdi-delete" style="font-size: 20px;"></i></a></th>
+                                </tr>
+                            }
+
+                      </tbody>
+                    </table>
+                }
+                else
+                {
+                    <div th:unless="${ussertypes.size>0}">
+                      <div style="margin-top:60px;">
+                        <img src="~/Assets/Admin/images/icons/empty.png" style="display:block;margin:0 auto;" width="150px">
+                        <p style="width:100%;text-align:center;color:#666;margin-top:20px;">@OwncmsCore.Language.all_strings.notfound</p>
+                      </div>
+                    </div>
+                }
+            
+
+          </div>
+        </div>
+      </div>
+      <!--Bottom Side Of Content Start-->
+
+    </div>
+
+  </div>
+  <!-- content-wrapper ends -->
