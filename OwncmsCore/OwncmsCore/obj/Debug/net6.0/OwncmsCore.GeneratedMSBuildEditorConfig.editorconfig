@@ -47,12 +47,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXGxvZ2luMmYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/new_report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXG5ld19yZXBvcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXHByb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/profile2F.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXHByb2ZpbGUyRi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/reports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXHJlcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/settings.cshtml]

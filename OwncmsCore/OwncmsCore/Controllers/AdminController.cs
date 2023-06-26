@@ -18,6 +18,7 @@ using OwncmsCore.Services.Panel.User;
 using OwncmsCore.Services.Panel.Settings;
 using OwncmsCore.Services.Panel.FileManager;
 using OwncmsCore.Services.Panel.Groups;
+using OwncmsCore.Services.Panel.Report;
 
 namespace OwncmsCore.Controllers
 {
@@ -156,6 +157,80 @@ namespace OwncmsCore.Controllers
             return Redirect("/Admin/Panel/Cities");
         }
         //Get Chart End
+
+
+
+
+
+
+
+
+
+
+
+
+        //Reports Start
+
+        [Route("Reports")]
+        public async Task<ActionResult> All_Reports()
+        {
+            GET_DATA();
+            ViewBag.AllReports = Report_Service.GetAll_User_Reports();
+            return View("Dashboard/reports");
+        }
+
+        [HttpGet]
+        [Route("Reports/View/{id}")]
+        public async Task<ActionResult> All_Reports(string id)
+        {
+            GET_DATA();
+            Report_Service.GetView_Report(long.Parse(id));
+            return Redirect("~/Admin/Panel/Reports");
+        }
+
+        //Reports End
+
+
+
+
+
+
+
+
+
+
+
+
+        //New Report Start
+        [Route("NewReport")]
+        public async Task<ActionResult> Reportss()
+        {
+            GET_DATA();
+            ViewBag.Reports = Report_Service.All_Reports();
+            return View("Dashboard/new_report");
+        }
+
+        [HttpPost]
+        [Route("NewReport")]
+        public async Task<ActionResult> Reportss(string title)
+        {
+            GET_DATA();
+            Report_Service.Add_New_Report(title);
+            return Redirect(Request.Headers.Referer);
+        }
+
+        [HttpGet]
+        [Route("NewReport/Remove/{id}")]
+        public async Task<ActionResult> Reports_Remove(string id)
+        {
+            GET_DATA();
+            Report_Service.Remove_Report(long.Parse(id));
+            return Redirect(Request.Headers.Referer);
+        }
+        //New Report End
+
+
+
 
 
 
