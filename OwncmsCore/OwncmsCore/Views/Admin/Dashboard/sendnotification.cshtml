@@ -1,0 +1,35 @@
+﻿@{
+    Layout = "~/Views/Admin/Themplate/__Empty.cshtml";
+}
+
+ <!--Send Notification To User Start-->
+<div class="content-wrapper" style="height: 100vh;">
+    <div class="row">
+        <div class="col-md-11 grid-margin stretch-card" style="margin: 50px auto;">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title" style="text-align: center;">@OwncmsCore.Language.all_strings.send_notification</h4>
+                    <p class="card-description" style="text-align: center;">@OwncmsCore.Language.all_strings.please_fill_under_field</p>
+                    <form class="forms-sample" method="post" action="/Admin/Panel/UserManager/SendNotification/Done">
+                        <input type="hidden" value="@ViewBag.User_Id" name="user_id" />
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <label for="exampleInputUsername1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.title</label>
+                            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.title" name="title">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.text</label>
+                            <textarea style="height: 60px;" class="form-control" id="exampleInputPassword1" placeholder="@OwncmsCore.Language.all_strings.text" name="content_text"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" style="width: 100%;text-align: right;">@OwncmsCore.Language.all_strings.link_address</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="@OwncmsCore.Language.all_strings.link_address" name="link">
+                        </div>
+                        <button style="width: 100%;" type="submit" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Send Notification To User End-->

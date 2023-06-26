@@ -1,0 +1,100 @@
+﻿﻿@using OwncmsCore.Services.Panel.Usermanager;
+@{
+    Layout = "~/Views/Admin/Themplate/__Empty.cshtml";
+    
+       OwncmsCore.Models.DatabaseModels.users_tbl USER = ViewBag.USER;
+
+    //Get all cites
+    List<OwncmsCore.Models.DatabaseModels.city_tbls> ALLCites = OwncmsCore.Services.Panel.Cites.City_Service.GetAllActiveCites();
+    List<OwncmsCore.Models.DatabaseModels.userstype_tbl> ALLTypes = OwncmsCore.Services.Panel.Groups.Groups_Service.GetAllAccessTypeUser();
+}
+
+<!--Send Notification To User Start-->
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title" style="text-align: center;">@OwncmsCore.Language.all_strings.profile</h4>
+                            <p class="card-description" style="text-align: center;">@OwncmsCore.Language.all_strings.please_fill_under_field</p>
+                            <form action="~/Admin/Panel/UserManager/UpdateDone" class="forms-sample" method="post" enctype="multipart/form-data">
+                                <input type="hidden" value="@USER.id" name="user_id" />
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.username</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.username" name="username" value="@USER.username">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.name</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.name" name="name" value="@USER.name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.family</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.family" name="family" value="@USER.family">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">@OwncmsCore.Language.all_strings.newpassword</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="@OwncmsCore.Language.all_strings.newpassword" name="password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">@OwncmsCore.Language.all_strings.email</label>
+                                    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="@OwncmsCore.Language.all_strings.email" name="email" value="@USER.email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">@OwncmsCore.Language.all_strings.userprofileimage</label>
+                                    <input type="file" class="form-control" id="exampleInputPassword1" name="profile_image">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">@OwncmsCore.Language.all_strings.phone</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="@OwncmsCore.Language.all_strings.phone" name="phone" value="@USER.phone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">@OwncmsCore.Language.all_strings.address</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="@OwncmsCore.Language.all_strings.address" name="address" value="@USER.address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.city</label>
+                                    <select class="form-control" id="exampleInputUsername1" name="city">
+                                        @foreach (var city in ALLCites)
+                                        {
+                                            @if(city.id == ViewBag.City.id)
+                                            {
+                                                <option selected value="@city.id">@city.name</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@city.id">@city.name</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.user_type</label>
+                                    <select class="form-control" id="exampleInputUsername1" name="user_type">
+                                        <option value="ADMIN">@OwncmsCore.Language.all_strings.ADMIN</option>
+                                        @foreach (var usertypes in ALLTypes)
+                                        {
+                                    @if (USER.user_type == usertypes.en_title)
+                                    {
+                                        <option selected value="@usertypes.en_title">@usertypes.title</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@usertypes.en_title">@usertypes.title</option>
+                                    }
+                                }
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">@OwncmsCore.Language.all_strings.bio</label>
+                                    <textarea style="height: 150px;" class="form-control" id="exampleInputPassword1" placeholder="@OwncmsCore.Language.all_strings.bio" name="bio">@USER.bio</textarea>
+                                </div>
+
+                                <br>
+                                <button style="width: 100%;" type="submit" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Send Notification To User End-->

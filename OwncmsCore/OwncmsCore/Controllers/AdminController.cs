@@ -21,6 +21,9 @@ using OwncmsCore.Services.Panel.Groups;
 using OwncmsCore.Services.Panel.Report;
 using OwncmsCore.Services.Panel.Post;
 using static OwncmsCore.Services.Panel.Post.Post_Service;
+using OwncmsCore.Services.Panel.Transation;
+using OwncmsCore.Services.Panel.Usermanager;
+using OwncmsCore.Services.Panel.Notifications;
 
 namespace OwncmsCore.Controllers
 {
@@ -133,6 +136,23 @@ namespace OwncmsCore.Controllers
 
 
 
+        //Transations start
+        [Route("Transactions")]
+        public async Task<ActionResult> Transations()
+        {
+            GET_DATA();
+            ViewBag.AllTransations = Transation_Service.GetAllTransations();
+            return View("Dashboard/transations");
+        }
+        //Transations end
+
+
+
+
+
+
+
+
 
         //AllPosts Start
 
@@ -191,6 +211,105 @@ namespace OwncmsCore.Controllers
             return View("Dashboard/chart");
         }
         //Get Chart End
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //UserManager Start
+        [Route("UserManager")]
+        public async Task<ActionResult> User_Manager()
+        {
+            GET_DATA();
+            ViewBag.AdminUsers = Usermanager_Service.GET_ADMIN_USERS_DATA();
+            ViewBag.Users = Usermanager_Service.GET_FILL_NEW_USERS();
+            return View("Dashboard/usermanager");
+        }
+
+        [HttpPost]
+        [Route("UserManager")]
+        public async Task<ActionResult> User_Manager(string User_Search)
+        {
+            GET_DATA();
+            ViewBag.AdminUsers = Usermanager_Service.GET_ADMIN_USERS_DATA();
+            ViewBag.Users = Usermanager_Service.GET_USER_SEARCH(User_Search);
+            return View("Dashboard/usermanager");
+        }
+
+        [HttpGet]
+        [Route("UserManager/Notifications/{User_Id}")]
+        public async Task<ActionResult> Notificationss(string User_Id)
+        {
+            GET_DATA();
+            ViewBag.Notifications = Notification_Service.Get_All_Old_Notifications(long.Parse(User_Id));
+            return View("Dashboard/notifications");
+        }
+
+        [HttpGet]
+        [Route("UserManager/SendNotification")]
+        public async Task<ActionResult> SendNotification(string User_Id)
+        {
+            GET_DATA();
+            ViewBag.User_Id = User_Id;
+            return View("Dashboard/sendnotification");
+        }
+
+
+        [HttpPost]
+        [Route("UserManager/SendNotification/Done")]
+        public async Task<ActionResult> SendNotification(string User_Id, string title, string content_text, string link)
+        {
+            GET_DATA();
+            Notification_Service.Send_Notification(User_Data.ToString(), User_Id, title, content_text, link);
+            return View("Dashboard/done");
+        }
+
+        [HttpGet]
+        [Route("UserManager/Edit_User/{User_Id}")]
+        public async Task<ActionResult> Edit_User(string User_Id)
+        {
+            GET_DATA();
+            Static_User.UserCity user = Static_User.GetUserByID(long.Parse(User_Id));
+            users_tbl usr = user.user;
+            ViewBag.USER = usr;
+            ViewBag.City = user.city;            
+            return View("Dashboard/user_profile_view");
+        }
+
+        [HttpPost]
+        [Route("UserManager/UpdateDone")]
+        public async Task<ActionResult> UpdateDone(Profile_Model profile, IFormFile profile_image)
+        {
+
+            if (profile_image != null)
+            {
+                profile.profile_image = profile_image;
+            }
+
+            GET_DATA();
+            profile.id = User_Data.id;
+            users_tbl user = Users_Service.UpdateUser(profile);
+
+            return View("Dashboard/done");
+        }
+        //UserManager End
+
+
+
+
+
 
 
 

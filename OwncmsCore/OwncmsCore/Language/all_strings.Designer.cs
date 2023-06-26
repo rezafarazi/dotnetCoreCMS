@@ -412,6 +412,15 @@ namespace OwncmsCore.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تاریخ.
+        /// </summary>
+        public static string date {
+            get {
+                return ResourceManager.GetString("date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to روز های باقی مانده.
         /// </summary>
         public static string days {
@@ -1240,6 +1249,15 @@ namespace OwncmsCore.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to پرداخت یافت نشد.
+        /// </summary>
+        public static string transationNotfound {
+            get {
+                return ResourceManager.GetString("transationNotfound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to دو مقصده.
         /// </summary>
         public static string two_way {
@@ -1344,6 +1362,15 @@ namespace OwncmsCore.Language {
         public static string users {
             get {
                 return ResourceManager.GetString("users", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to مقدار.
+        /// </summary>
+        public static string value {
+            get {
+                return ResourceManager.GetString("value", resourceCulture);
             }
         }
         

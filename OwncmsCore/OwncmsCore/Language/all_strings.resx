@@ -597,4 +597,13 @@
   <data name="en_name" xml:space="preserve">
     <value>نام لاتین</value>
   </data>
+  <data name="date" xml:space="preserve">
+    <value>تاریخ</value>
+  </data>
+  <data name="transationNotfound" xml:space="preserve">
+    <value>پرداخت یافت نشد</value>
+  </data>
+  <data name="value" xml:space="preserve">
+    <value>مقدار</value>
+  </data>
 </root>

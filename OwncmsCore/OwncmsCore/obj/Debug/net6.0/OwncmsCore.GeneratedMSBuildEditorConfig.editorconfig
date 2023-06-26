@@ -67,6 +67,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXG5ld19yZXBvcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/notifications.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXG5vdGlmaWNhdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXHByb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -79,8 +83,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXHJlcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/sendnotification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXHNlbmRub3RpZmljYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/settings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXHNldHRpbmdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/transations.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXHRyYW5zYXRpb25zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/usermanager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXHVzZXJtYW5hZ2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/user_profile_view.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXHVzZXJfcHJvZmlsZV92aWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Themplate/__Admin_Layout_Temp.cshtml]
