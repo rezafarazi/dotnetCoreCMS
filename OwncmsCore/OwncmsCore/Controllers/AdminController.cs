@@ -19,6 +19,8 @@ using OwncmsCore.Services.Panel.Settings;
 using OwncmsCore.Services.Panel.FileManager;
 using OwncmsCore.Services.Panel.Groups;
 using OwncmsCore.Services.Panel.Report;
+using OwncmsCore.Services.Panel.Post;
+using static OwncmsCore.Services.Panel.Post.Post_Service;
 
 namespace OwncmsCore.Controllers
 {
@@ -98,6 +100,81 @@ namespace OwncmsCore.Controllers
 
 
 
+
+
+
+
+
+
+        //New Post Start
+
+        [Route("NewPost")]
+        public async Task<ActionResult> NewPost()
+        {
+            GET_DATA();
+            ViewBag.AllCategories = Categories_Service.GetAllCategories();
+            return View("Dashboard/newpost");
+        }
+
+        [Route("NewPostDone")]
+        public async Task<ActionResult> AddNewPost(string title, string category, string visible, string img_adrs, string cntent)
+        {
+            GET_DATA();
+            Post_Service.Insert(title, cntent, img_adrs, (visible == "1") ? true : false, User_Data.id, long.Parse(category));
+            return Redirect(Request.Headers.Referer.ToString());
+        }
+
+        //New Post End
+
+
+
+
+
+
+
+
+
+        //AllPosts Start
+
+        [Route("AllPosts")]
+        public async Task<ActionResult> AllPosts()
+        {
+            GET_DATA();
+            ViewBag.AllPosts = Post_Service.Select();
+            return View("Dashboard/allposts");
+        }
+
+
+        [Route("AllPosts/{id}")]
+        public async Task<ActionResult> GetPost(string id)
+        {
+            GET_DATA();
+            PostData_struc post = Post_Service.Select(long.Parse(id));
+            ViewBag.AllCategories = Categories_Service.GetAllCategories();
+            ViewBag.Post = post.Post;
+            ViewBag.Cat = post.Category;
+            return View("Dashboard/editpost");
+        }
+
+
+        [Route("AllPosts/Update")]
+        public async Task<ActionResult> PostUpdate(string id, string title, string category, string visible, string img_adrs, string cntent)
+        {
+            GET_DATA();
+            Post_Service.Update(long.Parse(id), title, cntent, img_adrs, (visible == "1") ? true : false, User_Data.id, long.Parse(category));
+            return View("Dashboard/done");
+        }
+
+
+        [Route("AllPosts/Remove/{id}")]
+        public async Task<ActionResult> PostRemove(string id)
+        {
+            GET_DATA();
+            Post_Service.Delete(long.Parse(id));
+            return Redirect(Request.Headers.Referer.ToString());
+        }
+
+        //AllPosts End
 
 
 

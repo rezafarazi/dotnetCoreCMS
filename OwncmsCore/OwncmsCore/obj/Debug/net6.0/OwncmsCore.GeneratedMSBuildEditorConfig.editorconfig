@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/allposts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXGFsbHBvc3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/categories.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXGNhdGVnb3JpZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -25,6 +29,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/cites.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXGNpdGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/done.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXGRvbmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/editpost.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXGVkaXRwb3N0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/filemanager.cshtml]
@@ -45,6 +57,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/login2f.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXGxvZ2luMmYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/newpost.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXG5ld3Bvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/new_report.cshtml]
