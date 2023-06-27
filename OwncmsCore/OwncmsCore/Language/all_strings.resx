@@ -606,4 +606,13 @@
   <data name="value" xml:space="preserve">
     <value>مقدار</value>
   </data>
+  <data name="code" xml:space="preserve">
+    <value>کد</value>
+  </data>
+  <data name="count" xml:space="preserve">
+    <value>تعداد</value>
+  </data>
+  <data name="counts" xml:space="preserve">
+    <value>تعداد باقی مانده</value>
+  </data>
 </root>

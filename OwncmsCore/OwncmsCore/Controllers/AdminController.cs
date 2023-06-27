@@ -24,6 +24,7 @@ using static OwncmsCore.Services.Panel.Post.Post_Service;
 using OwncmsCore.Services.Panel.Transation;
 using OwncmsCore.Services.Panel.Usermanager;
 using OwncmsCore.Services.Panel.Notifications;
+using OwncmsCore.Services.Panel.Discount;
 
 namespace OwncmsCore.Controllers
 {
@@ -809,6 +810,33 @@ namespace OwncmsCore.Controllers
         }
         //Get Categories End
 
+
+
+        //Coupon start
+        [Route("Store/Coupon")]
+        public async Task<ActionResult> Coupon()
+        {
+            GET_DATA();
+            ViewBag.DiscountCodes = Discount_Service.GetAllDiscountCode();
+            return View("Dashboard/coupon");
+        }
+
+        [HttpPost]
+        [Route("Store/Coupon/New")]
+        public async Task<ActionResult> NewCoupon(string count)
+        {
+            Discount_Service.Generate(int.Parse(count));
+            return Redirect(Request.Headers.Referer.ToString());
+        }
+
+        [HttpGet]
+        [Route("Store/Coupon/Remove/{discount_code}")]
+        public async Task<ActionResult> RemoveCoupon(string discount_code)
+        {
+            Discount_Service.GetRmeoveCode(long.Parse(discount_code));
+            return Redirect(Request.Headers.Referer.ToString());
+        }
+        //Coupon end
 
 
         /**************************************Shop****************************************/

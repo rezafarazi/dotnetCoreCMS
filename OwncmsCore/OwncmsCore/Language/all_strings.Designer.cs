@@ -340,6 +340,15 @@ namespace OwncmsCore.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to کد.
+        /// </summary>
+        public static string code {
+            get {
+                return ResourceManager.GetString("code", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to OwnCmsCore.
         /// </summary>
         public static string companey_name {
@@ -363,6 +372,24 @@ namespace OwncmsCore.Language {
         public static string content {
             get {
                 return ResourceManager.GetString("content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تعداد.
+        /// </summary>
+        public static string count {
+            get {
+                return ResourceManager.GetString("count", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تعداد باقی مانده.
+        /// </summary>
+        public static string counts {
+            get {
+                return ResourceManager.GetString("counts", resourceCulture);
             }
         }
         
