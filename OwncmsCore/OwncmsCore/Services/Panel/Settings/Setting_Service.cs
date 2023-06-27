@@ -16,6 +16,22 @@ namespace OwncmsCore.Services.Panel.Settings
         //Get setting end
 
 
+        //Remove discount start
+        public static void SetDiscount(string value)
+        {
+            using (Database_DB DB = new Database_DB())
+            {
+
+                settings_tbl set = (from settings_tbl in DB.settings_tbl orderby settings_tbl.id descending select settings_tbl).First();
+
+                set.discountall = value;
+
+                DB.SaveChanges();
+            }
+        }
+        //Remove discount end
+
+
         //New setting start
         public static void AddNewSetting(string parametrs,string discount)
         {

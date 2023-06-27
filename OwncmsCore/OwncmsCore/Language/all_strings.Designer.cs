@@ -493,6 +493,15 @@ namespace OwncmsCore.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to هیچ تخفیفی موجود نیست.
+        /// </summary>
+        public static string discountnotactive {
+            get {
+                return ResourceManager.GetString("discountnotactive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تایید.
         /// </summary>
         public static string done {
@@ -642,6 +651,15 @@ namespace OwncmsCore.Language {
         public static string id {
             get {
                 return ResourceManager.GetString("id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اگر زیر 100 باشد درصد اگر بالای 100 از قیمت کم می شود.
+        /// </summary>
+        public static string iftotendisount {
+            get {
+                return ResourceManager.GetString("iftotendisount", resourceCulture);
             }
         }
         
@@ -858,6 +876,15 @@ namespace OwncmsCore.Language {
         public static string newcategory {
             get {
                 return ResourceManager.GetString("newcategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تخفیف جدید.
+        /// </summary>
+        public static string newdiscount {
+            get {
+                return ResourceManager.GetString("newdiscount", resourceCulture);
             }
         }
         
@@ -1083,6 +1110,15 @@ namespace OwncmsCore.Language {
         public static string radio {
             get {
                 return ResourceManager.GetString("radio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to حذف تخفیف.
+        /// </summary>
+        public static string removediscount {
+            get {
+                return ResourceManager.GetString("removediscount", resourceCulture);
             }
         }
         

@@ -811,6 +811,35 @@ namespace OwncmsCore.Controllers
         //Get Categories End
 
 
+        
+        
+        //Discount for all start
+        [Route("Store/Discount")]
+        public async Task<ActionResult> DiscountAll()
+        {
+            GET_DATA();
+            ViewBag.discount_value = Setting_Service.GetSettings().discountall;
+            return View("Dashboard/store_discountall");
+        }
+
+        [HttpPost]
+        [Route("Store/Discount/New")]
+        public async Task<ActionResult> AddAllRemove(string discount)
+        {
+            Setting_Service.SetDiscount(discount);
+            return Redirect(Request.Headers.Referer.ToString());
+        }
+
+        [Route("Store/Discount/Remove")]
+        public async Task<ActionResult> DiscountAllRemove()
+        {
+            Setting_Service.SetDiscount("0");
+            return Redirect(Request.Headers.Referer.ToString());
+        }
+        //Discount for all end
+
+
+
 
         //Coupon start
         [Route("Store/Coupon")]

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rMSHWlF8FCAyT+3metQylzoOHT2RV8vbaKxlERipA2I=",
+  "Hash": "usOfcHndzRJdNSjXLO/cOeOSFdyBe9DtdCwCLuIYSqo=",
   "Source": "OwncmsCore",
   "BasePath": "_content/OwncmsCore",
   "Mode": "Default",
@@ -3245,6 +3245,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Assets\\Admin\\images\\icons\\empty.png"
+    },
+    {
+      "Identity": "C:\\Users\\Rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\icons\\free.png",
+      "SourceId": "OwncmsCore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\",
+      "BasePath": "_content/OwncmsCore",
+      "RelativePath": "Assets/Admin/images/icons/free.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Assets\\Admin\\images\\icons\\free.png"
     },
     {
       "Identity": "C:\\Users\\Rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\logo.png",
