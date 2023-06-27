@@ -6,7 +6,7 @@ namespace OwncmsCore.Services.File
     public class File_Service
     {
 
-        public static file_tbl NewFile(IFormFile Upfile)
+        public static async Task<file_tbl> NewFile(IFormFile Upfile)
         {
             using (Database_DB DB = new Database_DB())
             {
@@ -15,14 +15,14 @@ namespace OwncmsCore.Services.File
                 {
 
                     string file_extention = System.IO.Path.GetExtension(Upfile.FileName);
-                    string path_temp = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "Uploads/Temp"));
-                    string path = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "Uploads/FileRepository"));
+                    string path_temp = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "FileManager/Temp"));
+                    string path = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "FileManager/FileRepository"));
                     string temp_file_storaged_path = "";
 
-                    using (var fileStream = new FileStream(Path.Combine(path_temp, Upfile.FileName), FileMode.Create))
+                    using (var fileStream = new FileStream(Path.Combine(path_temp, Upfile.FileName), FileMode.Append))
                     {
                         temp_file_storaged_path = Path.Combine(path_temp, Upfile.FileName);
-                        Upfile.CopyToAsync(fileStream);
+                        await Upfile.CopyToAsync(fileStream);
                     }
 
                     string hash = SHA256CheckSum(temp_file_storaged_path);
@@ -30,7 +30,10 @@ namespace OwncmsCore.Services.File
 
                     if (check_file.Count <= 0)
                     {
-                        using (var fileStream = new FileStream(Path.Combine(path, hash + "." + file_extention), FileMode.Create))
+
+                        //System.IO.File.Copy(temp_file_storaged_path, path+"/"+hash + file_extention,true);
+
+                        using (var fileStream = new FileStream(Path.Combine(path, hash + file_extention), FileMode.OpenOrCreate))
                         {
                             Upfile.CopyToAsync(fileStream);
                         }

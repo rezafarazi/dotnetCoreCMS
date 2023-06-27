@@ -25,6 +25,7 @@ using OwncmsCore.Services.Panel.Transation;
 using OwncmsCore.Services.Panel.Usermanager;
 using OwncmsCore.Services.Panel.Notifications;
 using OwncmsCore.Services.Panel.Discount;
+using OwncmsCore.Services.Panel.Store;
 
 namespace OwncmsCore.Controllers
 {
@@ -301,7 +302,7 @@ namespace OwncmsCore.Controllers
 
             GET_DATA();
             profile.id = User_Data.id;
-            users_tbl user = Users_Service.UpdateUser(profile);
+            users_tbl user = await Users_Service.UpdateUser(profile);
 
             return View("Dashboard/done");
         }
@@ -679,7 +680,7 @@ namespace OwncmsCore.Controllers
 
             GET_DATA();
             profile.id = User_Data.id;
-            users_tbl user = Users_Service.UpdateUser(profile);
+            users_tbl user = await Users_Service.UpdateUser(profile);
             string user_profile_image = Static_User.GetProfileImageHash(user.id);
 
             Auth_Model user_auth = new Auth_Model()
@@ -811,8 +812,35 @@ namespace OwncmsCore.Controllers
         //Get Categories End
 
 
-        
-        
+
+
+
+        //New store post start
+        [Route("Store/NewStore")]
+        public async Task<ActionResult> NewStorePost()
+        {
+            GET_DATA();
+            ViewBag.AllCategories = Store_Categories_Service.GetAllCategories();
+            return View("Dashboard/store_new");
+        }
+
+        [HttpPost]
+        [Route("Store/NewStore/New")]
+        public async Task<ActionResult> NewStorePostDone(NewStore_Model model)
+        {
+            GET_DATA();
+            Static_User.UserCity user = Static_User.GetUserByID(User_Data.id);
+            users_tbl usr = user.user;
+            Store_Service.AddNewStoreItem(usr, model);
+            return Redirect(Request.Headers.Referer.ToString());
+        }
+        //New store post end
+
+
+
+
+
+
         //Discount for all start
         [Route("Store/Discount")]
         public async Task<ActionResult> DiscountAll()

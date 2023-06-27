@@ -8,7 +8,7 @@ namespace OwncmsCore.Services.Panel.User
     {
 
         //Update user start
-        public static users_tbl UpdateUser(Profile_Model profile)
+        public static async Task<users_tbl> UpdateUser(Profile_Model profile)
         {
             using(Database_DB DB=new Database_DB())
             {
@@ -40,7 +40,7 @@ namespace OwncmsCore.Services.Panel.User
 
                 if (profile.profile_image != null)
                 {
-                    file_tbl profile_image = File_Service.NewFile(profile.profile_image);
+                    file_tbl profile_image = await File_Service.NewFile(profile.profile_image);
                     user.profile_image_file_id = profile_image;
                 }
 

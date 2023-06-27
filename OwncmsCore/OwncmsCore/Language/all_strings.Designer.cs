@@ -151,6 +151,15 @@ namespace OwncmsCore.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to همه ویژگی ها.
+        /// </summary>
+        public static string all_works {
+            get {
+                return ResourceManager.GetString("all_works", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to همه سفارشات.
         /// </summary>
         public static string allorders {
@@ -502,6 +511,15 @@ namespace OwncmsCore.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to جزئیات.
+        /// </summary>
+        public static string ditales {
+            get {
+                return ResourceManager.GetString("ditales", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تایید.
         /// </summary>
         public static string done {
@@ -579,6 +597,15 @@ namespace OwncmsCore.Language {
         public static string father_name {
             get {
                 return ResourceManager.GetString("father_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to فایل.
+        /// </summary>
+        public static string file {
+            get {
+                return ResourceManager.GetString("file", resourceCulture);
             }
         }
         
@@ -732,6 +759,15 @@ namespace OwncmsCore.Language {
         public static string izino {
             get {
                 return ResourceManager.GetString("izino", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to کلید.
+        /// </summary>
+        public static string key {
+            get {
+                return ResourceManager.GetString("key", resourceCulture);
             }
         }
         
@@ -1060,11 +1096,29 @@ namespace OwncmsCore.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to قیمت خرید.
+        /// </summary>
+        public static string price {
+            get {
+                return ResourceManager.GetString("price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to مشکل شما حل شد.
         /// </summary>
         public static string problem_is_ok {
             get {
                 return ResourceManager.GetString("problem_is_ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to محصول.
+        /// </summary>
+        public static string product {
+            get {
+                return ResourceManager.GetString("product", resourceCulture);
             }
         }
         
@@ -1357,6 +1411,15 @@ namespace OwncmsCore.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to آپلود عکس.
+        /// </summary>
+        public static string upload_image {
+            get {
+                return ResourceManager.GetString("upload_image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to آپلود فایل جدید.
         /// </summary>
         public static string upload_new_file {
@@ -1560,6 +1623,15 @@ namespace OwncmsCore.Language {
         public static string WORKER_USER {
             get {
                 return ResourceManager.GetString("WORKER_USER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ویژگی ها.
+        /// </summary>
+        public static string works {
+            get {
+                return ResourceManager.GetString("works", resourceCulture);
             }
         }
         

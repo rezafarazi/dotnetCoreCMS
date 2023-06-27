@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 using OwncmsCore.Models.DatabaseModels;
+using OwncmsCore.Models.FormModels;
 using OwncmsCore.Services.File;
 
 namespace OwncmsCore.Controllers
@@ -16,7 +18,7 @@ namespace OwncmsCore.Controllers
             file_tbl file = File_Service.GetFile(file_hash);
             var fileName = file.file_hash + "." + file.file_extention;
             var mimeType = file.file_type;
-            byte[] fileBytes = GetFileToByte(file.file_address+"/"+file.file_hash+"."+file.file_extention);
+            byte[] fileBytes = GetFileToByte(file.file_address+"/"+file.file_hash+file.file_extention);
 
             return new FileContentResult(fileBytes, mimeType)
             {
@@ -25,6 +27,21 @@ namespace OwncmsCore.Controllers
 
         }
         //Get file end
+
+
+
+        //Get Upload file start
+        [HttpPost]
+        [Route("File/Upload")]
+        public async Task<IActionResult> UploadFile(IFormFile UploadFile)
+        {
+            file_tbl rescvice = await File_Service.NewFile(UploadFile);
+
+            string hash_result = rescvice.file_hash;
+
+            return Json(new File_Result_Model() { file_id = hash_result });
+        }
+        //Get upload file end
 
 
 

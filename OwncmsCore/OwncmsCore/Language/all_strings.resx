@@ -627,4 +627,28 @@
   <data name="removediscount" xml:space="preserve">
     <value>حذف تخفیف</value>
   </data>
+  <data name="all_works" xml:space="preserve">
+    <value>همه ویژگی ها</value>
+  </data>
+  <data name="ditales" xml:space="preserve">
+    <value>جزئیات</value>
+  </data>
+  <data name="file" xml:space="preserve">
+    <value>فایل</value>
+  </data>
+  <data name="key" xml:space="preserve">
+    <value>کلید</value>
+  </data>
+  <data name="price" xml:space="preserve">
+    <value>قیمت خرید</value>
+  </data>
+  <data name="product" xml:space="preserve">
+    <value>محصول</value>
+  </data>
+  <data name="upload_image" xml:space="preserve">
+    <value>آپلود عکس</value>
+  </data>
+  <data name="works" xml:space="preserve">
+    <value>ویژگی ها</value>
+  </data>
 </root>
