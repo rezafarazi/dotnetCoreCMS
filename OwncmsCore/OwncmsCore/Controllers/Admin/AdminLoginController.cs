@@ -11,7 +11,7 @@ namespace OwncmsCore.Controllers
 
     [Route("Admin")]
     [LanguageMiddle]
-    public class LoginController : Controller
+    public class AdminLoginController : Controller
     {
 
 
@@ -111,6 +111,16 @@ namespace OwncmsCore.Controllers
 
 
 
+
+        //Logout Start
+        [Route("Logout")]
+        public async Task<ActionResult> Logout()
+        {
+            Response.Cookies.Delete("user_auth");
+            Response.Redirect("~/Admin/Login");
+            return Redirect("~/");
+        }
+        //Logout End
 
 
     }

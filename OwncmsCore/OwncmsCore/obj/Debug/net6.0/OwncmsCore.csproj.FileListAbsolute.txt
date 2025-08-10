@@ -144,7 +144,13 @@ C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\bin\Debug\net6.0\Ha
 C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\obj\Debug\net6.0\scopedcss\bundle\OwncmsCore.styles.css
-C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\obj\Debug\net6.0\OwncmsCore.csproj.CopyComplete
 C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\obj\Debug\net6.0\OwncmsCore.genruntimeconfig.cache
 C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\obj\Debug\net6.0\ref\OwncmsCore.dll
 C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\bin\Debug\net6.0\PersianTools.Core.dll
+C:\Users\rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\obj\Debug\net6.0\OwncmsCore.sourcelink.json
+C:\Users\rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\obj\Debug\net6.0\staticwebassets\msbuild.OwncmsCore.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\obj\Debug\net6.0\staticwebassets\msbuild.build.OwncmsCore.props
+C:\Users\rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.OwncmsCore.props
+C:\Users\rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.OwncmsCore.props
+C:\Users\rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\obj\Debug\net6.0\OwncmsCore.csproj.Up2Date
