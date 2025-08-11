@@ -2,19 +2,18 @@
 using Microsoft.AspNetCore.Mvc;
 using Nancy.Json;
 using OwncmsCore.Middleware.Language;
+using OwncmsCore.Models.Data_Models.Auth_Model;
 using OwncmsCore.Models.DatabaseModels;
 using OwncmsCore.Services.Global_Functions.Encript;
 using OwncmsCore.Services.Panel.Static_User;
 
-namespace OwncmsCore.Controllers
+namespace OwncmsCore.Controllers.Admin
 {
 
     [Route("Admin")]
     [LanguageMiddle]
     public class AdminLoginController : Controller
     {
-
-
 
 
 
@@ -45,13 +44,24 @@ namespace OwncmsCore.Controllers
             using (Database_DB DB = new Database_DB())
             {
                 string pass = Hasher_Lib.Hash.SHA_256(password);
-                Users_Tbl user = Static_User.GetLogin(username, pass);
+                users_tbl user = Static_User.GetLogin(username, pass);
                 if (user != null)
                 {
-                    if (user.google2f == null || user.google2f == "")
+                    string user_profile_image = Static_User.GetProfileImageHash(user.id);
+                    if (user.google_auth == null || user.google_auth == "")
                     {
                         //Add Auth Session Start
-                        string user_data = new JavaScriptSerializer().Serialize(user);
+                        Auth_Model user_auth = new Auth_Model()
+                        {
+                            id = user.id,
+                            name = user.name,
+                            family = user.family,
+                            username = user.username,
+                            login_token = user.login_token,
+                            user_type = user.user_type,
+                            profile_image = user_profile_image,
+                        };
+                        string user_data = new JavaScriptSerializer().Serialize(user_auth);
                         string encript_user_data = Encript.Encrypt(user_data);
                         Response.Cookies.Append("user_auth", encript_user_data);
                         //Add Auth Session End
@@ -88,16 +98,27 @@ namespace OwncmsCore.Controllers
             {
                 string token = HttpContext.Session.GetString("user_token").ToString();
 
-                Users_Tbl user = Static_User.GetLogin_With_Token(token);
+                users_tbl user = Static_User.GetLogin_With_Token(token);
+                string user_profile_image = Static_User.GetProfileImageHash(user.id);
 
-                byte[] secure_byte = System.Text.ASCIIEncoding.ASCII.GetBytes(user.google2f);
+                byte[] secure_byte = System.Text.ASCIIEncoding.ASCII.GetBytes(user.google_auth);
 
                 TwoFactorAuthenticator tfa = new TwoFactorAuthenticator();
 
                 if (tfa.ValidateTwoFactorPIN(secure_byte, auth_2f_code))
                 {
                     //Add Auth Session Start
-                    string user_data = new JavaScriptSerializer().Serialize(user);
+                    Auth_Model user_auth = new Auth_Model()
+                    {
+                        id = user.id,
+                        name = user.name,
+                        family = user.family,
+                        username = user.username,
+                        login_token = user.login_token,
+                        user_type = user.user_type,
+                        profile_image = user_profile_image,
+                    };
+                    string user_data = new JavaScriptSerializer().Serialize(user_auth);
                     string encript_user_data = Encript.Encrypt(user_data);
                     Response.Cookies.Append("user_auth", encript_user_data);
                     //Add Auth Session End
@@ -109,6 +130,18 @@ namespace OwncmsCore.Controllers
         }
         //Login End
 
+
+
+
+        //Logout Start
+        [Route("Logout")]
+        public async Task<ActionResult> Logout()
+        {
+            Response.Cookies.Delete("user_auth");
+            Response.Redirect("~/Admin/Login");
+            return Redirect("~/");
+        }
+        //Logout End
 
 
 

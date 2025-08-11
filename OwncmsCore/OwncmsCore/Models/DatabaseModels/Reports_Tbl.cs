@@ -1,18 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OwncmsCore.Models.DatabaseModels
 {
-    public class Reports_Tbl
+    public class reports_tbl
     {
 
         [Key]
         public long id { get; set; }
-        public string title { get; set; }
-        public bool delete_flag { get; set; }
+        public string content { get; set; }
+        public string date_time { get; set; }
+        public bool condition { get; set; }
+        public report_tbl report_id { get; set; }
+        public users_tbl user_id { get; set; }
+        public posts_tbls post_id { get; set; }
 
     }
 }

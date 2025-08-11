@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace OwncmsCore.Models.DatabaseModels
 {
-    public class Notifications_Tbl
+    public class notifications_tbl
     {
+
         [Key]
         public long id { get; set; }
         public string title { get; set; }
         public string content { get; set; }
         public string link { get; set; }
-        public string from { get; set; }
-        public string seen { get; set; }
-        public Users_Tbl user_id { get; set; }
+        public string from_user { get; set; }
+        public bool seen { get; set; }
+        public users_tbl user_id { get; set; }
+
     }
 }

@@ -1,16 +1,23 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\",
+<<<<<<< HEAD
+  "Documents": [],
+=======
   "Documents": [
     {
       "AbsoluteMoniker": "D:0:0:{020B36BD-732D-4145-BA81-5E308FF6891B}|OwncmsCore\\OwncmsCore.csproj|c:\\users\\rezafta\\desktop\\dotnetcorecms\\owncmscore\\owncmscore\\views\\admin\\themplate\\__admin_layout_temp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{020B36BD-732D-4145-BA81-5E308FF6891B}|OwncmsCore\\OwncmsCore.csproj|solutionrelative:owncmscore\\views\\admin\\themplate\\__admin_layout_temp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
+>>>>>>> master
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
+<<<<<<< HEAD
+      "DocumentGroups": []
+=======
       "DocumentGroups": [
         {
           "DockedWidth": 200,
@@ -32,6 +39,7 @@
           ]
         }
       ]
+>>>>>>> master
     }
   ]
 }

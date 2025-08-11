@@ -1,0 +1,169 @@
+﻿@{
+    Layout = "~/Views/Admin/Themplate/__Admin_Layout_Temp.cshtml";
+    
+    //Get all cites
+    List<OwncmsCore.Models.DatabaseModels.city_tbls> ALLArea = OwncmsCore.Services.Panel.Cites.City_Service.GetAllArea();
+
+    List<OwncmsCore.Models.DatabaseModels.city_tbls> ALLAreaAndCity = OwncmsCore.Services.Panel.Cites.City_Service.GetAllCitesAndArea();
+}
+
+
+
+<!-- partial -->
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title">
+                <span class="page-title-icon bg-gradient-primary text-white mr-2">
+                  <i class="mdi mdi-map "></i>
+                </span></span>@OwncmsCore.Language.all_strings.cites
+            </h3>
+        </div>
+
+        <div class="row">
+
+            <!--Top Side Of Content Start-->
+            <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        @if (ViewBag.City_Data == null)
+                        {
+                            <form action="/Admin/Panel/Cities/New" class="forms-sample" method="post">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.city</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.city" name="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.area</label>
+                                    <select class="form-control" id="exampleInputUsername1" name="area">
+                                        <option value="0">@OwncmsCore.Language.all_strings.area</option>                                    
+                                        @foreach (var area in ALLArea)
+                                        {
+                                            <option value="@area.id">@area.name</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.status</label>
+                                    <select class="form-control" id="exampleInputUsername1" name="status">
+                                        <option value="1">@OwncmsCore.Language.all_strings.active</option>
+                                        <option value="0">@OwncmsCore.Language.all_strings.deactive</option>
+                                    </select>
+                                </div>
+                                <button style="width: 100%;" type="submit" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</button>
+                            </form>
+                        }
+                        else
+                        {
+                            <form action="/Admin/Panel/Cities/Update" class="forms-sample" method="post">
+                                <input type="hidden" value="@ViewBag.City_Data.id" name="id"/>
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.city</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.city" name="name" value="@ViewBag.City_Data.name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.area</label>
+                                    <select class="form-control" id="exampleInputUsername1" name="area">
+                                        <option value="0">@OwncmsCore.Language.all_strings.area</option>                                    
+                                        @foreach (var area in ALLArea)
+                                        {
+                                            @if(@ViewBag.City_Data.area==area.id)
+                                            {
+                                                <option value="@area.id">@area.name</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@area.id">@area.name</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.status</label>
+                                    <select class="form-control" id="exampleInputUsername1" name="status">
+                                        @if (@ViewBag.City_Data.status == "1")
+                                        {
+                                            <option selected value="1">@OwncmsCore.Language.all_strings.active</option>
+                                            <option value="0">@OwncmsCore.Language.all_strings.deactive</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="1">@OwncmsCore.Language.all_strings.active</option>
+                                            <option selected value="0">@OwncmsCore.Language.all_strings.deactive</option>
+                                        }
+                                    </select>
+                                </div>
+                                <button style="width: 100%;" type="submit" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</button>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+            <!--Top Side Of Content Start-->
+
+
+            <!--Bottom Side Of Content Start-->
+            <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">شهر ها</h4>
+                        </p>
+                        @if (ALLAreaAndCity.Count > 0)
+                        {
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>@OwncmsCore.Language.all_strings.id</th>
+                                        <th>@OwncmsCore.Language.all_strings.city</th>
+                                        <th>@OwncmsCore.Language.all_strings.id @OwncmsCore.Language.all_strings.area</th>
+                                        <th>@OwncmsCore.Language.all_strings.status</th>
+                                        <th>@OwncmsCore.Language.all_strings.edit</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach (var city_area in ALLAreaAndCity)
+                                    {
+                                        <tr>
+                                            <td>@city_area.id</td>
+                                            <td>@city_area.name</td>
+                                            <td>@city_area.area</td>
+
+                                            @if (@city_area.status == "1")
+                                            {
+                                                <td>
+                                                    @OwncmsCore.Language.all_strings.active
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td>
+                                                    @OwncmsCore.Language.all_strings.deactive
+                                                </td>
+                                            }
+
+                                            <td><a href="~/Admin/Panel/Cities/Edit/@city_area.id"><i class="mdi mdi-table-edit" style="font-size: 20px;color:color:var(--primary);cursor: pointer;"></i></a></td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                            <div th:unless="${Cites.size>0}" class="card-body">
+                                <img th:src="~/Assets/Admin/images/icons/empty.png" style="width: 150px;display: block;margin: 0 auto;"/>
+                                <p style="text-align: center;">@OwncmsCore.Language.all_strings.notfound</p>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <!--Bottom Side Of Content Start-->
+
+
+
+        </div>
+
+    </div>
+    <!-- content-wrapper ends -->

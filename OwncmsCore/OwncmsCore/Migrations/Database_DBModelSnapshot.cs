@@ -21,7 +21,7 @@ namespace OwncmsCore.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.Categories_Tbl", b =>
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.categories_tbl", b =>
                 {
                     b.Property<long>("id")
                         .ValueGeneratedOnAdd()
@@ -29,48 +29,39 @@ namespace OwncmsCore.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("id"), 1L, 1);
 
-                    b.Property<string>("Create_Date")
+                    b.Property<string>("castom_link")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Enabled_Flag")
+                    b.Property<string>("datetime")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Icon_Address")
+                    b.Property<string>("delete_flag")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Root_Id")
+                    b.Property<string>("icon_address")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("User_Idid")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("link")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("text")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("root_cat_id")
+                        .HasColumnType("int");
 
                     b.Property<string>("title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("visible")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("id");
 
-                    b.HasIndex("User_Idid");
-
-                    b.ToTable("Categories_Tbl");
+                    b.ToTable("categories_tbl");
                 });
 
-            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.Logs_Tbl", b =>
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.city_tbls", b =>
                 {
                     b.Property<long>("id")
                         .ValueGeneratedOnAdd()
@@ -78,21 +69,100 @@ namespace OwncmsCore.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("id"), 1L, 1);
 
-                    b.Property<string>("DateTime")
+                    b.Property<int>("area")
+                        .HasColumnType("int");
+
+                    b.Property<string>("datetime")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("User_Idid")
-                        .HasColumnType("bigint");
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
 
-                    b.HasIndex("User_Idid");
-
-                    b.ToTable("Logs_Tbl");
+                    b.ToTable("city_tbls");
                 });
 
-            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.Notifications_Tbl", b =>
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.discount_code_tbl", b =>
+                {
+                    b.Property<long>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("id"), 1L, 1);
+
+                    b.Property<string>("code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("count")
+                        .HasColumnType("int");
+
+                    b.Property<string>("date")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("delete_flag")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("discount_code_tbl");
+                });
+
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.file_tbl", b =>
+                {
+                    b.Property<long>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("id"), 1L, 1);
+
+                    b.Property<string>("file_address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("file_date_time")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("file_extention")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("file_hash")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("file_name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("file_server_address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("file_size")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("file_type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("file_tbl");
+                });
+
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.notifications_tbl", b =>
                 {
                     b.Property<long>("id")
                         .ValueGeneratedOnAdd()
@@ -104,7 +174,7 @@ namespace OwncmsCore.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("from")
+                    b.Property<string>("from_user")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -112,9 +182,8 @@ namespace OwncmsCore.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("seen")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("seen")
+                        .HasColumnType("bit");
 
                     b.Property<string>("title")
                         .IsRequired()
@@ -127,10 +196,10 @@ namespace OwncmsCore.Migrations
 
                     b.HasIndex("user_idid");
 
-                    b.ToTable("Notifications_Tbl");
+                    b.ToTable("notifications_tbl");
                 });
 
-            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.Posts_Tbl", b =>
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.orders_tbls", b =>
                 {
                     b.Property<long>("id")
                         .ValueGeneratedOnAdd()
@@ -138,8 +207,48 @@ namespace OwncmsCore.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("id"), 1L, 1);
 
-                    b.Property<long>("User_Idid")
+                    b.Property<string>("date")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("order_status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("price")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("store_idid")
                         .HasColumnType("bigint");
+
+                    b.Property<string>("time")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("user_idid")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("store_idid");
+
+                    b.HasIndex("user_idid");
+
+                    b.ToTable("orders_tbls");
+                });
+
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.posts_tbls", b =>
+                {
+                    b.Property<long>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("id"), 1L, 1);
 
                     b.Property<long>("category_idid")
                         .HasColumnType("bigint");
@@ -152,8 +261,9 @@ namespace OwncmsCore.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("delete_flag")
-                        .HasColumnType("bit");
+                    b.Property<string>("delete_flag")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("image")
                         .IsRequired()
@@ -163,19 +273,23 @@ namespace OwncmsCore.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("visible")
-                        .HasColumnType("bit");
+                    b.Property<long>("user_idid")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("visible")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
 
-                    b.HasIndex("User_Idid");
-
                     b.HasIndex("category_idid");
 
-                    b.ToTable("Posts_Tbl");
+                    b.HasIndex("user_idid");
+
+                    b.ToTable("posts_tbls");
                 });
 
-            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.Reports_Tbl", b =>
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.report_tbl", b =>
                 {
                     b.Property<long>("id")
                         .ValueGeneratedOnAdd()
@@ -192,10 +306,10 @@ namespace OwncmsCore.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Reports_Tbl");
+                    b.ToTable("report_tbl");
                 });
 
-            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.Users_Tbl", b =>
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.reports_tbl", b =>
                 {
                     b.Property<long>("id")
                         .ValueGeneratedOnAdd()
@@ -203,19 +317,266 @@ namespace OwncmsCore.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("id"), 1L, 1);
 
-                    b.Property<string>("active_user_flag")
+                    b.Property<bool>("condition")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("content")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("date_time")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("post_idid")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("report_idid")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("user_idid")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("post_idid");
+
+                    b.HasIndex("report_idid");
+
+                    b.HasIndex("user_idid");
+
+                    b.ToTable("reports_tbl");
+                });
+
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.settings_tbl", b =>
+                {
+                    b.Property<long>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("id"), 1L, 1);
+
+                    b.Property<string>("discountall")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("parametrs")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("settings_tbl");
+                });
+
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.store_categories_tbl", b =>
+                {
+                    b.Property<long>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("id"), 1L, 1);
+
+                    b.Property<string>("castom_link")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("datetime")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("delete_falg")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("icon_address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("root_cat_id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("visible")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("store_categories_tbl");
+                });
+
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.store_images_tbls", b =>
+                {
+                    b.Property<long>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("id"), 1L, 1);
+
+                    b.Property<string>("date")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("file_idid")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("store_idid")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("file_idid");
+
+                    b.HasIndex("store_idid");
+
+                    b.ToTable("store_images_tbls");
+                });
+
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.store_tbl", b =>
+                {
+                    b.Property<long>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("id"), 1L, 1);
+
+                    b.Property<string>("adiscount")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("category_idid")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("date")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("delete_flag")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("discount")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("file_idid")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("json")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("price")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("user_idid")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("visible")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("category_idid");
+
+                    b.HasIndex("file_idid");
+
+                    b.HasIndex("user_idid");
+
+                    b.ToTable("store_tbl");
+                });
+
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.transcation_tbl", b =>
+                {
+                    b.Property<long>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("id"), 1L, 1);
+
+                    b.Property<string>("date")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("order_idid")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("user_idid")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("value")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("order_idid");
+
+                    b.HasIndex("user_idid");
+
+                    b.ToTable("transcation_tbl");
+                });
+
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.user_verify_tbl", b =>
+                {
+                    b.Property<long>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("id"), 1L, 1);
+
+                    b.Property<string>("hash_code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("user_idid")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("user_idid");
+
+                    b.ToTable("user_verify_tbl");
+                });
+
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.users_tbl", b =>
+                {
+                    b.Property<long>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("id"), 1L, 1);
 
                     b.Property<string>("address")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("city")
+                    b.Property<string>("bio")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("create_datetime")
+                    b.Property<long>("city_idid")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("date_time")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -227,11 +588,7 @@ namespace OwncmsCore.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("father_name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("google2f")
+                    b.Property<string>("google_auth")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -243,13 +600,6 @@ namespace OwncmsCore.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("national_id")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("notification")
-                        .HasColumnType("bit");
-
                     b.Property<string>("password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -258,7 +608,10 @@ namespace OwncmsCore.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("profile_image_address")
+                    b.Property<long>("profile_image_file_idid")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("status")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -270,12 +623,20 @@ namespace OwncmsCore.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("website")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("id");
 
-                    b.ToTable("Users_Tbl");
+                    b.HasIndex("city_idid");
+
+                    b.HasIndex("profile_image_file_idid");
+
+                    b.ToTable("users_tbl");
                 });
 
-            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.UsersReports_Tbl", b =>
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.userstype_tbl", b =>
                 {
                     b.Property<long>("id")
                         .ValueGeneratedOnAdd()
@@ -283,25 +644,9 @@ namespace OwncmsCore.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("id"), 1L, 1);
 
-                    b.Property<string>("DateTime")
+                    b.Property<string>("en_title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("Report_Typeid")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("Reporter_Userid")
-                        .HasColumnType("bigint");
-
-                    b.Property<bool>("Seen")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("content")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("report_postid")
-                        .HasColumnType("bigint");
 
                     b.Property<string>("title")
                         .IsRequired()
@@ -309,62 +654,12 @@ namespace OwncmsCore.Migrations
 
                     b.HasKey("id");
 
-                    b.HasIndex("Report_Typeid");
-
-                    b.HasIndex("Reporter_Userid");
-
-                    b.HasIndex("report_postid");
-
-                    b.ToTable("UsersReports_Tbl");
+                    b.ToTable("userstype_tbl");
                 });
 
-            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.Verify_Code_Tbl", b =>
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.notifications_tbl", b =>
                 {
-                    b.Property<long>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("id"), 1L, 1);
-
-                    b.Property<long>("Userid")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("code_hash")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("Userid");
-
-                    b.ToTable("Verify_Code_Tbl");
-                });
-
-            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.Categories_Tbl", b =>
-                {
-                    b.HasOne("OwncmsCore.Models.DatabaseModels.Users_Tbl", "User_Id")
-                        .WithMany()
-                        .HasForeignKey("User_Idid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User_Id");
-                });
-
-            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.Logs_Tbl", b =>
-                {
-                    b.HasOne("OwncmsCore.Models.DatabaseModels.Users_Tbl", "User_Id")
-                        .WithMany()
-                        .HasForeignKey("User_Idid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User_Id");
-                });
-
-            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.Notifications_Tbl", b =>
-                {
-                    b.HasOne("OwncmsCore.Models.DatabaseModels.Users_Tbl", "user_id")
+                    b.HasOne("OwncmsCore.Models.DatabaseModels.users_tbl", "user_id")
                         .WithMany()
                         .HasForeignKey("user_idid")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -373,61 +668,164 @@ namespace OwncmsCore.Migrations
                     b.Navigation("user_id");
                 });
 
-            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.Posts_Tbl", b =>
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.orders_tbls", b =>
                 {
-                    b.HasOne("OwncmsCore.Models.DatabaseModels.Users_Tbl", "User_Id")
+                    b.HasOne("OwncmsCore.Models.DatabaseModels.store_tbl", "store_id")
                         .WithMany()
-                        .HasForeignKey("User_Idid")
+                        .HasForeignKey("store_idid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("OwncmsCore.Models.DatabaseModels.Categories_Tbl", "category_id")
+                    b.HasOne("OwncmsCore.Models.DatabaseModels.users_tbl", "user_id")
+                        .WithMany()
+                        .HasForeignKey("user_idid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("store_id");
+
+                    b.Navigation("user_id");
+                });
+
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.posts_tbls", b =>
+                {
+                    b.HasOne("OwncmsCore.Models.DatabaseModels.categories_tbl", "category_id")
                         .WithMany()
                         .HasForeignKey("category_idid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("User_Id");
+                    b.HasOne("OwncmsCore.Models.DatabaseModels.users_tbl", "user_id")
+                        .WithMany()
+                        .HasForeignKey("user_idid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("category_id");
+
+                    b.Navigation("user_id");
                 });
 
-            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.UsersReports_Tbl", b =>
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.reports_tbl", b =>
                 {
-                    b.HasOne("OwncmsCore.Models.DatabaseModels.Reports_Tbl", "Report_Type")
+                    b.HasOne("OwncmsCore.Models.DatabaseModels.posts_tbls", "post_id")
                         .WithMany()
-                        .HasForeignKey("Report_Typeid")
+                        .HasForeignKey("post_idid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("OwncmsCore.Models.DatabaseModels.Users_Tbl", "Reporter_User")
+                    b.HasOne("OwncmsCore.Models.DatabaseModels.report_tbl", "report_id")
                         .WithMany()
-                        .HasForeignKey("Reporter_Userid")
+                        .HasForeignKey("report_idid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("OwncmsCore.Models.DatabaseModels.Posts_Tbl", "report_post")
+                    b.HasOne("OwncmsCore.Models.DatabaseModels.users_tbl", "user_id")
                         .WithMany()
-                        .HasForeignKey("report_postid")
+                        .HasForeignKey("user_idid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Report_Type");
+                    b.Navigation("post_id");
 
-                    b.Navigation("Reporter_User");
+                    b.Navigation("report_id");
 
-                    b.Navigation("report_post");
+                    b.Navigation("user_id");
                 });
 
-            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.Verify_Code_Tbl", b =>
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.store_images_tbls", b =>
                 {
-                    b.HasOne("OwncmsCore.Models.DatabaseModels.Users_Tbl", "User")
+                    b.HasOne("OwncmsCore.Models.DatabaseModels.file_tbl", "file_id")
                         .WithMany()
-                        .HasForeignKey("Userid")
+                        .HasForeignKey("file_idid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("User");
+                    b.HasOne("OwncmsCore.Models.DatabaseModels.store_tbl", "store_id")
+                        .WithMany()
+                        .HasForeignKey("store_idid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("file_id");
+
+                    b.Navigation("store_id");
+                });
+
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.store_tbl", b =>
+                {
+                    b.HasOne("OwncmsCore.Models.DatabaseModels.store_categories_tbl", "category_id")
+                        .WithMany()
+                        .HasForeignKey("category_idid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OwncmsCore.Models.DatabaseModels.file_tbl", "file_id")
+                        .WithMany()
+                        .HasForeignKey("file_idid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OwncmsCore.Models.DatabaseModels.users_tbl", "user_id")
+                        .WithMany()
+                        .HasForeignKey("user_idid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("category_id");
+
+                    b.Navigation("file_id");
+
+                    b.Navigation("user_id");
+                });
+
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.transcation_tbl", b =>
+                {
+                    b.HasOne("OwncmsCore.Models.DatabaseModels.orders_tbls", "order_id")
+                        .WithMany()
+                        .HasForeignKey("order_idid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OwncmsCore.Models.DatabaseModels.users_tbl", "user_id")
+                        .WithMany()
+                        .HasForeignKey("user_idid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("order_id");
+
+                    b.Navigation("user_id");
+                });
+
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.user_verify_tbl", b =>
+                {
+                    b.HasOne("OwncmsCore.Models.DatabaseModels.users_tbl", "user_id")
+                        .WithMany()
+                        .HasForeignKey("user_idid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("user_id");
+                });
+
+            modelBuilder.Entity("OwncmsCore.Models.DatabaseModels.users_tbl", b =>
+                {
+                    b.HasOne("OwncmsCore.Models.DatabaseModels.city_tbls", "city_id")
+                        .WithMany()
+                        .HasForeignKey("city_idid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OwncmsCore.Models.DatabaseModels.file_tbl", "profile_image_file_id")
+                        .WithMany()
+                        .HasForeignKey("profile_image_file_idid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("city_id");
+
+                    b.Navigation("profile_image_file_id");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+using OwncmsCore.Middleware.AdminAuth;
+=======
 ﻿using OwncmsCore.Middleware.AdminAuth;
+>>>>>>> master
 using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -41,7 +45,11 @@ app.Use(async (context, next) => {
                 //Get check user
                 AdminAuth.GET_DATA(context);
 
+<<<<<<< HEAD
+                await next.Invoke();
+=======
                 await next.Invoke();                
+>>>>>>> master
 
                 return;
             }

@@ -1,11 +1,16 @@
 ﻿@{
     //User Data
+<<<<<<< HEAD
+    OwncmsCore.Models.Data_Models.Auth_Model.Auth_Model User_Data = OwncmsCore.Middleware.AdminAuth.AdminAuth.UserData;
+    
+=======
     //OwncmsCore.Models.DatabaseModels.Users_Tbl User_Data= ViewBag.User_Data;    
     OwncmsCore.Models.DatabaseModels.Users_Tbl User_Data = OwncmsCore.Middleware.AdminAuth.AdminAuth.AdminUser;
 
     //User Notifications
     OwncmsCore.Services.Panel.Notifications.Notifications.Notification_Out Notifications = OwncmsCore.Middleware.AdminAuth.AdminAuth.Notification;
 
+>>>>>>> master
 }
 <!DOCTYPE html>
 <html lang="fa">
@@ -58,7 +63,7 @@
                     <li class="nav-item dropdown" onclick="Get_Seen_All_Notificatio(this)">
                         <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
                             <i class="mdi mdi-bell-outline"></i>
-                            @if (@Notifications.seen > 0)
+                            @if (0 > 0)
                             {
                                 <span class="count-symbol bg-danger"></span>
                             }
@@ -67,17 +72,17 @@
                                 <h6 class="p-3 mb-0" style="text-align: center;">Notifications</h6>
                                 <div class="dropdown-divider"></div>
 
-                                @for (int i = 0; i < Notifications.notifications.Count; i++)
+                                @for (int i = 0; i < 0; i++)
                                 {
-                                <a class="dropdown-item preview-item" href="@Notifications.notifications[i].link">
+                                <a class="dropdown-item preview-item" href="salam">
                                     <div class="preview-thumbnail">
                                         <div class="preview-icon bg-reddit">
                                             <i class="mdi mdi-bell"></i>
                                         </div>
                                     </div>
                                     <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                                        <h6 style="margin: 5px;" class="preview-subject font-weight-normal mb-1">@Notifications.notifications[i].title</h6>
-                                        <p style="margin: 5px;" class="text-gray ellipsis mb-0">@Notifications.notifications[i].content</p>
+                                        <h6 style="margin: 5px;" class="preview-subject font-weight-normal mb-1">hello</h6>
+                                        <p style="margin: 5px;" class="text-gray ellipsis mb-0">hello</p>
                                     </div>
                                 </a>
                                 }
@@ -99,9 +104,10 @@
 
                         <ul class="nav">
                         <li class="nav-item nav-profile">
-                            <a href="~/Admin/Profile" class="nav-link">
+                            <a href="~/Admin/Panel/Profile" class="nav-link">
                                 <div class="nav-profile-image">
-                                    <img src="~/Assets/Admin/images/faces/face.png" alt="profile">
+                                    <!--<img src="~/Assets/Admin/images/faces/face.png" alt="profile">-->
+                                    <img src="~/File/@User_Data.profile_image" alt="profile">
                                     <span class="login-status online"></span>
                                     <!--change to offline or busy as needed-->
                                 </div>
@@ -116,13 +122,116 @@
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="~/Admin/Panel/Dashboard">
-                                <span class="menu-title">@OwncmsCore.Language.all_strings.dashboard</span>
-                                <i class="mdi mdi-home menu-icon"></i>
-                            </a>
-                        </li>
+                                        <li class="nav-item">
+                    <a class="nav-link" href="/Admin/Panel/Dashboard">
+                        <span class="menu-title">@OwncmsCore.Language.all_strings.dashboard</span>
+                        <i class="mdi mdi-home menu-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Admin/Panel/Categoreis">
+                        <span class="menu-title">@OwncmsCore.Language.all_strings.categoris</span>
+                        <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Admin/Panel/NewPost">
+                        <span class="menu-title">@OwncmsCore.Language.all_strings.newpost</span>
+                        <i class="mdi mdi-package-variant-closed menu-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                        <span class="menu-title">@OwncmsCore.Language.all_strings.store</span>
+                        <i class="mdi mdi-store menu-icon"></i>
+                    </a>
+                    <div class="collapse" id="ui-basic">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"><a class="nav-link" href="/Admin/Panel/Store/CategoryStore">@OwncmsCore.Language.all_strings.store_categories</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/Admin/Panel/Store/NewStore">@OwncmsCore.Language.all_strings.newstorepost</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/Admin/Panel/Store/AllStores">@OwncmsCore.Language.all_strings.allstores</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/Admin/Panel/Store/AllOrders">@OwncmsCore.Language.all_strings.allorders</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/Admin/Panel/Store/CurrentOrders">@OwncmsCore.Language.all_strings.curent_orders</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/Admin/Panel/Store/Discount">@OwncmsCore.Language.all_strings.discountforall</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/Admin/Panel/Store/Coupon">@OwncmsCore.Language.all_strings.coupon</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Admin/Panel/Transactions">
+                        <span class="menu-title">@OwncmsCore.Language.all_strings.transactions</span>
+                        <i class="mdi mdi-card menu-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Admin/Panel/AllPosts">
+                        <span class="menu-title">@OwncmsCore.Language.all_strings.allposts</span>
+                        <i class="mdi mdi-paperclip menu-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Admin/Panel/UserManager">
+                        <span class="menu-title">@OwncmsCore.Language.all_strings.usermanagment</span>
+                        <i class="mdi mdi-account-multiple menu-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Admin/Panel/Charts">
+                        <span class="menu-title">@OwncmsCore.Language.all_strings.chart</span>
+                        <i class="mdi mdi-chart-bar menu-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                        <span class="menu-title">@OwncmsCore.Language.all_strings.reports</span>
+                        <i class="mdi mdi-chart-bubble menu-icon"></i>
+                    </a>
+                    <div class="collapse" id="ui-basic">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="/Admin/Panel/Reports">@OwncmsCore.Language.all_strings.reports</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="/Admin/Panel/NewReport">@OwncmsCore.Language.all_strings.new_report</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Admin/Panel/Groups">
+                        <span class="menu-title">@OwncmsCore.Language.all_strings.accesss</span>
+                        <i class="mdi mdi-fingerprint menu-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Admin/Panel/Cities">
+                        <span class="menu-title">@OwncmsCore.Language.all_strings.cites</span>
+                        <i class="mdi mdi-map menu-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Admin/Panel/FileManager">
+                        <span class="menu-title">@OwncmsCore.Language.all_strings.filemanager</span>
+                        <i class="mdi mdi-folder menu-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Admin/Panel/Profile">
+                        <span class="menu-title">@OwncmsCore.Language.all_strings.profile</span>
+                        <i class="mdi mdi-account menu-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Admin/Panel/Settings">
+                        <span class="menu-title">@OwncmsCore.Language.all_strings.settings</span>
+                        <i class="mdi mdi-settings menu-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Admin/Panel/Logout">
+                        <span class="menu-title">@OwncmsCore.Language.all_strings.exit</span>
+                        <i class="mdi mdi-logout menu-icon"></i>
+                    </a>
+                </li>
 
+<<<<<<< HEAD
+=======
                         <li class="nav-item">
                             <a class="nav-link" href="~/Admin/Panel/Categoreis">
                                 <span class="menu-title">@OwncmsCore.Language.all_strings.categoris</span>
@@ -192,6 +301,7 @@
                                 <i class="mdi mdi-exit-to-app menu-icon"></i>
                             </a>
                         </li>
+>>>>>>> master
 
                     </ul>
                     

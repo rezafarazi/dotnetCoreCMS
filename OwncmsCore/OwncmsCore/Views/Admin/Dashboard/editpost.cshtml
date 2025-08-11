@@ -1,9 +1,9 @@
-﻿@using OwncmsCore.Models.DatabaseModels;
+﻿﻿@using OwncmsCore.Models.DatabaseModels;
 @{
     Layout = "~/Views/Admin/Themplate/__Empty.cshtml";
-    List<Categories_Tbl> categories = ViewBag.AllCategories;
-    Posts_Tbl post = ViewBag.Post;
-    Categories_Tbl cat = ViewBag.Cat;
+    List<categories_tbl> categories = ViewBag.AllCategories;
+    posts_tbls post = ViewBag.Post;
+    categories_tbl cat = ViewBag.Cat;
 }
 
      
@@ -53,7 +53,7 @@
                                 <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.visible</label>
                                 <select class="form-control" name="visible" required>
 
-                                    @if(post.visible)
+                                    @if(post.visible == "1")
                                     {
                                         <option selected value="1">@OwncmsCore.Language.all_strings.visible</option>
                                         <option value="0">@OwncmsCore.Language.all_strings.hide</option>
@@ -266,10 +266,5 @@
 
     </div>
     <!-- content-wrapper ends -->
-
-
-
-
-
 
 

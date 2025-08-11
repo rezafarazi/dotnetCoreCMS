@@ -537,4 +537,118 @@
   <data name="write_your_content" xml:space="preserve">
     <value>محتوا خود را اینجا بنویسید</value>
   </data>
+  <data name="newcategory" xml:space="preserve">
+    <value>دسته بندی جدید</value>
+  </data>
+  <data name="properties" xml:space="preserve">
+    <value>عملیات</value>
+  </data>
+  <data name="visib" xml:space="preserve">
+    <value>قابل مشاهده</value>
+  </data>
+  <data name="bio" xml:space="preserve">
+    <value>بایو</value>
+  </data>
+  <data name="accesss" xml:space="preserve">
+    <value>دسترسی ها</value>
+  </data>
+  <data name="allorders" xml:space="preserve">
+    <value>همه سفارشات</value>
+  </data>
+  <data name="allstores" xml:space="preserve">
+    <value>کل پست های فروشگاهی</value>
+  </data>
+  <data name="coupon" xml:space="preserve">
+    <value>کوپن</value>
+  </data>
+  <data name="curent_orders" xml:space="preserve">
+    <value>سفارشات در جریان</value>
+  </data>
+  <data name="discountforall" xml:space="preserve">
+    <value>تخفیف برای همه</value>
+  </data>
+  <data name="newstorepost" xml:space="preserve">
+    <value>پست فروشگاهی جدید</value>
+  </data>
+  <data name="store" xml:space="preserve">
+    <value>فروشگاه</value>
+  </data>
+  <data name="store_categories" xml:space="preserve">
+    <value>دسته بندی فروشگاه</value>
+  </data>
+  <data name="transactions" xml:space="preserve">
+    <value>پرداخت ها</value>
+  </data>
+  <data name="banners" xml:space="preserve">
+    <value>بنر ها</value>
+  </data>
+  <data name="eventt" xml:space="preserve">
+    <value>رویداد</value>
+  </data>
+  <data name="law" xml:space="preserve">
+    <value>قوانین</value>
+  </data>
+  <data name="newbanner" xml:space="preserve">
+    <value>بنرجدید</value>
+  </data>
+  <data name="slides" xml:space="preserve">
+    <value>اسلایدها</value>
+  </data>
+  <data name="en_name" xml:space="preserve">
+    <value>نام لاتین</value>
+  </data>
+  <data name="date" xml:space="preserve">
+    <value>تاریخ</value>
+  </data>
+  <data name="transationNotfound" xml:space="preserve">
+    <value>پرداخت یافت نشد</value>
+  </data>
+  <data name="value" xml:space="preserve">
+    <value>مقدار</value>
+  </data>
+  <data name="code" xml:space="preserve">
+    <value>کد</value>
+  </data>
+  <data name="count" xml:space="preserve">
+    <value>تعداد</value>
+  </data>
+  <data name="counts" xml:space="preserve">
+    <value>تعداد باقی مانده</value>
+  </data>
+  <data name="discountnotactive" xml:space="preserve">
+    <value>هیچ تخفیفی موجود نیست</value>
+  </data>
+  <data name="iftotendisount" xml:space="preserve">
+    <value>اگر زیر 100 باشد درصد اگر بالای 100 از قیمت کم می شود</value>
+  </data>
+  <data name="newdiscount" xml:space="preserve">
+    <value>تخفیف جدید</value>
+  </data>
+  <data name="removediscount" xml:space="preserve">
+    <value>حذف تخفیف</value>
+  </data>
+  <data name="all_works" xml:space="preserve">
+    <value>همه ویژگی ها</value>
+  </data>
+  <data name="ditales" xml:space="preserve">
+    <value>جزئیات</value>
+  </data>
+  <data name="file" xml:space="preserve">
+    <value>فایل</value>
+  </data>
+  <data name="key" xml:space="preserve">
+    <value>کلید</value>
+  </data>
+  <data name="price" xml:space="preserve">
+    <value>قیمت خرید</value>
+  </data>
+  <data name="product" xml:space="preserve">
+    <value>محصول</value>
+  </data>
+  <data name="upload_image" xml:space="preserve">
+    <value>آپلود عکس</value>
+  </data>
+  <data name="works" xml:space="preserve">
+    <value>ویژگی ها</value>
+  </data>
 </root>

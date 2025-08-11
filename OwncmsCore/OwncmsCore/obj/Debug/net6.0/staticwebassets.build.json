@@ -1,6 +1,10 @@
 {
   "Version": 1,
+<<<<<<< HEAD
+  "Hash": "ykWby5q20VUr8VW3uHdw9KHxVASA9XlUBD+viqkuGog=",
+=======
   "Hash": "XxTL0bVHl3FWLWP10rAuB6hyRUSHzven4UbZ/ywnj4c=",
+>>>>>>> master
   "Source": "OwncmsCore",
   "BasePath": "_content/OwncmsCore",
   "Mode": "Default",
@@ -3627,10 +3631,36 @@
       "OriginalItemSpec": "wwwroot\\Assets\\Admin\\images\\icons\\empty.png"
     },
     {
+<<<<<<< HEAD
+      "Identity": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\icons\\free.png",
+      "SourceId": "OwncmsCore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\",
+      "BasePath": "_content/OwncmsCore",
+      "RelativePath": "Assets/Admin/images/icons/free.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Assets\\Admin\\images\\icons\\free.png"
+    },
+    {
       "Identity": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\logo.png",
       "SourceId": "OwncmsCore",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\logo.png",
+      "SourceId": "OwncmsCore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\",
+>>>>>>> master
       "BasePath": "_content/OwncmsCore",
       "RelativePath": "Assets/Admin/images/logo.png",
       "AssetKind": "All",

@@ -1,0 +1,70 @@
+﻿﻿@using OwncmsCore.Models.DatabaseModels;
+@{
+    Layout = "~/Views/Admin/Themplate/__Admin_Layout_Temp.cshtml";
+
+    string discount = ViewBag.discount_value;
+
+}
+
+
+
+<!-- partial -->
+<div class="main-panel">
+  <div class="content-wrapper">
+    <div class="page-header">
+      <h3 class="page-title">
+                <span class="page-title-icon bg-gradient-primary text-white mr-2">
+                  <i class="mdi mdi-paperclip"></i>
+                </span>@OwncmsCore.Language.all_strings.discountforall
+      </h3>
+    </div>
+
+    <div class="row">
+
+
+      <!--Left Side Of Content Start-->
+      <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+
+            @if (discount == "" || discount == "0")
+            {
+                <div>
+                    <!--Get new discount start-->
+                  <form class="forms-sample" method="post" action="/Admin/Panel/Store/Discount/New">
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.newdiscount</label>
+                      <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.iftotendisount" name="discount" required>
+                    </div>
+                    <button style="width: 100%;" type="submit" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</button>
+                  </form>
+                  <!--Get new discount end-->
+                  <div style="width: 100%;height: 250px;display: flex;justify-content: center;align-items: center;">
+                    <div style="width: 150px;">
+                      <img style="margin: 0 auto;" src="~/Assets/Admin/images/icons/free.png" width="150px"/>
+                      <p style="margin: 10px auto;text-align: center;">@OwncmsCore.Language.all_strings.discountnotactive</p>
+                    </div>
+                  </div>
+                </div>
+            }
+            else
+            {
+                <div style="width: 100%;height: 250px;display: flex;justify-content: center;align-items: center;">
+                  <div style="width: 150px;">
+                    <img style="margin: 0 auto;" src="~/Assets/Admin/images/icons/free.png" width="150px"/>
+                    <p style="margin: 10px auto;text-align: center;">تخفیف @discount</p>
+                    <a href="/Admin/Panel/Store/Discount/Remove" style="cursor: pointer;color:var(--primary);text-align: center;display: block;margin: 0 auto;">@OwncmsCore.Language.all_strings.removediscount</a>
+                  </div>
+                </div>
+            }
+
+          </div>
+        </div>
+      </div>
+      <!--Left Side Of Content End-->
+
+
+    </div>
+
+  </div>
+  <!-- content-wrapper ends -->

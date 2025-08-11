@@ -1,0 +1,89 @@
+﻿﻿@using OwncmsCore.Models.DatabaseModels;
+@{
+    Layout = "~/Views/Admin/Themplate/__Admin_Layout_Temp.cshtml";
+
+    List<discount_code_tbl> Codes = ViewBag.DiscountCodes;
+}
+
+
+<!-- partial -->
+<div class="main-panel">
+  <!--Send Notification To User Start-->
+  <div class="content-wrapper">
+    <div class="page-header">
+      <h3 class="page-title">
+                <span class="page-title-icon bg-gradient-primary text-white mr-2">
+                  <i class="mdi mdi-paperclip "></i>
+                </span>@OwncmsCore.Language.all_strings.coupon
+      </h3>
+    </div>
+    <div class="row">
+
+      <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title" ></h4>
+            </p>
+
+            <form method="post" action="/Admin/Panel/Store/Coupon/New">
+
+              <div class="form-group">
+                <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.count</label>
+                <input type="number" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.count" name="count" required>
+              </div>
+
+              <button type="submit" style="width: 100%;" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</btn>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title" ></h4>
+            </p>
+
+                        @if (Codes.Count > 0)
+                        {
+                            <table class="table">
+
+                                <thead>
+                                    <th>@OwncmsCore.Language.all_strings.code</th>
+                                    <th>@OwncmsCore.Language.all_strings.counts</th>
+                                    <th>@OwncmsCore.Language.all_strings.eventt</th>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Codes)
+                                    {
+                                        <tr>
+                                            <td>@item.code</td>
+                        <td>@item.count</td>
+                        <td><a href="/Admin/Panel/Store/Coupon/Remove/@item.id"><i class="mdi mdi-delete" style="font-size: 20px;color:var(--primary)"></i></a></td>
+                    </tr>
+                }
+              </tbody>
+
+            </table>
+            }
+            else
+            {
+                <div>
+                  <div style="margin-top:60px;">
+                    <img src="~/Assets/Admin/images/icons/empty.png" style="display:block;margin:0 auto;" width="150px">
+                    <p style="width:100%;text-align:center;color:#666;margin-top:20px;">@OwncmsCore.Language.all_strings.notfound</p>
+                  </div>
+                </div>
+            }
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <!--Send Notification To User End-->

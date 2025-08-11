@@ -1,5 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
+<<<<<<< HEAD
+using OwncmsCore.Models.Data_Models.Auth_Model;
+=======
+>>>>>>> master
 using OwncmsCore.Models.DatabaseModels;
 using OwncmsCore.Services.Global_Functions.Encript;
 
@@ -9,8 +13,12 @@ namespace OwncmsCore.Middleware.AdminAuth
     {
 
         //Get user data
+<<<<<<< HEAD
+        public static Auth_Model UserData;        
+=======
         public static Users_Tbl AdminUser;
         public static OwncmsCore.Services.Panel.Notifications.Notifications.Notification_Out Notification;
+>>>>>>> master
 
 
 
@@ -20,12 +28,24 @@ namespace OwncmsCore.Middleware.AdminAuth
             string user_auth = request.Request.Cookies["user_auth"].ToString();
             string json_user_data = Encript.Decrypt(user_auth);
             JObject user_data = JObject.Parse(json_user_data);
+<<<<<<< HEAD
+            Auth_Model user = new Auth_Model()
+=======
             Users_Tbl user = new Users_Tbl()
+>>>>>>> master
             {
                 id = int.Parse(user_data["id"].ToString()),
                 name = user_data["name"].ToString(),
                 family = user_data["family"].ToString(),
                 username = user_data["username"].ToString(),
+<<<<<<< HEAD
+                login_token = user_data["login_token"].ToString(),
+                user_type = user_data["user_type"].ToString(),
+                profile_image = user_data["profile_image"].ToString(),
+            };
+
+            UserData = user;
+=======
                 password = user_data["password"].ToString(),
                 login_token = user_data["login_token"].ToString(),
                 create_datetime = user_data["create_datetime"].ToString(),
@@ -45,13 +65,18 @@ namespace OwncmsCore.Middleware.AdminAuth
             Notification = OwncmsCore.Services.Panel.Notifications.Notifications.Get_All_Notifications(user);
 
             Check_Role(request,user, request.Request.Path.ToString());            
+>>>>>>> master
 
             //ViewBag.User_Data = User_Data;
             //ViewBag.Notification = OwncmsCore.Services.Panel.Notifications.Notifications.Get_All_Notifications(user);
         }
 
 
+<<<<<<< HEAD
+        public static void Check_Role(HttpContext request, users_tbl User, string Route)
+=======
         public static void Check_Role(HttpContext request, Users_Tbl User, string Route)
+>>>>>>> master
         {
             if (User.user_type == "ADMIN")
             {

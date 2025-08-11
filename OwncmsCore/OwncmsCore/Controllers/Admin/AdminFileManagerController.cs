@@ -4,13 +4,20 @@ using OwncmsCore.Services.Panel.FileManager;
 
 namespace OwncmsCore.Controllers.Admin
 {
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
     [Route("Admin/Panel")]
     [LanguageMiddle]
     public class AdminFileManagerController : Controller
     {
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
         //File Manager Start
         [Route("FileManager")]
         public async Task<ActionResult> FileManager([FromQuery] string Dir)
@@ -131,5 +138,9 @@ namespace OwncmsCore.Controllers.Admin
         //File Manager End
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
     }
 }

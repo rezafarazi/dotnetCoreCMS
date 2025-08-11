@@ -22,6 +22,24 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXGFsbHBvc3RzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+[C:/Users/rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/categories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXGNhdGVnb3JpZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/chart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXGNoYXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/cites.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXGNpdGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/coupon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXGNvdXBvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+=======
 [C:/Users/rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/categoreis.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXGNhdGVnb3JlaXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -30,14 +48,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXGNoYXJ0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+>>>>>>> master
 [C:/Users/rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/done.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXGRvbmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+=======
 [C:/Users/rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/editcategoreis.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXGVkaXRjYXRlZ29yZWlzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+>>>>>>> master
 [C:/Users/rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/editpost.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXGVkaXRwb3N0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -46,6 +68,13 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXGZpbGVtYW5hZ2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+[C:/Users/rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/groups.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXGdyb3Vwcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+=======
+>>>>>>> master
 [C:/Users/rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXGluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -86,6 +115,29 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXHNlbmRub3RpZmljYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+[C:/Users/rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXHNldHRpbmdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/store_categories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXHN0b3JlX2NhdGVnb3JpZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/store_discountall.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXHN0b3JlX2Rpc2NvdW50YWxsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/store_new.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXHN0b3JlX25ldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/transations.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXHRyYW5zYXRpb25zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+=======
+>>>>>>> master
 [C:/Users/rezafta/Desktop/dotnetCoreCMS/OwncmsCore/OwncmsCore/Views/Admin/Dashboard/usermanager.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkXHVzZXJtYW5hZ2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

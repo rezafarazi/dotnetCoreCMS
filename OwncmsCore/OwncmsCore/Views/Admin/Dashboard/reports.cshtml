@@ -1,7 +1,7 @@
-﻿@using OwncmsCore.Services.Panel.UsersReports;
+﻿@using OwncmsCore.Services.Panel.Report;
 @{
     Layout = "~/Views/Admin/Themplate/__Admin_Layout_Temp.cshtml";
-    UsersReports.Reports_Var UsersReports = ViewBag.AllReports;
+    Report_Service.Reports_Var UsersReports = ViewBag.AllReports;
 }
 
        
@@ -34,7 +34,6 @@
                             <thead>
                                 <tr>
                                     <th>@OwncmsCore.Language.all_strings.id</th>
-                                    <th>@OwncmsCore.Language.all_strings.title</th>
                                     <th>@OwncmsCore.Language.all_strings.text</th>
                                     <th>@OwncmsCore.Language.all_strings.type</th>
                                     <th>@OwncmsCore.Language.all_strings.reporter_user</th>
@@ -48,11 +47,10 @@
                                 {
                                 <tr>
                                     <td>@UsersReports.AllReports[i].id</td>
-                                    <td>@UsersReports.AllReports[i].title</td>
                                     <td>@UsersReports.AllReports[i].content</td>
                                     <td>@UsersReports.ReportType[i].title</td>
-                                    <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/Panel/UserManager/Edit_User/@UsersReports.AllReports[i].Reporter_User')"><i class="mdi mdi-account-edit" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></i></td>
-                                    <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/Panel/UserManager/Notifications/@UsersReports.AllReports[i].Reporter_User')" class="mdi mdi-comment" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></td>
+                                    <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/Panel/UserManager/Edit_User/@UsersReports.AllReports[i].user_id.id')"><i class="mdi mdi-account-edit" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></i></td>
+                                    <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/Panel/UserManager/Notifications/@UsersReports.AllReports[i].user_id.id')" class="mdi mdi-comment" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></td>
                                     <td><a href="~/Admin/Admin/Reports/View/@UsersReports.AllReports[i].id" style="color:#FF0000;">@OwncmsCore.Language.all_strings.not_seen</a></td>
                                 </tr>
                                 }
@@ -78,4 +76,3 @@
 
     </div>
         <!-- content-wrapper ends -->
-

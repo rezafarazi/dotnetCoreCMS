@@ -1,23 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace OwncmsCore.Models.DatabaseModels
 {
-    public class Categories_Tbl
+    public class categories_tbl
     {
+
         [Key]
         public long id { get; set; }
-        public string title { get; set; } = "";
-        public string Icon_Address { get; set; } = "";
-        public string Type { get; set; } = "";
-        public string Create_Date { get; set; } = "";
-        public string Enabled_Flag { get; set; } = "";
-        public string Root_Id { get; set; } = "";
-        public Users_Tbl User_Id { get; set; }
-        public string text { get; set; } = "";
-        public string link { get; set; } = "";
+        public string title { get; set; }
+        public int root_cat_id { get; set; }
+        public string icon_address { get; set; }
+        public string datetime { get; set; }
+        public string castom_link { get; set; }
+        public string visible { get; set; }
+        public string delete_flag { get; set; }
+
     }
 }

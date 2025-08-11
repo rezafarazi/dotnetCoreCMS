@@ -1,0 +1,194 @@
+﻿@{
+    Layout = "~/Views/Admin/Themplate/__Admin_Layout_Temp.cshtml";
+
+    //get data
+    List<OwncmsCore.Models.DatabaseModels.categories_tbl> Categories = ViewBag.Categories;
+
+}
+
+<!-- partial -->
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title">
+                <span class="page-title-icon bg-gradient-primary text-white mr-2">
+                  <i class="mdi mdi-format-list-bulleted"></i>
+                </span>@OwncmsCore.Language.all_strings.categoris
+            </h3>
+        </div>
+
+        <div class="row">
+
+            <!--Right Side Of Content Start-->
+            <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        
+
+                            @if(ViewBag.Category!=null)
+                            {
+                                <form class="forms-sample" method="post" action="~/Admin/Panel/Categoreis/UpdateDone">     
+
+                                    <input type="hidden" name="category_id" value="@ViewBag.Category.id" required>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.newcategory</label>
+                                        <input value="@ViewBag.Category.title" type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.newcategory" name="title" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.icon_address</label>
+                                        <input value="@ViewBag.Category.icon_address" type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.icon_address" name="iconaddress" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.sub</label>
+                                        <select class="form-control" id="exampleInputUsername1" name="root">
+                                            <option value="0">@OwncmsCore.Language.all_strings.root</option>
+                                            @foreach(OwncmsCore.Models.DatabaseModels.categories_tbl categories in Categories)
+                                            {
+                                                if(ViewBag.Category.root_cat_id == categories.id)
+                                                {
+                                                    <option selected value="@categories.id">@categories.title</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="@categories.id">@categories.title</option>
+                                                }
+                                            }
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.visible</label>
+                                        <select class="form-control" id="exampleInputUsername1" name="visible">
+                                            @if(ViewBag.Category.visible == "1")
+                                            {
+                                                <option selected value="1">@OwncmsCore.Language.all_strings.visib</option>
+                                                <option value="0">@OwncmsCore.Language.all_strings.hide</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="1">@OwncmsCore.Language.all_strings.visib</option>
+                                                <option selected value="0">@OwncmsCore.Language.all_strings.hide</option>
+                                            }
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.ca_link</label>
+                                        <input value="@ViewBag.Category.castom_link" type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.ca_link" name="ca_link">
+                                    </div>
+
+                                    <button style="width: 100%;" type="submit" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</button>
+
+                                </form>
+
+                            }
+                            else
+                            {
+                                <form class="forms-sample" method="post" action="~/Admin/Panel/Categoreis/New">     
+
+                                    <div class="form-group">
+                                        <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.newcategory</label>
+                                        <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.newcategory" name="title" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.icon_address</label>
+                                        <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.icon_address" name="iconaddress" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.sub</label>
+                                        <select class="form-control" id="exampleInputUsername1" name="root">
+                                            <option value="0">@OwncmsCore.Language.all_strings.root</option>
+                                            @foreach(OwncmsCore.Models.DatabaseModels.categories_tbl categories in Categories)
+                                            {
+                                                <option value="@categories.id">@categories.title</option>
+                                            }
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.visible</label>
+                                        <select class="form-control" id="exampleInputUsername1" name="visible">
+                                            <option value="1">@OwncmsCore.Language.all_strings.visib</option>
+                                            <option value="0">@OwncmsCore.Language.all_strings.hide</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputUsername1">@OwncmsCore.Language.all_strings.ca_link</label>
+                                        <input type="text" class="form-control" id="exampleInputUsername1" placeholder="@OwncmsCore.Language.all_strings.ca_link" name="ca_link">
+                                    </div>
+
+                                    <button style="width: 100%;" type="submit" class="btn btn-gradient-primary mr-2">@OwncmsCore.Language.all_strings.done</button>
+
+                                </form>
+                            }
+
+                    </div>
+                </div>
+            </div>
+            <!--Right Side Of Content End-->
+
+
+            <!--Left Side Of Content Start-->
+            <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title" ></h4>
+                        </p>
+                        @if (Categories.Count > 0)
+                        {
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>@OwncmsCore.Language.all_strings.id</th>
+                                    <th>@OwncmsCore.Language.all_strings.title</th>
+                                    <th>@OwncmsCore.Language.all_strings.visible</th>
+                                    <th>@OwncmsCore.Language.all_strings.properties</th>
+                                    <th>@OwncmsCore.Language.all_strings.delete</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach(OwncmsCore.Models.DatabaseModels.categories_tbl categories in Categories)
+                                {
+                                    <tr>
+                                        <td>@categories.id</td>
+                                        <td>@categories.title</td>
+
+                                        @if(@categories.visible == "1")
+                                        {
+                                            <td>@OwncmsCore.Language.all_strings.visib</td>
+                                        }
+                                        else
+                                        {
+                                            <td>@OwncmsCore.Language.all_strings.hide</td>
+                                        }
+
+                                        <td><a href="/Admin/Panel/Category/Update/@categories.id"><i class="mdi mdi-table-edit" style=";font-size: 20px;color:var(--primary)"></i></a></td>
+                                        <td><a href="/Admin/Panel/Category/Remove/@categories.id"><i class="mdi mdi-delete" style="font-size: 20px;color:var(--primary)"></i></a></td>
+
+                                    </tr>
+                                }
+                                </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                            <div style="width: 100%;height: 250px;display: flex;justify-content: center;align-items: center;">
+                                <div style="width: 150px;">
+                                    <img style="margin: 0 auto;" src="~/Assets/Admin/images/icons/empty.png" width="150px"/>
+                                    <p style="margin: 10px auto;text-align: center;">@OwncmsCore.Language.all_strings.notfound</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <!--Left Side Of Content End-->
+
+            
+        </div>
+
+    </div>
+    <!-- content-wrapper ends -->
+
+
+
+
+

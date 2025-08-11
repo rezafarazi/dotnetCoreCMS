@@ -1,12 +1,10 @@
 ﻿@using OwncmsCore.Models.DatabaseModels;
-@using OwncmsCore.Services.Panel.UserManager;
+@using OwncmsCore.Services.Panel.Usermanager;
 @{
     Layout = "~/Views/Admin/Themplate/__Admin_Layout_Temp.cshtml";
 
-    Users_Tbl User = ViewBag.User_Data;
-
-    UserManager.GET_ADMIN_USERS_STRUCT User_Admin = ViewBag.AdminUsers;
-    UserManager.GET_FILL_NEW_USERS_STRUCT Users = ViewBag.Users;
+    Usermanager_Service.GET_ADMIN_USERS_STRUCT User_Admin = ViewBag.AdminUsers;
+    Usermanager_Service.GET_FILL_NEW_USERS_STRUCT Users = ViewBag.Users;
     
 }
 
@@ -63,27 +61,20 @@
                             </thead>
                             <tbody>
 
-                                @{
-                                    int admin_user_count = 0;
-                                }
                                 @for (int i = 0; i < User_Admin.All_User_Id.Count; i++)
                                 {
-                                    if (long.Parse(User_Admin.All_User_Id[i]) != User.id)
-                                    {
-                                        admin_user_count++;
-                                        <tr>
-                                            <th scope="row">@User_Admin.All_User_Name[i]</th>
-                                            <td>@User_Admin.All_User_Name[i]</td>
-                                            <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/Panel/UserManager/Edit_User/@User_Admin.All_User_Id[i]')"><i class="mdi mdi-account-edit" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></i></td>
-                                            <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/Panel/UserManager/SendNotification?User_Id=@User_Admin.All_User_Id[i]')" class="mdi mdi-comment" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></td>
-                                        </tr>
-                                    }
+                                    <tr>
+                                        <th scope="row">@User_Admin.All_User_Name[i]</th>
+                                        <td>@User_Admin.All_User_Name[i]</td>
+                                        <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/Panel/UserManager/Edit_User/@User_Admin.All_User_Id[i]')"><i class="mdi mdi-account-edit" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></i></td>
+                                        <td><i onclick="Open_Link_Dialog(this, window.location.protocol + '//' + window.location.host + '/Admin/Panel/UserManager/SendNotification?User_Id=@User_Admin.All_User_Id[i]')" class="mdi mdi-comment" style="font-size: 20px;color:#007bff;cursor: pointer;"></i></td>
+                                    </tr>
                                 }
 
                             </tbody>
                         </table>
 
-                        @if (admin_user_count <= 0)
+                        @if (User_Admin.All_User_Id.Count <= 0)
                         {
                             <tr>
                                 <div style="margin-top:60px;">
@@ -131,17 +122,17 @@
                                     </tr>
                                     }
                                 }
-
-                                @if (@Users.Users_Id.Count <= 0)
-                                {
-                                <div style="margin-top:60px;">
-                                    <img src="~/Assets/Admin/img/box.png" width="150px" style="display:block;margin:0 auto;" />
-                                    <p style="width:100%;text-align:center;color:#FFFF;">@OwncmsCore.Language.all_strings.not_found</p>
-                                </div>
-                                }
-
                             </tbody>
                         </table>
+
+                        @if (@Users.Users_Id.Count <= 0)
+                        {
+                            <div style="margin-top:60px;">
+                                <img src="~/Assets/Admin/images/icons/empty.png" width="150px" style="display:block;margin:0 auto;" />
+                                <p style="width:100%;text-align:center;color:#666;margin-top:20px;">@OwncmsCore.Language.all_strings.not_found</p>
+                            </div>
+                        }
+
                     </div>
                 </div>
             </div>
@@ -151,6 +142,5 @@
 
     </div>
     <!-- content-wrapper ends -->
-
 
 
