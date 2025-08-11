@@ -761,10 +761,13 @@
       "PackagePath": "staticwebassets\\Assets\\Admin\\images\\icons\\empty.png"
     },
     {
+<<<<<<< HEAD
       "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\icons\\free.png",
       "PackagePath": "staticwebassets\\Assets\\Admin\\images\\icons\\free.png"
     },
     {
+=======
+>>>>>>> master
       "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\logo.png",
       "PackagePath": "staticwebassets\\Assets\\Admin\\images\\logo.png"
     },

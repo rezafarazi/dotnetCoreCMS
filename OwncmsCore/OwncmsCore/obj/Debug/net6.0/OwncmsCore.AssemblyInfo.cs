@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OwncmsCore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+655bc66caefee4d1efad7eb715e85ef720a24e21")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f1c3c5e773286886afa7b87cfd5540c02e734b36")]
+>>>>>>> master
 [assembly: System.Reflection.AssemblyProductAttribute("OwncmsCore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OwncmsCore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

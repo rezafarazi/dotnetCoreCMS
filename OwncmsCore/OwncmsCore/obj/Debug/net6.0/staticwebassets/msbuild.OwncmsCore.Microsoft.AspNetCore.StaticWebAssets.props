@@ -3040,6 +3040,7 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Assets\Admin\images\icons\empty.png))</OriginalItemSpec>
     </StaticWebAsset>
+<<<<<<< HEAD
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Assets\Admin\images\icons\free.png))">
       <SourceType>Package</SourceType>
       <SourceId>OwncmsCore</SourceId>
@@ -3056,6 +3057,8 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Assets\Admin\images\icons\free.png))</OriginalItemSpec>
     </StaticWebAsset>
+=======
+>>>>>>> master
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Assets\Admin\images\logo.png))">
       <SourceType>Package</SourceType>
       <SourceId>OwncmsCore</SourceId>

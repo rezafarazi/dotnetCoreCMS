@@ -147,10 +147,13 @@ C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\obj\Debug\net6.0\sc
 C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\obj\Debug\net6.0\OwncmsCore.genruntimeconfig.cache
 C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\obj\Debug\net6.0\ref\OwncmsCore.dll
 C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\bin\Debug\net6.0\PersianTools.Core.dll
+<<<<<<< HEAD
 C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\bin\Debug\net6.0\Microsoft.Practices.ServiceLocation.dll
 C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\bin\Debug\net6.0\XAct.Core.PCL.dll
 C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\bin\Debug\net6.0\CyberCrypt.dll
 C:\Users\Rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\bin\Debug\net6.0\XSystem.dll
+=======
+>>>>>>> master
 C:\Users\rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\obj\Debug\net6.0\OwncmsCore.sourcelink.json
 C:\Users\rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\obj\Debug\net6.0\staticwebassets\msbuild.OwncmsCore.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\rezafta\Desktop\dotnetCoreCMS\OwncmsCore\OwncmsCore\obj\Debug\net6.0\staticwebassets\msbuild.build.OwncmsCore.props

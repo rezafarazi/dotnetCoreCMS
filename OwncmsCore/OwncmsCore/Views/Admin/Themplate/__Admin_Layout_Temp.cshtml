@@ -1,7 +1,16 @@
 ﻿@{
     //User Data
+<<<<<<< HEAD
     OwncmsCore.Models.Data_Models.Auth_Model.Auth_Model User_Data = OwncmsCore.Middleware.AdminAuth.AdminAuth.UserData;
     
+=======
+    //OwncmsCore.Models.DatabaseModels.Users_Tbl User_Data= ViewBag.User_Data;    
+    OwncmsCore.Models.DatabaseModels.Users_Tbl User_Data = OwncmsCore.Middleware.AdminAuth.AdminAuth.AdminUser;
+
+    //User Notifications
+    OwncmsCore.Services.Panel.Notifications.Notifications.Notification_Out Notifications = OwncmsCore.Middleware.AdminAuth.AdminAuth.Notification;
+
+>>>>>>> master
 }
 <!DOCTYPE html>
 <html lang="fa">
@@ -221,6 +230,78 @@
                     </a>
                 </li>
 
+<<<<<<< HEAD
+=======
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Admin/Panel/Categoreis">
+                                <span class="menu-title">@OwncmsCore.Language.all_strings.categoris</span>
+                                <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Admin/Panel/NewPost">
+                              <span class="menu-title">@OwncmsCore.Language.all_strings.newpost</span>
+                              <i class="mdi mdi-package-variant-closed menu-icon"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                              <a class="nav-link" href="~/Admin/Panel/AllPosts">
+                                  <span class="menu-title">@OwncmsCore.Language.all_strings.allposts</span>
+                                  <i class="mdi mdi-paperclip menu-icon"></i>
+                              </a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Admin/Panel/Charts">
+                                <span class="menu-title">@OwncmsCore.Language.all_strings.chart</span>
+                                <i class="mdi mdi-chart-bar menu-icon"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Admin/Panel/UserManager">
+                                <span class="menu-title">@OwncmsCore.Language.all_strings.usermanagment</span>
+                                <i class="mdi mdi-account-multiple menu-icon"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                                <span class="menu-title">@OwncmsCore.Language.all_strings.reports</span>
+                                <i class="mdi mdi-chart-bubble menu-icon"></i>
+                            </a>
+                            <div class="collapse" id="ui-basic">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item"> <a class="nav-link" href="~/Admin/Panel/Reports">@OwncmsCore.Language.all_strings.reports</a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="~/Admin/Panel/NewReport">@OwncmsCore.Language.all_strings.new_report</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Admin/Panel/FileManager">
+                                <span class="menu-title">@OwncmsCore.Language.all_strings.filemanager</span>
+                                <i class="mdi mdi-folder menu-icon"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Admin/Panel/Profile">
+                                <span class="menu-title">@OwncmsCore.Language.all_strings.profile</span>
+                                <i class="mdi mdi-account menu-icon"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Admin/Logout">
+                                <span class="menu-title">@OwncmsCore.Language.all_strings.exit</span>
+                                <i class="mdi mdi-exit-to-app menu-icon"></i>
+                            </a>
+                        </li>
+>>>>>>> master
 
                     </ul>
                     

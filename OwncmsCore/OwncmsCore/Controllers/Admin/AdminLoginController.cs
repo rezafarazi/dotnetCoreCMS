@@ -133,6 +133,16 @@ namespace OwncmsCore.Controllers.Admin
 
 
 
+        //Logout Start
+        [Route("Logout")]
+        public async Task<ActionResult> Logout()
+        {
+            Response.Cookies.Delete("user_auth");
+            Response.Redirect("~/Admin/Login");
+            return Redirect("~/");
+        }
+        //Logout End
+
 
 
         //Logout Start

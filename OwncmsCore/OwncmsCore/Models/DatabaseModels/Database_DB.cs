@@ -12,7 +12,11 @@ namespace OwncmsCore.Models.DatabaseModels
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Rezafta\Desktop\OwncmsCore\OwncmsCore\DB\DB.mdf;Integrated Security=True;Connect Timeout=30");
+<<<<<<< HEAD
             optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\rezafta\Desktop\DB\database.mdf;Integrated Security=True;Connect Timeout=30");
+=======
+            optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\rezafta\Desktop\Database\db.mdf;Integrated Security=True;Connect Timeout=30");
+>>>>>>> master
         }
 
         public DbSet<settings_tbl> settings_tbl { get; set; }
