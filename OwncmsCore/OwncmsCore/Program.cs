@@ -1,3 +1,4 @@
+using OwncmsCore.Middleware.AdminAuth;
 using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -37,6 +38,9 @@ app.Use(async (context, next) => {
         {
             if (context.Request.Cookies["user_auth"] != null)
             {
+                //Get check user
+                AdminAuth.GET_DATA(context);
+
                 await next.Invoke();
 
                 return;

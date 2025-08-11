@@ -7,15 +7,13 @@ using OwncmsCore.Models.DatabaseModels;
 using OwncmsCore.Services.Global_Functions.Encript;
 using OwncmsCore.Services.Panel.Static_User;
 
-namespace OwncmsCore.Controllers
+namespace OwncmsCore.Controllers.Admin
 {
 
     [Route("Admin")]
     [LanguageMiddle]
-    public class LoginController : Controller
+    public class AdminLoginController : Controller
     {
-
-
 
 
 
@@ -110,8 +108,9 @@ namespace OwncmsCore.Controllers
                 if (tfa.ValidateTwoFactorPIN(secure_byte, auth_2f_code))
                 {
                     //Add Auth Session Start
-                    Auth_Model user_auth = new Auth_Model() {
-                        id=user.id,
+                    Auth_Model user_auth = new Auth_Model()
+                    {
+                        id = user.id,
                         name = user.name,
                         family = user.family,
                         username = user.username,
@@ -133,6 +132,18 @@ namespace OwncmsCore.Controllers
 
 
 
+
+
+
+        //Logout Start
+        [Route("Logout")]
+        public async Task<ActionResult> Logout()
+        {
+            Response.Cookies.Delete("user_auth");
+            Response.Redirect("~/Admin/Login");
+            return Redirect("~/");
+        }
+        //Logout End
 
 
     }

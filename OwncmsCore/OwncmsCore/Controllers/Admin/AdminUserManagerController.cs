@@ -1,0 +1,237 @@
+﻿using Google.Authenticator;
+using Microsoft.AspNetCore.Mvc;
+using Nancy.Json;
+using OwncmsCore.Middleware.AdminAuth;
+using OwncmsCore.Middleware.Language;
+using OwncmsCore.Models.Data_Models.Auth_Model;
+using OwncmsCore.Models.DatabaseModels;
+using OwncmsCore.Models.FormModels;
+using OwncmsCore.Services.Global_Functions.Encript;
+using OwncmsCore.Services.Panel.Groups;
+using OwncmsCore.Services.Panel.Notifications;
+using OwncmsCore.Services.Panel.Static_User;
+using OwncmsCore.Services.Panel.User;
+using OwncmsCore.Services.Panel.Usermanager;
+
+namespace OwncmsCore.Controllers.Admin
+{
+    [Route("Admin/Panel")]
+    [LanguageMiddle]
+    public class AdminUserManagerController : Controller
+    {
+
+
+        //UserManager Start
+        [Route("UserManager")]
+        public async Task<ActionResult> User_Manager()
+        {
+
+            ViewBag.AdminUsers = Usermanager_Service.GET_ADMIN_USERS_DATA();
+            ViewBag.Users = Usermanager_Service.GET_FILL_NEW_USERS();
+            return View("../Admin/Dashboard/usermanager");
+        }
+
+        [HttpPost]
+        [Route("UserManager")]
+        public async Task<ActionResult> User_Manager(string User_Search)
+        {
+
+            ViewBag.AdminUsers = Usermanager_Service.GET_ADMIN_USERS_DATA();
+            ViewBag.Users = Usermanager_Service.GET_USER_SEARCH(User_Search);
+            return View("../Admin/Dashboard/usermanager");
+        }
+
+        [HttpGet]
+        [Route("UserManager/Notifications/{User_Id}")]
+        public async Task<ActionResult> Notificationss(string User_Id)
+        {
+
+            ViewBag.Notifications = Notification_Service.Get_All_Old_Notifications(long.Parse(User_Id));
+            return View("../Admin/Dashboard/notifications");
+        }
+
+        [HttpGet]
+        [Route("UserManager/SendNotification")]
+        public async Task<ActionResult> SendNotification(string User_Id)
+        {
+
+            ViewBag.User_Id = User_Id;
+            return View("../Admin/Dashboard/sendnotification");
+        }
+
+
+        [HttpPost]
+        [Route("UserManager/SendNotification/Done")]
+        public async Task<ActionResult> SendNotification(string User_Id, string title, string content_text, string link)
+        {
+
+            Notification_Service.Send_Notification(AdminAuth.UserData.ToString(), User_Id, title, content_text, link);
+            return View("../Admin/Dashboard/done");
+        }
+
+        [HttpGet]
+        [Route("UserManager/Edit_User/{User_Id}")]
+        public async Task<ActionResult> Edit_User(string User_Id)
+        {
+
+            Static_User.UserCity user = Static_User.GetUserByID(long.Parse(User_Id));
+            users_tbl usr = user.user;
+            ViewBag.USER = usr;
+            ViewBag.City = user.city;
+            return View("../Admin/Dashboard/user_profile_view");
+        }
+
+        [HttpPost]
+        [Route("UserManager/UpdateDone")]
+        public async Task<ActionResult> UpdateDone(Profile_Model profile, IFormFile profile_image)
+        {
+
+            if (profile_image != null)
+            {
+                profile.profile_image = profile_image;
+            }
+
+
+            profile.id = AdminAuth.UserData.id;
+            users_tbl user = await Users_Service.UpdateUser(profile);
+
+            return View("../Admin/Dashboard/done");
+        }
+        //UserManager End
+
+
+
+        //Groups start
+        [Route("Groups")]
+        public async Task<ActionResult> Groups()
+        {
+
+            ViewBag.Groups = Groups_Service.GetAllAccessTypeUser();
+            return View("../Admin/Dashboard/groups");
+        }
+
+        [HttpPost]
+        [Route("Groups/New")]
+        public async Task<ActionResult> NewGroups(string title, string en_title)
+        {
+
+            Groups_Service.GetAddNewGroup(title, en_title);
+            return Redirect(Request.Headers.Referer);
+        }
+
+        [HttpGet]
+        [Route("Groups/Delete/{type_id}")]
+        public async Task<ActionResult> RemoveGroups(string type_id)
+        {
+
+            Groups_Service.GetRemoveAccessType(int.Parse(type_id));
+            return Redirect(Request.Headers.Referer);
+        }
+        //Groups end
+
+
+
+        //Profile start
+        [Route("Profile")]
+        public async Task<ActionResult> Profile()
+        {
+
+            Static_User.UserCity user = Static_User.GetUserByID(AdminAuth.UserData.id);
+            users_tbl usr = user.user;
+            ViewBag.USER = usr;
+            ViewBag.City = user.city;
+            return View("../Admin/Dashboard/profile");
+        }
+
+        [HttpPost]
+        [Route("Profile/Update")]
+        public async Task<ActionResult> ProfileDone(Profile_Model profile, IFormFile profile_image)
+        {
+
+            if (profile_image != null)
+            {
+                profile.profile_image = profile_image;
+            }
+
+
+            profile.id = AdminAuth.UserData.id;
+            users_tbl user = await Users_Service.UpdateUser(profile);
+            string user_profile_image = Static_User.GetProfileImageHash(user.id);
+
+            Auth_Model user_auth = new Auth_Model()
+            {
+                id = user.id,
+                name = user.name,
+                family = user.family,
+                username = user.username,
+                login_token = user.login_token,
+                user_type = user.user_type,
+                profile_image = user_profile_image,
+            };
+            string user_data = new JavaScriptSerializer().Serialize(user_auth);
+            string encript_user_data = Encript.Encrypt(user_data);
+            Response.Cookies.Append("user_auth", encript_user_data);
+
+            return Redirect(Request.Headers.Referer);
+        }
+
+        [Route("Profile/Active2F")]
+        public async Task<ActionResult> Active2F()
+        {
+
+            ViewBag.USER = Static_User.GetLogin_With_Token(AdminAuth.UserData.login_token);
+
+            using (Database_DB DB = new Database_DB())
+            {
+                users_tbl user = (from Users_Tbl in DB.users_tbl where Users_Tbl.login_token.Equals(AdminAuth.UserData.login_token) select Users_Tbl).First();
+
+                string secure = generateSecret();
+
+                TwoFactorAuthenticator tfa = new TwoFactorAuthenticator();
+                byte[] secure_byte = System.Text.Encoding.ASCII.GetBytes(secure);
+
+                user.google_auth = secure;
+
+                var qr_code = tfa.GenerateSetupCode("Sorapp", "Sorapp", secure_byte, 300, true);
+                ViewBag.GoogleAuth2F = qr_code.QrCodeSetupImageUrl;
+
+                DB.SaveChanges();
+
+            }
+
+            return View("../Admin/Dashboard/profile2F");
+        }
+
+        [Route("Profile/Diactive2F")]
+        public async Task<ActionResult> Diactive2F()
+        {
+
+            using (Database_DB DB = new Database_DB())
+            {
+                users_tbl user = (from Users_Tbl in DB.users_tbl where Users_Tbl.login_token.Equals(AdminAuth.UserData.login_token) select Users_Tbl).First();
+                user.google_auth = "";
+                DB.SaveChanges();
+            }
+
+            return Redirect(Request.Headers.Referer.ToString());
+        }
+        //Profile end
+
+
+
+        private string generateSecret()
+        {
+            string random_secure = "";
+            Random rnd = new Random();
+
+            for (int i = 0; i < 10; i++)
+            {
+                random_secure += rnd.Next(65, 75);
+            }
+
+            return random_secure;
+        }
+        //My Functionss End
+
+    }
+}

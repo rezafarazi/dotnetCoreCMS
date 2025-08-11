@@ -4,7 +4,7 @@ using OwncmsCore.Models.DatabaseModels;
 using OwncmsCore.Models.FormModels;
 using OwncmsCore.Services.File;
 
-namespace OwncmsCore.Controllers
+namespace OwncmsCore.Controllers.File
 {
     public class FileController : Controller
     {
@@ -18,7 +18,7 @@ namespace OwncmsCore.Controllers
             file_tbl file = File_Service.GetFile(file_hash);
             var fileName = file.file_hash + "." + file.file_extention;
             var mimeType = file.file_type;
-            byte[] fileBytes = GetFileToByte(file.file_address+"/"+file.file_hash+file.file_extention);
+            byte[] fileBytes = GetFileToByte(file.file_address + "/" + file.file_hash + file.file_extention);
 
             return new FileContentResult(fileBytes, mimeType)
             {
@@ -48,10 +48,10 @@ namespace OwncmsCore.Controllers
         public byte[] GetFileToByte(string fileName)
         {
             byte[] fileContent = null;
-            System.IO.FileStream fs = new System.IO.FileStream(fileName, System.IO.FileMode.Open, System.IO.FileAccess.Read);
-            System.IO.BinaryReader binaryReader = new System.IO.BinaryReader(fs);
-            long byteLength = new System.IO.FileInfo(fileName).Length;
-            fileContent = binaryReader.ReadBytes((Int32)byteLength);
+            FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader(fs);
+            long byteLength = new FileInfo(fileName).Length;
+            fileContent = binaryReader.ReadBytes((int)byteLength);
             fs.Close();
             fs.Dispose();
             binaryReader.Close();

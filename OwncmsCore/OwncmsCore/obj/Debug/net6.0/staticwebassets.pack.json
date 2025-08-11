@@ -1,0 +1,1069 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\css\\castum_style.css",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\css\\castum_style.css"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\css\\style.css",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\css\\style.css.map",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\css\\style.css.map"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\About_Different_formats.pdf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\About_Different_formats.pdf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\About_Different_formats.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\About_Different_formats.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\English to Farsi numbers help.pdf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\English to Farsi numbers help.pdf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\Farsi_numerals.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\Farsi_numerals.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\IRANSans(FaNum).ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\IRANSans(FaNum).ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\IRANSans(FaNum)_Black.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\IRANSans(FaNum)_Black.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\IRANSans(FaNum)_Bold.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\IRANSans(FaNum)_Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\IRANSans(FaNum)_Light.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\IRANSans(FaNum)_Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\IRANSans(FaNum)_Medium.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\IRANSans(FaNum)_Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\IRANSans(FaNum)_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\IRANSans(FaNum)_UltraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MobileFonts\\IRANSansMobile(FaNum).ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MobileFonts\\IRANSansMobile(FaNum).ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MobileFonts\\IRANSansMobile(FaNum)_Black.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MobileFonts\\IRANSansMobile(FaNum)_Black.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MobileFonts\\IRANSansMobile(FaNum)_Bold.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MobileFonts\\IRANSansMobile(FaNum)_Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MobileFonts\\IRANSansMobile(FaNum)_Light.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MobileFonts\\IRANSansMobile(FaNum)_Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MobileFonts\\IRANSansMobile(FaNum)_Medium.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MobileFonts\\IRANSansMobile(FaNum)_Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MobileFonts\\IRANSansMobile(FaNum)_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MobileFonts\\IRANSansMobile(FaNum)_UltraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MobileFonts\\MobileFonts.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MobileFonts\\MobileFonts.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\IRANSansMonoSpacedNum.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\IRANSansMonoSpacedNum.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\IRANSansMonoSpacedNum_Black.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\IRANSansMonoSpacedNum_Black.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\IRANSansMonoSpacedNum_Bold.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\IRANSansMonoSpacedNum_Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\IRANSansMonoSpacedNum_Light.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\IRANSansMonoSpacedNum_Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\IRANSansMonoSpacedNum_Medium.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\IRANSansMonoSpacedNum_Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\IRANSansMonoSpacedNum_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\IRANSansMonoSpacedNum_UltraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\MonoSpaced Numral.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\MonoSpaced Numral.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\OnlyNumeral\\IRANSansOnlyNumeral.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\OnlyNumeral\\IRANSansOnlyNumeral.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\OnlyNumeral\\IRANSansOnlyNumeral_Bold.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\OnlyNumeral\\IRANSansOnlyNumeral_Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\OnlyNumeral\\IRANSansOnlyNumeral_Light.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\OnlyNumeral\\IRANSansOnlyNumeral_Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\OnlyNumeral\\IRANSansOnlyNumeral_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\OnlyNumeral\\IRANSansOnlyNumeral_UltraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\OnlyNumeral\\IRANSansOnlyNumral_Medium.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\OnlyNumeral\\IRANSansOnlyNumral_Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\OnlyNumeral\\woff\\IRANSansOnlyNumeral.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\OnlyNumeral\\woff\\IRANSansOnlyNumeral.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\OnlyNumeral\\woff\\IRANSansOnlyNumeral_Bold.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\OnlyNumeral\\woff\\IRANSansOnlyNumeral_Bold.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\OnlyNumeral\\woff\\IRANSansOnlyNumeral_Light.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\OnlyNumeral\\woff\\IRANSansOnlyNumeral_Light.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\OnlyNumeral\\woff\\IRANSansOnlyNumeral_UltraLight.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\OnlyNumeral\\woff\\IRANSansOnlyNumeral_UltraLight.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\OnlyNumeral\\woff\\IRANSansOnlyNumral_Medium.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\OnlyNumeral\\woff\\IRANSansOnlyNumral_Medium.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\woff\\IRANSansMonoSpacedNum.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\woff\\IRANSansMonoSpacedNum.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\woff\\IRANSansMonoSpacedNum_Black.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\woff\\IRANSansMonoSpacedNum_Black.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\woff\\IRANSansMonoSpacedNum_Bold.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\woff\\IRANSansMonoSpacedNum_Bold.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\woff\\IRANSansMonoSpacedNum_Light.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\woff\\IRANSansMonoSpacedNum_Light.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\woff\\IRANSansMonoSpacedNum_Medium.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\woff\\IRANSansMonoSpacedNum_Medium.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\woff\\IRANSansMonoSpacedNum_UltraLight.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\MonoSpaced Numral\\woff\\IRANSansMonoSpacedNum_UltraLight.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\IRANSans.html",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\IRANSans.html"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\WebFonts.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\WebFonts.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\css\\fontiran.css",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\css\\fontiran.css"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\css\\style.css",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\eot\\IRANSansWeb(FaNum).eot",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\eot\\IRANSansWeb(FaNum).eot"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\eot\\IRANSansWeb(FaNum)_Black.eot",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\eot\\IRANSansWeb(FaNum)_Black.eot"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\eot\\IRANSansWeb(FaNum)_Bold.eot",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\eot\\IRANSansWeb(FaNum)_Bold.eot"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\eot\\IRANSansWeb(FaNum)_Light.eot",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\eot\\IRANSansWeb(FaNum)_Light.eot"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\eot\\IRANSansWeb(FaNum)_Medium.eot",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\eot\\IRANSansWeb(FaNum)_Medium.eot"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\eot\\IRANSansWeb(FaNum)_UltraLight.eot",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\eot\\IRANSansWeb(FaNum)_UltraLight.eot"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\ttf\\IRANSansWeb(FaNum).ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\ttf\\IRANSansWeb(FaNum).ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\ttf\\IRANSansWeb(FaNum)_Black.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\ttf\\IRANSansWeb(FaNum)_Black.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\ttf\\IRANSansWeb(FaNum)_Bold.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\ttf\\IRANSansWeb(FaNum)_Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\ttf\\IRANSansWeb(FaNum)_Light.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\ttf\\IRANSansWeb(FaNum)_Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\ttf\\IRANSansWeb(FaNum)_Medium.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\ttf\\IRANSansWeb(FaNum)_Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\ttf\\IRANSansWeb(FaNum)_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\ttf\\IRANSansWeb(FaNum)_UltraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff2\\IRANSansWeb(FaNum).woff2",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff2\\IRANSansWeb(FaNum).woff2"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff2\\IRANSansWeb(FaNum)_Black.woff2",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff2\\IRANSansWeb(FaNum)_Black.woff2"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff2\\IRANSansWeb(FaNum)_Bold.woff2",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff2\\IRANSansWeb(FaNum)_Bold.woff2"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff2\\IRANSansWeb(FaNum)_Light.woff2",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff2\\IRANSansWeb(FaNum)_Light.woff2"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff2\\IRANSansWeb(FaNum)_Medium.woff2",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff2\\IRANSansWeb(FaNum)_Medium.woff2"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff2\\IRANSansWeb(FaNum)_UltraLight.woff2",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff2\\IRANSansWeb(FaNum)_UltraLight.woff2"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff\\IRANSansWeb(FaNum).woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff\\IRANSansWeb(FaNum).woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff\\IRANSansWeb(FaNum)_Black.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff\\IRANSansWeb(FaNum)_Black.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff\\IRANSansWeb(FaNum)_Bold.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff\\IRANSansWeb(FaNum)_Bold.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff\\IRANSansWeb(FaNum)_Light.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff\\IRANSansWeb(FaNum)_Light.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff\\IRANSansWeb(FaNum)_Medium.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff\\IRANSansWeb(FaNum)_Medium.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff\\IRANSansWeb(FaNum)_UltraLight.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Farsi_numerals\\webFonts\\fonts\\woff\\IRANSansWeb(FaNum)_UltraLight.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\FontLicense.txt",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\FontLicense.txt"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\IRANSans.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\IRANSans.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\IRANSans5.html",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\IRANSans5.html"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\IRANSans5.jpg",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\IRANSans5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\IRANSans_Black.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\IRANSans_Black.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\IRANSans_Bold.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\IRANSans_Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\IRANSans_Light.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\IRANSans_Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\IRANSans_Medium.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\IRANSans_Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\IRANSans_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\IRANSans_UltraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\MobileFonts\\IRANSansMobile.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\MobileFonts\\IRANSansMobile.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\MobileFonts\\IRANSansMobile_Black.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\MobileFonts\\IRANSansMobile_Black.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\MobileFonts\\IRANSansMobile_Bold.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\MobileFonts\\IRANSansMobile_Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\MobileFonts\\IRANSansMobile_Light.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\MobileFonts\\IRANSansMobile_Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\MobileFonts\\IRANSansMobile_Medium.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\MobileFonts\\IRANSansMobile_Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\MobileFonts\\IRANSansMobile_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\MobileFonts\\IRANSansMobile_UltraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\MobileFonts\\MobileFonts.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\MobileFonts\\MobileFonts.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\MobileFonts\\IRAN SansMobile(NoEn).ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\MobileFonts\\IRAN SansMobile(NoEn).ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\MobileFonts\\IRANSansMobile(NoEn)_Black.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\MobileFonts\\IRANSansMobile(NoEn)_Black.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\MobileFonts\\IRANSansMobile(NoEn)_Bold.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\MobileFonts\\IRANSansMobile(NoEn)_Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\MobileFonts\\IRANSansMobile(NoEn)_Light.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\MobileFonts\\IRANSansMobile(NoEn)_Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\MobileFonts\\IRANSansMobile(NoEn)_Medium.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\MobileFonts\\IRANSansMobile(NoEn)_Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\MobileFonts\\IRANSansMobile(NoEn)_ultralight.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\MobileFonts\\IRANSansMobile(NoEn)_ultralight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\MobileFonts\\MobileFonts.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\MobileFonts\\MobileFonts.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\Non_English.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\Non_English.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\IRANSans.html",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\IRANSans.html"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\WebFonts.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\WebFonts.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\css\\fontiran.css",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\css\\fontiran.css"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\css\\style.css",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\eot\\IRANSansWeb(NoEn).eot",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\eot\\IRANSansWeb(NoEn).eot"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\eot\\IRANSansWeb(NoEn)_Black.eot",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\eot\\IRANSansWeb(NoEn)_Black.eot"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\eot\\IRANSansWeb(NoEn)_Bold.eot",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\eot\\IRANSansWeb(NoEn)_Bold.eot"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\eot\\IRANSansWeb(NoEn)_Light.eot",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\eot\\IRANSansWeb(NoEn)_Light.eot"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\eot\\IRANSansWeb(NoEn)_Medium.eot",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\eot\\IRANSansWeb(NoEn)_Medium.eot"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\eot\\IRANSansWeb(NoEn)_UltraLight.eot",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\eot\\IRANSansWeb(NoEn)_UltraLight.eot"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\ttf\\IRANSansWeb(NoEn).ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\ttf\\IRANSansWeb(NoEn).ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\ttf\\IRANSansWeb(NoEn)_Black.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\ttf\\IRANSansWeb(NoEn)_Black.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\ttf\\IRANSansWeb(NoEn)_Bold.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\ttf\\IRANSansWeb(NoEn)_Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\ttf\\IRANSansWeb(NoEn)_Light.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\ttf\\IRANSansWeb(NoEn)_Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\ttf\\IRANSansWeb(NoEn)_Medium.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\ttf\\IRANSansWeb(NoEn)_Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\ttf\\IRANSansWeb(NoEn)_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\ttf\\IRANSansWeb(NoEn)_UltraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff2\\IRANSansWeb(NoEn).woff2",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff2\\IRANSansWeb(NoEn).woff2"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff2\\IRANSansWeb(NoEn)_Black.woff2",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff2\\IRANSansWeb(NoEn)_Black.woff2"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff2\\IRANSansWeb(NoEn)_Bold.woff2",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff2\\IRANSansWeb(NoEn)_Bold.woff2"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff2\\IRANSansWeb(NoEn)_Light.woff2",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff2\\IRANSansWeb(NoEn)_Light.woff2"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff2\\IRANSansWeb(NoEn)_Medium.woff2",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff2\\IRANSansWeb(NoEn)_Medium.woff2"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff2\\IRANSansWeb(NoEn)_UltraLight.woff2",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff2\\IRANSansWeb(NoEn)_UltraLight.woff2"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff\\IRANSansWeb(NoEn).woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff\\IRANSansWeb(NoEn).woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff\\IRANSansWeb(NoEn)_Black.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff\\IRANSansWeb(NoEn)_Black.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff\\IRANSansWeb(NoEn)_Bold.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff\\IRANSansWeb(NoEn)_Bold.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff\\IRANSansWeb(NoEn)_Light.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff\\IRANSansWeb(NoEn)_Light.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff\\IRANSansWeb(NoEn)_Medium.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff\\IRANSansWeb(NoEn)_Medium.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff\\IRANSansWeb(NoEn)_UltraLight.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\Non_English\\WebFonts\\fonts\\woff\\IRANSansWeb(NoEn)_UltraLight.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\SmallSizeFonts\\IRANSans(Small).ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\SmallSizeFonts\\IRANSans(Small).ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\SmallSizeFonts\\IRANSans(Small)_Black.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\SmallSizeFonts\\IRANSans(Small)_Black.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\SmallSizeFonts\\IRANSans(Small)_Bold.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\SmallSizeFonts\\IRANSans(Small)_Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\SmallSizeFonts\\IRANSans(Small)_Light.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\SmallSizeFonts\\IRANSans(Small)_Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\SmallSizeFonts\\IRANSans(Small)_Medium.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\SmallSizeFonts\\IRANSans(Small)_Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\SmallSizeFonts\\IRANSans(Small)_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\SmallSizeFonts\\IRANSans(Small)_UltraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\SmallSizeFonts\\SmallSizeFonts.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\SmallSizeFonts\\SmallSizeFonts.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\IRANSans.html",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\IRANSans.html"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\WebFonts.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\WebFonts.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\css\\fontiran.css",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\css\\fontiran.css"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\css\\style.css",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\eot\\IRANSansWeb.eot",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\eot\\IRANSansWeb.eot"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\eot\\IRANSansWeb_Black.eot",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\eot\\IRANSansWeb_Black.eot"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\eot\\IRANSansWeb_Bold.eot",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\eot\\IRANSansWeb_Bold.eot"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\eot\\IRANSansWeb_Light.eot",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\eot\\IRANSansWeb_Light.eot"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\eot\\IRANSansWeb_Medium.eot",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\eot\\IRANSansWeb_Medium.eot"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\eot\\IRANSansWeb_UltraLight.eot",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\eot\\IRANSansWeb_UltraLight.eot"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\ttf\\IRANSansWeb.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\ttf\\IRANSansWeb.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\ttf\\IRANSansWeb_Black.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\ttf\\IRANSansWeb_Black.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\ttf\\IRANSansWeb_Bold.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\ttf\\IRANSansWeb_Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\ttf\\IRANSansWeb_Light.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\ttf\\IRANSansWeb_Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\ttf\\IRANSansWeb_Medium.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\ttf\\IRANSansWeb_Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\ttf\\IRANSansWeb_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\ttf\\IRANSansWeb_UltraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff2\\IRANSansWeb.woff2",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff2\\IRANSansWeb.woff2"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff2\\IRANSansWeb_Black.woff2",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff2\\IRANSansWeb_Black.woff2"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff2\\IRANSansWeb_Bold.woff2",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff2\\IRANSansWeb_Bold.woff2"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff2\\IRANSansWeb_Light.woff2",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff2\\IRANSansWeb_Light.woff2"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff2\\IRANSansWeb_Medium.woff2",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff2\\IRANSansWeb_Medium.woff2"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff2\\IRANSansWeb_UltraLight.woff2",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff2\\IRANSansWeb_UltraLight.woff2"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff\\IRANSansWeb.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff\\IRANSansWeb.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff\\IRANSansWeb_Black.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff\\IRANSansWeb_Black.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff\\IRANSansWeb_Bold.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff\\IRANSansWeb_Bold.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff\\IRANSansWeb_Light.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff\\IRANSansWeb_Light.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff\\IRANSansWeb_Medium.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff\\IRANSansWeb_Medium.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff\\IRANSansWeb_UltraLight.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\WebFonts\\fonts\\woff\\IRANSansWeb_UltraLight.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\IRANSans\\license.pdf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\IRANSans\\license.pdf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Bold.eot",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Bold.eot"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Bold.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Bold.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Bold.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Bold.woff2",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Bold.woff2"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Light.eot",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Light.eot"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Light.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Light.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Light.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Light.woff2",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Light.woff2"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Medium.eot",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Medium.eot"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Medium.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Medium.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Medium.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Medium.woff2",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Medium.woff2"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Regular.eot",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Regular.eot"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Regular.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Regular.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Regular.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Regular.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Regular.woff2",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\fonts\\Ubuntu\\Ubuntu-Regular.woff2"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\check.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\check.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\dashboard\\circle.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\dashboard\\circle.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\dashboard\\circle.svg",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\dashboard\\circle.svg"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\dashboard\\img_1.jpg",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\dashboard\\img_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\dashboard\\img_2.jpg",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\dashboard\\img_2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\dashboard\\img_3.jpg",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\dashboard\\img_3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\dashboard\\img_4.jpg",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\dashboard\\img_4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\faces-clipart\\pic-1.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\faces-clipart\\pic-1.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\faces-clipart\\pic-2.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\faces-clipart\\pic-2.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\faces-clipart\\pic-3.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\faces-clipart\\pic-3.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\faces-clipart\\pic-4.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\faces-clipart\\pic-4.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\faces\\face.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\faces\\face.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\ico.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\ico.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\icons\\check.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\icons\\check.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\icons\\empty.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\icons\\empty.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\icons\\free.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\icons\\free.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\logo.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\sprites\\blue.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\sprites\\blue.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\sprites\\dark.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\sprites\\dark.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\sprites\\flag.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\sprites\\flag.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\sprites\\green.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\sprites\\green.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\sprites\\jsgrid-icons.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\sprites\\jsgrid-icons.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\sprites\\red.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\sprites\\red.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\images\\sprites\\yellow.png",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\images\\sprites\\yellow.png"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\js\\chart.js",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\js\\chart.js"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\js\\ckeditor.js",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\js\\ckeditor.js"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\js\\ckeditor_main.js",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\js\\ckeditor_main.js"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\js\\dashboard.js",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\js\\dashboard.js"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\js\\file-upload.js",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\js\\file-upload.js"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\js\\hoverable-collapse.js",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\js\\hoverable-collapse.js"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\js\\main.js",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\js\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\js\\misc.js",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\js\\misc.js"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\js\\off-canvas.js",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\js\\off-canvas.js"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\js\\todo.js",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\js\\todo.js"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\js\\todolist.js",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\js\\todolist.js"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\_dashboard.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\_dashboard.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\_demo.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\_demo.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\_fonts.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\_fonts.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\_footer.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\_footer.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\_functions.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\_functions.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\_layouts.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\_layouts.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\_misc.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\_misc.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\_navbar.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\_navbar.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\_reset.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\_reset.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\_sidebar.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\_sidebar.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\_typography.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\_typography.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\_utilities.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\_utilities.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\_variables.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\_vertical-wrapper.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\_vertical-wrapper.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\_widget-grid.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\_widget-grid.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\components\\_badges.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\components\\_badges.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\components\\_bootstrap-progress.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\components\\_bootstrap-progress.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\components\\_breadcrumbs.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\components\\_breadcrumbs.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\components\\_buttons.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\components\\_buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\components\\_cards.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\components\\_cards.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\components\\_checkbox-radio.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\components\\_checkbox-radio.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\components\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\components\\_dropdown.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\components\\_forms.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\components\\_forms.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\components\\_icons.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\components\\_icons.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\components\\_lists.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\components\\_lists.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\components\\_preview.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\components\\_preview.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\components\\_tables.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\components\\_tables.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\components\\_todo-list.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\components\\_todo-list.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\landing-screens\\_auth.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\landing-screens\\_auth.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\mixins\\_animation.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\mixins\\_animation.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\mixins\\_background.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\mixins\\_background.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\mixins\\_badges.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\mixins\\_badges.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\mixins\\_blockqoute.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\mixins\\_blockqoute.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\mixins\\_breadcrumbs.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\mixins\\_breadcrumbs.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\mixins\\_buttons.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\mixins\\_buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\mixins\\_cards.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\mixins\\_cards.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\mixins\\_misc.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\mixins\\_misc.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\mixins\\_pagination.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\mixins\\_pagination.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\mixins\\_popovers.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\mixins\\_popovers.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\mixins\\_text.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\mixins\\_text.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\mixins\\_tooltips.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\mixins\\_tooltips.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\scss\\style.scss",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\scss\\style.scss"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\vendors\\chart.js\\Chart.min.js",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\vendors\\chart.js\\Chart.min.js"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\vendors\\css\\vendor.bundle.base.css",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\vendors\\css\\vendor.bundle.base.css"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\vendors\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\vendors\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\vendors\\js\\vendor.bundle.base.js",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\vendors\\js\\vendor.bundle.base.js"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\vendors\\mdi\\css\\materialdesignicons.min.css",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\vendors\\mdi\\css\\materialdesignicons.min.css"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\vendors\\mdi\\css\\materialdesignicons.min.css.map",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\vendors\\mdi\\css\\materialdesignicons.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\vendors\\mdi\\fonts\\materialdesignicons-webfont.eot",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\vendors\\mdi\\fonts\\materialdesignicons-webfont.eot"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\vendors\\mdi\\fonts\\materialdesignicons-webfont.ttf",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\vendors\\mdi\\fonts\\materialdesignicons-webfont.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\vendors\\mdi\\fonts\\materialdesignicons-webfont.woff",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\vendors\\mdi\\fonts\\materialdesignicons-webfont.woff"
+    },
+    {
+      "Id": "C:\\Users\\rezafta\\Desktop\\dotnetCoreCMS\\OwncmsCore\\OwncmsCore\\wwwroot\\Assets\\Admin\\vendors\\mdi\\fonts\\materialdesignicons-webfont.woff2",
+      "PackagePath": "staticwebassets\\Assets\\Admin\\vendors\\mdi\\fonts\\materialdesignicons-webfont.woff2"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.OwncmsCore.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.OwncmsCore.props",
+      "PackagePath": "build\\OwncmsCore.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.OwncmsCore.props",
+      "PackagePath": "buildMultiTargeting\\OwncmsCore.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.OwncmsCore.props",
+      "PackagePath": "buildTransitive\\OwncmsCore.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
